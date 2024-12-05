@@ -24,7 +24,7 @@ public class Movement : MonoBehaviour
     Vector2 currentMouseDelta;
     Vector2 currentMouseDeltaVelocity;
 
-    CharacterController controller;
+   public CharacterController controller;
     Vector2 currentDir;
     Vector2 currentDirVelocity;
     Vector3 velocity;

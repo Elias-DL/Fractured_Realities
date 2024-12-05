@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    //declaratie
+    
+        //declaratie
     public Rigidbody rb;
     public float forwardForce = 500, sideForce = 30, sprintForce = 1000, jump = 10;
 
