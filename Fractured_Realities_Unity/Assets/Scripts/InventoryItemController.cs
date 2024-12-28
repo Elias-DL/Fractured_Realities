@@ -12,7 +12,7 @@ public class InventoryItemController : MonoBehaviour
     public void RemoveItem()
     {
         InventoryManager.Instance.Remove(item);
-
+        RecreateItemInWorld();
         Destroy(gameObject);
     }
 
@@ -21,7 +21,7 @@ public class InventoryItemController : MonoBehaviour
         item = newItem;
     }
 
-    private void RecreateItemInWorld()
+    public void RecreateItemInWorld()
     {
         if (itemPrefab != null)
         {
@@ -37,7 +37,7 @@ public class InventoryItemController : MonoBehaviour
         }
     }
 
-    private Vector3 GetDropPosition()
+    public Vector3 GetDropPosition()
     {
         // Get player position (assuming the player has a tag "Player")
         GameObject player = GameObject.FindGameObjectWithTag("Player");
