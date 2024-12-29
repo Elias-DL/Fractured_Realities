@@ -36,7 +36,7 @@ public class Movement : MonoBehaviour
         if (cursorLock)
         {
             Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = true;
+            Cursor.visible = false;
         }
     }
 

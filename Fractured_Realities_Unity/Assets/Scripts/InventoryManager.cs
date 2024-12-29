@@ -58,7 +58,12 @@ public class InventoryManager : MonoBehaviour
 
     public void Remove(Item item)
     {
+       
+        // Remove the item from the inventory
         Items.Remove(item);
+
+        // Update UI if necessary
+        ListItems();
     }
 
     public void ListItems()

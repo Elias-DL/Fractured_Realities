@@ -6,12 +6,13 @@ public class DoorInteraction : MonoBehaviour
 {
     [SerializeField] private string sceneToLoad; // The name of the scene to load
 
-    private void OnMouseDown()
+    public void OnMouseDown()
     {
         // Check if the left mouse button was clicked
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
             LoadScene();
+           
         }
     }
 
