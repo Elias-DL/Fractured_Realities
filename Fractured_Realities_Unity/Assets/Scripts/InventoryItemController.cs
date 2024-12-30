@@ -19,23 +19,32 @@ public class InventoryItemController : MonoBehaviour
     public void AddItem(Item newItem)
     {
         item = newItem;
+
+        // Assign the dynamic item prefab from the Item data
+        if (newItem.prefab != null)
+        {
+            itemPrefab = newItem.prefab;
+        }
+        else
+        {
+            Debug.LogWarning("Item does not have an associated prefab!");
+        }
     }
+
 
     public void RecreateItemInWorld()
     {
         if (itemPrefab != null)
         {
-            // You can modify this position to be wherever you want the item to appear
             Vector3 spawnPosition = GetDropPosition();
-
-            // Instantiate the item in the world
             Instantiate(itemPrefab, spawnPosition, Quaternion.identity);
         }
         else
         {
-            Debug.LogWarning("Item prefab is not assigned!");
+            Debug.LogWarning("Item prefab is not assigned for this item!");
         }
     }
+
 
     public Vector3 GetDropPosition()
     {

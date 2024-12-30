@@ -44,9 +44,10 @@ public class InventoryManager : MonoBehaviour
             bool isActive = InventoryPanel.activeSelf;
             InventoryPanel.SetActive(!isActive);
 
+            // Only refresh the UI if the inventory is being opened
             if (!isActive)
             {
-                ListItems();
+                ListItems(); // Refresh the inventory UI only when opening
             }
         }
     }
@@ -68,23 +69,40 @@ public class InventoryManager : MonoBehaviour
 
     public void ListItems()
     {
+        // Clear out any existing inventory items in the UI
         foreach (Transform item in ItemContent)
         {
             Destroy(item.gameObject);
         }
 
-        foreach (var item in Items)
+        // Clear the InventoryItems array before setting new ones
+        InventoryItems = new InventoryItemController[Items.Count];
+
+        // Instantiate new inventory items
+        for (int i = 0; i < Items.Count; i++)
         {
             GameObject obj = Instantiate(InventoryItem, ItemContent);
+
+            // Find the UI components inside the instantiated prefab
             var itemName = obj.transform.Find("ItemName").GetComponent<TMPro.TextMeshProUGUI>();
             var itemIcon = obj.transform.Find("ItemIcon").GetComponent<UnityEngine.UI.Image>();
 
-            itemName.text = item.itemName;
-            itemIcon.sprite = item.icon;
-        }
+            
+            // Set the UI text and icon for the item
+            itemName.text = Items[i].itemName;
+            itemIcon.sprite = Items[i].icon;
 
-        SetInventoryItems();
+
+            obj.name = itemName.text;
+            // Assign the item to the InventoryItemController component
+            InventoryItemController controller = obj.GetComponent<InventoryItemController>();
+            controller.AddItem(Items[i]);
+
+            // Assign to the InventoryItems array
+            InventoryItems[i] = controller;
+        }
     }
+
 
     public void SetInventoryItems()
     {
