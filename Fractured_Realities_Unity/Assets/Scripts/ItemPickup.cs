@@ -9,9 +9,10 @@ public class ItemPickup : MonoBehaviour
     void Pickup()
     {
         InventoryManager.Instance.Add(Item);
-        InventoryManager.Instance.ListItems(); // UI refreshed direct   
+        InventoryManager.Instance.ListItems(); // UI refreshed
         Destroy(gameObject);
     }
+
 
     // Update is called once per frame
     private void OnMouseDown() // probkeem -> altijd click niet alleen op object? (gefixed zie inventorymanager)

@@ -1,135 +1,111 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class InventoryItemController : MonoBehaviour
 {
-    public Item item; // Reference to the item data
-    public GameObject itemPrefab; // Prefab of the item
+    public Item item; // Reference to the item data (ScriptableObject)
+    public GameObject itemPrefab; // Prefab of the item (from the item data)
     public Transform player; // Reference to the player's transform
-    public Vector3 offset = new Vector3(10,20,20); // Offset position relative to the player
+    private GameObject equippedItem; // Reference to the equipped item instance
 
-    private bool isEquipped = false; // Flag to check if the item is equipped
+    [Header("Position and Rotation Settings")]
+    public Vector3 offsetPosition = new Vector3(0f, 1.5f, 1.5f); // Position offset for equipping
+    public Vector3 rotationSpeed = new Vector3(0f, 30f, 0f); // Rotation speed for equipped items
 
-    // Triggered when the item UI is clicked
-    public void OnItemClick()
+    [Header("Manual Adjustments")]
+    public Vector3 manualPositionAdjustments; // Fine-tuning item position
+    public Vector3 manualRotationAdjustments; // Fine-tuning item rotation
+
+    private void Start()
     {
-        if (!isEquipped)
-        {
-            EquipItem();
-        }
-        else
-        {
-            UnequipItem();
-        }
+        // Get the player's transform (assuming the player has a tag "Player")
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
+
     private void Update()
     {
-        if (isEquipped && player != null)
+        // Continuously rotate the equipped item (if any)
+        if (equippedItem != null)
         {
-            transform.position = player.position + offset;
+            equippedItem.transform.Rotate(rotationSpeed * Time.deltaTime);
+
+            // Update position and rotation based on adjustments
+            UpdateEquippedItemPosition();
+            UpdateEquippedItemRotation();
         }
     }
 
-    // Equip the item to the player
+    // This is called when an item is clicked in the inventory UI
+    public void OnItemClicked()
+    {
+        EquipItem();
+        InventoryManager.Instance.Remove(item); // Remove from inventory (but no world drop)
+    }
+
+    // Equip the item in front of the player
     public void EquipItem()
     {
-        isEquipped = true;
-
-        if (player != null)
+        if (item != null && item.prefab != null)
         {
-            // Set item's position relative to the player
-            transform.SetParent(player);
-            transform.localPosition = offset;
+            // Destroy any currently equipped item before equipping a new one
+            if (equippedItem != null)
+            {
+                Destroy(equippedItem);
+            }
 
-            // Disable physics if the item has a Rigidbody
-            if (TryGetComponent<Rigidbody>(out Rigidbody rb))
+            // Instantiate the item's prefab
+            equippedItem = Instantiate(item.prefab);
+            equippedItem.transform.position = player.position + player.forward * offsetPosition.z + Vector3.up * offsetPosition.y;
+
+            // Parent it to the player for it to follow the player
+            equippedItem.transform.parent = player;
+
+            // Disable physics on equipped item (optional)
+            Rigidbody rb = equippedItem.GetComponent<Rigidbody>();
+            if (rb != null)
             {
                 rb.isKinematic = true;
             }
         }
         else
         {
-            Debug.LogWarning("Player transform is not assigned!");
+            Debug.LogWarning("Item or prefab is missing for this item!");
         }
-
-        InventoryManager.Instance.Remove(item); // Remove the item from inventory
-        Destroy(gameObject); // Remove the item's UI element
     }
 
-    // Unequip the item and place it back in the world
-    public void UnequipItem()
-    {
-        isEquipped = false;
-
-        // Detach the item from the player
-        transform.SetParent(null);
-
-        // Re-enable physics if the item has a Rigidbody
-        if (TryGetComponent<Rigidbody>(out Rigidbody rb))
-        {
-            rb.isKinematic = false;
-        }
-
-        // Recreate the item in the world
-        RecreateItemInWorld();
-    }
-
-    // Adds a new item to the inventory
+    // Adds an item to this controller, ensuring the correct prefab is linked
     public void AddItem(Item newItem)
     {
+        // Assign the item data
         item = newItem;
 
-        // Assign the dynamic item prefab from the item data
-        if (newItem.prefab != null)
+        // Assign the prefab from the item's data
+        if (item != null && item.prefab != null)
         {
-            itemPrefab = newItem.prefab;
+            itemPrefab = item.prefab; // Assign the correct prefab
         }
         else
         {
-            Debug.LogWarning("Item does not have an associated prefab!");
+            Debug.LogWarning("Item or prefab is missing for " + item.itemName);
         }
     }
 
-    // Removes the item from the inventory
-    public void RemoveItem()
-    {
-        InventoryManager.Instance.Remove(item);
-        RecreateItemInWorld(); // Spawn it back in the world
-        Destroy(gameObject); // Remove the item's UI representation
-    }
 
-    // Recreates the item as a GameObject in the world
-    public void RecreateItemInWorld()
+    // Update equipped item position based on player and adjustments
+    private void UpdateEquippedItemPosition()
     {
-        if (itemPrefab != null)
+        if (equippedItem != null)
         {
-            Vector3 spawnPosition = GetDropPosition();
-            Instantiate(itemPrefab, spawnPosition, Quaternion.identity);
-        }
-        else
-        {
-            Debug.LogWarning("Item prefab is not assigned for this item!");
+            equippedItem.transform.position = player.position + player.forward * offsetPosition.z + Vector3.up * offsetPosition.y;
+            equippedItem.transform.position += manualPositionAdjustments;
         }
     }
 
-    // Calculates the drop position slightly in front of the player
-    public Vector3 GetDropPosition()
+    // Update equipped item rotation based on adjustments
+    private void UpdateEquippedItemRotation()
     {
-        // Get player position (assuming the player has a tag "Player")
-        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
-
-        if (playerObject != null)
+        if (equippedItem != null)
         {
-            // Drop the item slightly in front of the player
-            Vector3 playerPosition = playerObject.transform.position;
-            Vector3 forward = playerObject.transform.forward;
-            return playerPosition + forward * 2; // Adjust the 2 for drop distance
-        }
-        else
-        {
-            Debug.LogWarning("Player not found. Using default spawn position.");
-            return Vector3.zero;
+            equippedItem.transform.rotation = Quaternion.Euler(manualRotationAdjustments);
         }
     }
 }

@@ -59,11 +59,10 @@ public class InventoryManager : MonoBehaviour
 
     public void Remove(Item item)
     {
-       
-        // Remove the item from the inventory
+        // Remove the item from the inventory list
         Items.Remove(item);
 
-        // Update UI if necessary
+        // Optionally refresh the inventory UI (if you want immediate feedback)
         ListItems();
     }
 
@@ -87,21 +86,26 @@ public class InventoryManager : MonoBehaviour
             var itemName = obj.transform.Find("ItemName").GetComponent<TMPro.TextMeshProUGUI>();
             var itemIcon = obj.transform.Find("ItemIcon").GetComponent<UnityEngine.UI.Image>();
 
-            
             // Set the UI text and icon for the item
             itemName.text = Items[i].itemName;
             itemIcon.sprite = Items[i].icon;
 
-
             obj.name = itemName.text;
+
             // Assign the item to the InventoryItemController component
             InventoryItemController controller = obj.GetComponent<InventoryItemController>();
+
+            // Ensure the correct item and prefab are assigned
             controller.AddItem(Items[i]);
 
             // Assign to the InventoryItems array
             InventoryItems[i] = controller;
+
+            // Add the click event to equip the item
+            obj.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(controller.OnItemClicked);
         }
     }
+
 
 
     public void SetInventoryItems()
