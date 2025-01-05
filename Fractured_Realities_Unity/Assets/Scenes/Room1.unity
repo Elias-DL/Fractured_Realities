@@ -605,6 +605,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1831504449878450, guid: b5a5a17dc3a6d9e47bd468828a2dec34, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1637211256}
+    - targetCorrespondingSourceObject: {fileID: 1831504449878450, guid: b5a5a17dc3a6d9e47bd468828a2dec34, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1637211257}
   m_SourcePrefab: {fileID: 100100000, guid: b5a5a17dc3a6d9e47bd468828a2dec34, type: 3}
 --- !u!1 &976592681 stripped
 GameObject:
@@ -1096,6 +1099,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: Map
+  neccescaryKey: 
 --- !u!65 &1637211256
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1117,6 +1121,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.26, y: 1.79, z: 0.4}
   m_Center: {x: -0.09, y: 1.08, z: 0}
+--- !u!114 &1637211257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637211253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9e6cee9f9b84b49975a8caae13de8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScene: 
+  doorName: 
 --- !u!1001 &3737909203717352877
 PrefabInstance:
   m_ObjectHideFlags: 0
