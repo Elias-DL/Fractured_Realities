@@ -68,6 +68,8 @@ public class InventoryManager : MonoBehaviour
 
     public void ListItems()
     {
+        Debug.Log("ListItems called");
+
         // Clear out any existing inventory items in the UI
         foreach (Transform item in ItemContent)
         {
@@ -81,6 +83,7 @@ public class InventoryManager : MonoBehaviour
         for (int i = 0; i < Items.Count; i++)
         {
             GameObject obj = Instantiate(InventoryItem, ItemContent);
+            obj.SetActive(true); // Ensure the item is visible
 
             // Find the UI components inside the instantiated prefab
             var itemName = obj.transform.Find("ItemName").GetComponent<TMPro.TextMeshProUGUI>();

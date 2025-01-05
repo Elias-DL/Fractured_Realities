@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class InventoryItemController : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class InventoryItemController : MonoBehaviour
     public Vector3 manualPositionAdjustments; // Fine-tuning item position
     public Vector3 manualRotationAdjustments; // Fine-tuning item rotation
 
+    // Static reference to the currently equipped item's name
+    public static string EquippedItemName { get; private set; }
+
     private void Start()
     {
         // Get the player's transform (assuming the player has a tag "Player")
@@ -23,15 +27,15 @@ public class InventoryItemController : MonoBehaviour
 
     private void Update()
     {
-        // Continuously rotate the equipped item (if any)
-        if (equippedItem != null)
-        {
-            equippedItem.transform.Rotate(rotationSpeed * Time.deltaTime);
+        //// Continuously rotate the equipped item (if any)
+        //if (equippedItem != null)
+        //{
+        //    equippedItem.transform.Rotate(rotationSpeed * Time.deltaTime);
 
-            // Update position and rotation based on adjustments
-            UpdateEquippedItemPosition();
-            UpdateEquippedItemRotation();
-        }
+        //    // Update position and rotation based on adjustments
+        //    UpdateEquippedItemPosition();
+        //    UpdateEquippedItemRotation();
+        //}
     }
 
     // This is called when an item is clicked in the inventory UI
@@ -46,31 +50,31 @@ public class InventoryItemController : MonoBehaviour
     {
         if (item != null && item.prefab != null)
         {
-            // Destroy any currently equipped item before equipping a new one
             if (equippedItem != null)
             {
                 Destroy(equippedItem);
             }
 
-            // Instantiate the item's prefab
-            equippedItem = Instantiate(item.prefab);
-            equippedItem.transform.position = player.position + player.forward * offsetPosition.z + Vector3.up * offsetPosition.y;
-
-            // Parent it to the player for it to follow the player
+            Vector3 Equippoint = GameObject.FindGameObjectWithTag("EquipPosition").transform.position;
+            Debug.Log(Equippoint);
+            equippedItem = Instantiate(item.prefab, Equippoint, Quaternion.identity);
             equippedItem.transform.parent = player;
-
-            // Disable physics on equipped item (optional)
+            item.itemName = item.name;
             Rigidbody rb = equippedItem.GetComponent<Rigidbody>();
             if (rb != null)
             {
                 rb.isKinematic = true;
             }
+
+            EquippedItemManager.Instance.SetEquippedItem(item.itemName); // Notify the manager
         }
         else
         {
             Debug.LogWarning("Item or prefab is missing for this item!");
+            EquippedItemManager.Instance.ClearEquippedItem(); // Clear if nothing is equipped
         }
     }
+
 
     // Adds an item to this controller, ensuring the correct prefab is linked
     public void AddItem(Item newItem)
@@ -82,6 +86,7 @@ public class InventoryItemController : MonoBehaviour
         if (item != null && item.prefab != null)
         {
             itemPrefab = item.prefab; // Assign the correct prefab
+            Debug.Log("add");
         }
         else
         {
@@ -89,23 +94,62 @@ public class InventoryItemController : MonoBehaviour
         }
     }
 
-
-    // Update equipped item position based on player and adjustments
-    private void UpdateEquippedItemPosition()
+    public void RemoveItem()
     {
-        if (equippedItem != null)
+        InventoryManager.Instance.Remove(item);
+        RecreateItemInWorld();
+        Destroy(gameObject);
+    }
+
+    public void RecreateItemInWorld()
+    {
+        if (itemPrefab != null)
         {
-            equippedItem.transform.position = player.position + player.forward * offsetPosition.z + Vector3.up * offsetPosition.y;
-            equippedItem.transform.position += manualPositionAdjustments;
+            Vector3 spawnPosition = GetDropPosition();
+            Instantiate(itemPrefab, spawnPosition, Quaternion.identity);
+        }
+        else
+        {
+            Debug.LogWarning("Item prefab is not assigned for this item!");
         }
     }
 
-    // Update equipped item rotation based on adjustments
-    private void UpdateEquippedItemRotation()
+
+    public Vector3 GetDropPosition()
     {
-        if (equippedItem != null)
+        // Get player position (assuming the player has a tag "Player")
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+        if (player != null)
         {
-            equippedItem.transform.rotation = Quaternion.Euler(manualRotationAdjustments);
+            // Drop the item slightly in front of the player
+            Vector3 playerPosition = player.transform.position;
+            Vector3 forward = player.transform.forward;
+            return playerPosition + forward * 2; // Adjust the 2 to control how far in front the item appears
+        }
+        else
+        {
+            Debug.LogWarning("Player not found. Using default spawn position.");
+            return Vector3.zero;
         }
     }
 }
+    // Update equipped item position based on player and adjustments
+    //private void UpdateEquippedItemPosition()
+    //{
+    //    if (equippedItem != null)
+    //    {
+    //        equippedItem.transform.position = player.position + player.forward * offsetPosition.z + Vector3.up * offsetPosition.y * 5;
+    //        equippedItem.transform.position += manualPositionAdjustments;
+    //    }
+    //}
+
+    //// Update equipped item rotation based on adjustments
+    //private void UpdateEquippedItemRotation()
+    //{
+    //    if (equippedItem != null)
+    //    {
+    //        equippedItem.transform.rotation = Quaternion.Euler(manualRotationAdjustments);
+    //    }
+    //}
+

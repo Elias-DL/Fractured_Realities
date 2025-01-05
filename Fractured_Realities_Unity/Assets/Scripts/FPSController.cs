@@ -6,8 +6,8 @@ using UnityEngine;
 public class FPSController : MonoBehaviour
 {
     public Camera playerCamera;
-    public float walkSpeed = 6f;
-    public float runSpeed = 12f;
+    public float walkSpeed = 25f;
+    public float runSpeed = 50f;
     public float jumpPower = 7f;
     public float gravity = 10f;
 
@@ -23,11 +23,13 @@ public class FPSController : MonoBehaviour
 
 
     CharacterController characterController;
+    Animator animator; // Reference to Animator
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+        animator = GetComponentInChildren<Animator>(); // Get the Animator from the child object
         Cursor.lockState = CursorLockMode.Confined;
-        Cursor.visible = true;
     }
 
     void Update()
@@ -46,12 +48,17 @@ public class FPSController : MonoBehaviour
         float movementDirectionY = moveDirection.y;
         moveDirection = (forward * curSpeedX) + (right * curSpeedY);
 
+        // Update Animator parameter "Move"
+        float moveMagnitude = new Vector2(curSpeedX, curSpeedY).magnitude; // Calculate combined movement speed
+        animator.SetFloat("Move", moveMagnitude); // Update Move parameter
+        //Debug.Log(moveMagnitude);
         #endregion
 
         #region Handles Jumping
-        if (Input.GetButton("Jump") && canMove && characterController.isGrounded)
+        if (Input.GetKeyDown("space") && canMove && characterController.isGrounded)
         {
             moveDirection.y = jumpPower;
+            Debug.Log("jump");
         }
         else
         {

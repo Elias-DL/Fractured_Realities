@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 
-public class ZombieAI : MonoBehaviour
+public class ZombieAI : MonoBehaviour // reset de component voor changes 
 {
     public enum Zone
     {
@@ -16,41 +16,59 @@ public class ZombieAI : MonoBehaviour
 
     public Zone currentZone = Zone.None;  // Start outside of any zone
     public Transform player;              // The player the zombie will chase
-    public float detectionRadius = 10f;   // Radius for detection
-    public float roamRange = 15f;         // Maximum roaming range from current position
-    public float stopChaseDistance = 15f; // Distance at which the zombie stops chasing the player
+    public float detectionRadius = 50;   // Radius for detection
+    public float roamRange = 100;         // Maximum roaming range from current position
+    public float stopChaseDistance = 20; // Distance at which the zombie stops chasing the player
     private NavMeshAgent navAgent;
+    private Animator animator; // Animator reference
 
+
+    private string action;
     private void Start()
     {
         navAgent = GetComponent<NavMeshAgent>();
         // Default zone is None, which means the zombie doesn't do anything yet.
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
     {
-        // Only move and chase if we are in Zone 1
+        Debug.Log(action);
         if (currentZone == Zone.Zone1)
+
         {
-            // Detect player and chase if in range
-            if (Vector3.Distance(transform.position, player.position) < detectionRadius)
+            animator.SetBool("Roam", true);
+            animator.SetBool("Chase", false);
+
+            float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+            //Debug.Log("Distance to player: " + distanceToPlayer + " detectionradius : " + detectionRadius);
+
+            if (distanceToPlayer < detectionRadius)
             {
                 ChasePlayer();
+                //Debug.Log("chasing");
+                action = "chase";
             }
             else
             {
+                action = "roam";
+
                 RoamAround();
             }
         }
-        // If outside of Zone 1, stop everything and remain still
         else
         {
+            // Stop animations when outside Zone 1
+           
             navAgent.isStopped = true;
         }
     }
 
+
     private void RoamAround()
     {
+        //Debug.Log("roam");
+        animator.SetBool("Roam", true);
         // Check if the agent is already moving to a destination, if not, pick a random spot to roam to
         if (!navAgent.pathPending && navAgent.remainingDistance <= navAgent.stoppingDistance)
         {
@@ -65,13 +83,26 @@ public class ZombieAI : MonoBehaviour
                 navAgent.SetDestination(hit.position);
             }
         }
+
+
     }
 
     private void ChasePlayer()
     {
-        navAgent.isStopped = false;  // Ensure the zombie isn't stopped while chasing
+        animator.SetBool("Chase", true);
+
+        navAgent.isStopped = false;
         navAgent.SetDestination(player.position);
+
+        // Attack if close enough
+        if (Vector3.Distance(transform.position, player.position) < 20f) // Attack range
+        {
+            animator.SetBool("Attack", true);
+        }
+
+
     }
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -94,6 +125,10 @@ public class ZombieAI : MonoBehaviour
         {
             currentZone = Zone.None;  // Zombie is out of Zone 1, stop everything
             navAgent.isStopped = true;
+            animator.SetBool("Idle", true); // Set to Idle animation
+
         }
     }
+
+
 }
