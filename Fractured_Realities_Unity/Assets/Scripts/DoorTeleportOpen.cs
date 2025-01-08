@@ -3,7 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class DoorTeleportOpen : MonoBehaviour
 {
-    [SerializeField] private string sceneToLoad; // The name of the scene to load
+    public string targetScene; // De scene waar deze deur naartoe leidt
+    public string doorName;    // Unieke naam van deze deur
 
     private void OnTriggerEnter(Collider other)
     {
@@ -16,9 +17,17 @@ public class DoorTeleportOpen : MonoBehaviour
 
     private void LoadScene()
     {
-        if (!string.IsNullOrEmpty(sceneToLoad))
+        if (!string.IsNullOrEmpty(targetScene))
         {
-            SceneManager.LoadScene(sceneToLoad);
+        
+                // Opslaan in GameManager
+                GameManager.Instance.lastPlayerPosition = transform.position;
+                GameManager.Instance.lastDoorName = doorName;
+
+                // Scene laden
+                SceneManager.LoadScene(targetScene);
+            Debug.Log("GAA TNEIUT");
+            
         }
         else
         {

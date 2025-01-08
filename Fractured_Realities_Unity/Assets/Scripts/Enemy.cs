@@ -33,7 +33,7 @@ public class ZombieAI : MonoBehaviour // reset de component voor changes
 
     private void Update()
     {
-        Debug.Log(action);
+        //Debug.Log(action);
         if (currentZone == Zone.Zone1)
 
         {
