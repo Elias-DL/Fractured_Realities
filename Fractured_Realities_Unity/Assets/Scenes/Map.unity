@@ -2439,6 +2439,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4970741399400872, guid: b5a5a17dc3a6d9e47bd468828a2dec34, type: 3}
   m_PrefabInstance: {fileID: 1644917939}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &140977083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 140977079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 819c10f5c1b921a4699d958db8133f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScene: Room2
+  doorName: Door2.2
 --- !u!114 &140977084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2448,21 +2462,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 140977079}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b9e6cee9f9b84b49975a8caae13de8d, type: 3}
+  m_Script: {fileID: 11500000, guid: c1dc89ac6d46df24991ba4ae9f1adcc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &140977085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 140977079}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb100e201cc7a0c4d8e0cf518ece5974, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  doorName: Door2.2
 --- !u!1 &143558972
 GameObject:
   m_ObjectHideFlags: 0
@@ -11516,6 +11519,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4970741399400872, guid: b5a5a17dc3a6d9e47bd468828a2dec34, type: 3}
   m_PrefabInstance: {fileID: 1304571401}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &801705368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801705364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 819c10f5c1b921a4699d958db8133f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScene: Room3
+  doorName: Door3
 --- !u!114 &801705369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11525,21 +11542,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 801705364}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b9e6cee9f9b84b49975a8caae13de8d, type: 3}
+  m_Script: {fileID: 11500000, guid: c1dc89ac6d46df24991ba4ae9f1adcc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &801705370
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 801705364}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb100e201cc7a0c4d8e0cf518ece5974, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  doorName: Door3
 --- !u!1 &803458931 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7508425826967976401, guid: 0774e6b487ccb3d4ea5ca13ff4764ebf, type: 3}
@@ -18393,7 +18399,7 @@ PrefabInstance:
       addedObject: {fileID: 1243695296}
     - targetCorrespondingSourceObject: {fileID: 1831504449878450, guid: b5a5a17dc3a6d9e47bd468828a2dec34, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1243695297}
+      addedObject: {fileID: 1243695295}
   m_SourcePrefab: {fileID: 100100000, guid: b5a5a17dc3a6d9e47bd468828a2dec34, type: 3}
 --- !u!1 &1137375236
 GameObject:
@@ -19788,7 +19794,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultSpawnPoint: {fileID: 1543825019}
   doors:
-  - {fileID: 1812628719}
+  - {fileID: 0}
+  - {fileID: 1243695296}
+  - {fileID: 140977084}
+  - {fileID: 801705369}
   - {fileID: 1065398946}
 --- !u!4 &1213564224
 Transform:
@@ -20165,6 +20174,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4970741399400872, guid: b5a5a17dc3a6d9e47bd468828a2dec34, type: 3}
   m_PrefabInstance: {fileID: 1136237902}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1243695295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243695291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 819c10f5c1b921a4699d958db8133f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScene: Room2
+  doorName: Door2
 --- !u!114 &1243695296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20174,21 +20197,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1243695291}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b9e6cee9f9b84b49975a8caae13de8d, type: 3}
+  m_Script: {fileID: 11500000, guid: c1dc89ac6d46df24991ba4ae9f1adcc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1243695297
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1243695291}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb100e201cc7a0c4d8e0cf518ece5974, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  doorName: Door2
 --- !u!1 &1244137708
 GameObject:
   m_ObjectHideFlags: 0
@@ -20554,7 +20566,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7775238851484150622, guid: 5de184c4e32d6a446bd421eec3a57eb0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.2
+      value: 2.2
       objectReference: {fileID: 0}
     - target: {fileID: 7775238851484150622, guid: 5de184c4e32d6a446bd421eec3a57eb0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -21479,7 +21491,7 @@ PrefabInstance:
       addedObject: {fileID: 801705369}
     - targetCorrespondingSourceObject: {fileID: 1831504449878450, guid: b5a5a17dc3a6d9e47bd468828a2dec34, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 801705370}
+      addedObject: {fileID: 801705368}
   m_SourcePrefab: {fileID: 100100000, guid: b5a5a17dc3a6d9e47bd468828a2dec34, type: 3}
 --- !u!1 &1307501127 stripped
 GameObject:
@@ -26842,7 +26854,7 @@ PrefabInstance:
       addedObject: {fileID: 140977084}
     - targetCorrespondingSourceObject: {fileID: 1831504449878450, guid: b5a5a17dc3a6d9e47bd468828a2dec34, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 140977085}
+      addedObject: {fileID: 140977083}
   m_SourcePrefab: {fileID: 100100000, guid: b5a5a17dc3a6d9e47bd468828a2dec34, type: 3}
 --- !u!1 &1645349395
 GameObject:

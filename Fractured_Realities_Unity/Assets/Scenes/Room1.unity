@@ -466,7 +466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bb99800c6bc728438dd88ad821ba667, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultSpawnPoint: {fileID: 0}
+  defaultSpawnPoint: {fileID: 968980665}
   doors:
   - {fileID: 0}
 --- !u!4 &258800721
@@ -651,11 +651,42 @@ PrefabInstance:
       addedObject: {fileID: 1637211256}
     - targetCorrespondingSourceObject: {fileID: 1831504449878450, guid: b5a5a17dc3a6d9e47bd468828a2dec34, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1637211259}
+      addedObject: {fileID: 1637211260}
     - targetCorrespondingSourceObject: {fileID: 1831504449878450, guid: b5a5a17dc3a6d9e47bd468828a2dec34, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1637211260}
+      addedObject: {fileID: 1637211261}
   m_SourcePrefab: {fileID: 100100000, guid: b5a5a17dc3a6d9e47bd468828a2dec34, type: 3}
+--- !u!1 &968980664
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 968980665}
+  m_Layer: 0
+  m_Name: DefaultSpawnpoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &968980665
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968980664}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 13.5, y: 38, z: 178}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &976592681 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 655bca05cf4f2524f885952dd6b5eaa9, type: 3}
@@ -1154,19 +1185,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.26, y: 1.79, z: 0.4}
   m_Center: {x: -0.09, y: 1.08, z: 0}
---- !u!114 &1637211259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1637211253}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1dc89ac6d46df24991ba4ae9f1adcc2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  doorName: Room1Door
 --- !u!114 &1637211260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1181,6 +1199,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetScene: Map
   doorName: Room1Door
+--- !u!114 &1637211261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637211253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1dc89ac6d46df24991ba4ae9f1adcc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorName: Room1Door
 --- !u!1001 &3737909203717352877
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1192,6 +1223,10 @@ PrefabInstance:
     - target: {fileID: 908279289729936865, guid: 5de184c4e32d6a446bd421eec3a57eb0, type: 3}
       propertyPath: m_Name
       value: Player 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 908279289729936865, guid: 5de184c4e32d6a446bd421eec3a57eb0, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7775238851484150622, guid: 5de184c4e32d6a446bd421eec3a57eb0, type: 3}
       propertyPath: m_LocalScale.x
@@ -1260,3 +1295,4 @@ SceneRoots:
   - {fileID: 894015655}
   - {fileID: 3737909203717352877}
   - {fileID: 258800721}
+  - {fileID: 968980665}

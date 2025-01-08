@@ -8,7 +8,7 @@ public class DoorTeleportOpen : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // Check if the player enters the trigger
+        // Controleer of de speler de trigger binnenkomt
         if (other.CompareTag("Player"))
         {
             LoadScene();
@@ -17,21 +17,27 @@ public class DoorTeleportOpen : MonoBehaviour
 
     private void LoadScene()
     {
-        if (!string.IsNullOrEmpty(targetScene))
+        // Controleer of de scènenaam is ingesteld
+        if (string.IsNullOrEmpty(targetScene))
         {
-        
-                // Opslaan in GameManager
-                GameManager.Instance.lastPlayerPosition = transform.position;
-                GameManager.Instance.lastDoorName = doorName;
+            Debug.LogError("Scènenaam is niet ingesteld in de Inspector!");
+            return;
+        }
 
-                // Scene laden
-                SceneManager.LoadScene(targetScene);
-            Debug.Log("GAA TNEIUT");
-            
-        }
-        else
+        // Controleer of GameManager bestaat
+        if (GameManager.Instance == null)
         {
-            Debug.LogError("Scene name is not set in the inspector!");
+            Debug.LogError("GameManager.Instance is null! Zorg ervoor dat er een GameManager in de scène is.");
+            return;
         }
+
+        // Opslaan in GameManager
+        Debug.Log($"Opslaan van spelerpositie: {transform.position}, deurnaam: {doorName}");
+        GameManager.Instance.lastPlayerPosition = transform.position;
+        GameManager.Instance.lastDoorName = doorName;
+
+        // Scene laden
+        Debug.Log($"Laden van scène: {targetScene} via deur: {doorName}");
+        SceneManager.LoadScene(targetScene);
     }
 }
