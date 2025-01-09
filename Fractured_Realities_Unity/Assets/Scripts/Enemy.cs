@@ -33,12 +33,13 @@ public class ZombieAI : MonoBehaviour // reset de component voor changes
 
     private void Update()
     {
-        //Debug.Log(action);
+        Debug.Log(action);
         if (currentZone == Zone.Zone1)
 
         {
             animator.SetBool("Roam", true);
             animator.SetBool("Chase", false);
+            animator.SetBool("Attack", false);
 
             float distanceToPlayer = Vector3.Distance(transform.position, player.position);
             //Debug.Log("Distance to player: " + distanceToPlayer + " detectionradius : " + detectionRadius);

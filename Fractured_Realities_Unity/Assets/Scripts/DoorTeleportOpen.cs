@@ -6,6 +6,7 @@ public class DoorTeleportOpen : MonoBehaviour
     public string targetScene; // De scene waar deze deur naartoe leidt
     public string doorName;    // Unieke naam van deze deur
 
+
     private void OnTriggerEnter(Collider other)
     {
         // Controleer of de speler de trigger binnenkomt
