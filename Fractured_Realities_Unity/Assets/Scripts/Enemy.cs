@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UIElements;
 
 
 public class ZombieAI : MonoBehaviour // reset de component voor changes 
@@ -21,14 +22,17 @@ public class ZombieAI : MonoBehaviour // reset de component voor changes
     public float stopChaseDistance = 20; // Distance at which the zombie stops chasing the player
     private NavMeshAgent navAgent;
     private Animator animator; // Animator reference
-
-
+    private Vector3 startPOS;
     private string action;
-    private void Start()
+    private bool exitedZone = false;
+    public Transform startZone1;
+    public void Start()
     {
         navAgent = GetComponent<NavMeshAgent>();
         // Default zone is None, which means the zombie doesn't do anything yet.
         animator = GetComponent<Animator>();
+         startPOS = transform.position;
+
     }
 
     private void Update()
@@ -48,7 +52,7 @@ public class ZombieAI : MonoBehaviour // reset de component voor changes
             {
                 ChasePlayer();
                 //Debug.Log("chasing");
-                action = "chase";
+                //action = "chase"; 2 opties
             }
             else
             {
@@ -83,6 +87,8 @@ public class ZombieAI : MonoBehaviour // reset de component voor changes
                 navAgent.isStopped = false;
                 navAgent.SetDestination(hit.position);
             }
+            Debug.Log(hit.position);
+
         }
 
 
@@ -90,46 +96,71 @@ public class ZombieAI : MonoBehaviour // reset de component voor changes
 
     private void ChasePlayer()
     {
-        animator.SetBool("Chase", true);
-
         navAgent.isStopped = false;
-        navAgent.SetDestination(player.position);
 
-        // Attack if close enough
-        if (Vector3.Distance(transform.position, player.position) < 20f) // Attack range
+        float attackRange = 40f; 
+
+        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+
+        if (distanceToPlayer <= attackRange)
         {
+            animator.SetBool("Roam", false);
+            animator.SetBool("Chase", false);
+
             animator.SetBool("Attack", true);
+            action = "attack";
+
+            // Make the zombie face the player
+            Vector3 directionToPlayer = (player.position - transform.position).normalized;
+            Quaternion lookRotation = Quaternion.LookRotation(new Vector3(directionToPlayer.x, 0, directionToPlayer.z));
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+
+            navAgent.isStopped = true; 
+
+          
         }
+        else
+        {
+            action = "chase";
+            animator.SetBool("Chase", true);
+            animator.SetBool("Roam", false);
+            animator.SetBool("Attack", false);
 
+            Vector3 directionToPlayer = (player.position - transform.position).normalized;
+            Vector3 stoppingPoint = player.position - directionToPlayer * attackRange;
 
+            navAgent.isStopped = false;
+            navAgent.SetDestination(stoppingPoint);
+        }
     }
 
 
-    private void OnTriggerEnter(Collider other)
-    {
-        // Enter Zone 1 and start roaming or chasing
-        if (other.CompareTag("Zone1"))
-        {
-            currentZone = Zone.Zone1;
-        }
-        // Exit Zone 1, stop roaming and chasing
-        else if (other.CompareTag("Zone2") || other.CompareTag("Zone3"))
-        {
-            currentZone = Zone.None;  // Zombie is out of Zone 1, do nothing
-        }
-    }
+
+  
 
     private void OnTriggerExit(Collider other)
-    {
-        // Exit Zone 1 and stop moving
-        if (other.CompareTag("Zone1"))
+    { // 2 colliders?, timer is niet consistent
+        if (!other.CompareTag("Zone1") && !exitedZone)
         {
-            currentZone = Zone.None;  // Zombie is out of Zone 1, stop everything
-            navAgent.isStopped = true;
-            animator.SetBool("Idle", true); // Set to Idle animation
+            exitedZone = true;
+            animator.SetBool("Roam", true); 
+            animator.SetBool("Attack", false);
+            animator.SetBool("Chase", false);
 
+            currentZone = Zone.Zone1;
+            Debug.Log("exit zone1");
+            Debug.Log("go to " + startPOS);
+
+            //navAgent.isStopped = false;
+            navAgent.SetDestination(startPOS);
+            // probleem als chase of attack erna is wod de zombie 'afgeleid'
         }
+
+
+
     }
+
+
 
 
 }
