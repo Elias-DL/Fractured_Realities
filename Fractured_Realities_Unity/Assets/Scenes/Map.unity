@@ -1619,7 +1619,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &89920218
 Transform:
   m_ObjectHideFlags: 0
@@ -2459,7 +2459,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -2483,7 +2483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetScene: Room2
-  doorName: 
+  targetSpawnPointName: Room2Door2SP
 --- !u!114 &140977084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4768,6 +4768,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1065398944}
+  - {fileID: 1814839033}
   - {fileID: 1812628717}
   - {fileID: 1243695294}
   - {fileID: 140977082}
@@ -10549,9 +10550,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4970741399400872, guid: b5a5a17dc3a6d9e47bd468828a2dec34, type: 3}
       insertIndex: -1
       addedObject: {fileID: 421931801}
-    - targetCorrespondingSourceObject: {fileID: 4970741399400872, guid: b5a5a17dc3a6d9e47bd468828a2dec34, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1814839033}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1831504449878450, guid: b5a5a17dc3a6d9e47bd468828a2dec34, type: 3}
       insertIndex: -1
@@ -11708,7 +11706,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -11732,7 +11730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetScene: Room3
-  doorName: 
+  targetSpawnPointName: Room3DoorSP
 --- !u!114 &801705369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17878,7 +17876,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -17911,12 +17909,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1065398940}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7a8345f431c22b41b24fe5e8cae6103, type: 3}
+  m_Script: {fileID: 11500000, guid: 819c10f5c1b921a4699d958db8133f16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  neccescaryKey: Key4
   targetScene: Room4
-  doorName: 
+  targetSpawnPointName: Room4DoorSP
 --- !u!1 &1067295126 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7601649242064096958, guid: 0774e6b487ccb3d4ea5ca13ff4764ebf, type: 3}
@@ -20204,13 +20201,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bb99800c6bc728438dd88ad821ba667, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultSpawnPoint: {fileID: 1543825019}
-  doors:
-  - {fileID: 0}
-  - {fileID: 1243695296}
-  - {fileID: 140977084}
-  - {fileID: 801705369}
-  - {fileID: 1065398946}
 --- !u!4 &1213564224
 Transform:
   m_ObjectHideFlags: 0
@@ -20575,7 +20565,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -20608,12 +20598,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1243695291}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7a8345f431c22b41b24fe5e8cae6103, type: 3}
+  m_Script: {fileID: 11500000, guid: 819c10f5c1b921a4699d958db8133f16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  neccescaryKey: Key2
   targetScene: Room2
-  doorName: 
+  targetSpawnPointName: Room2DoorSP
 --- !u!1 &1244137708
 GameObject:
   m_ObjectHideFlags: 0
@@ -29315,7 +29304,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -29394,7 +29383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetScene: Room1
-  doorName: 
+  targetSpawnPointName: Room1DoorSP
 --- !u!114 &1812628719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29432,12 +29421,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1814839032}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.381}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 377.03998, y: -71.60396, z: -25.720001}
+  m_LocalScale: {x: 20, y: 20, z: 15}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1812628717}
+  m_Father: {fileID: 315397078}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1823385458
 GameObject:
@@ -31762,7 +31751,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3

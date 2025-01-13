@@ -2,28 +2,37 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    public Transform defaultSpawnPoint; // Als er geen specifieke deur is, gebruik dit punt
-    public Door[] doors;               // Alle deuren in deze scene
+    public static string spawnPointName; // Naam van het teleportatiedoel
 
-    private void Start()
+    private void Awake()
     {
-        GameObject player = GameObject.FindWithTag("Player"); // Zoek de speler
-
-        // Controleer of er een opgeslagen deur is
-        if (!string.IsNullOrEmpty(GameManager.Instance.lastDoorName))
+        if (!string.IsNullOrEmpty(spawnPointName))
         {
-            foreach (Door door in doors)
+            // Zoek het teleportatiedoel op basis van zijn naam
+            GameObject spawnPoint = GameObject.Find(spawnPointName);
+
+            if (spawnPoint != null)
             {
-                if (door.doorName == GameManager.Instance.lastDoorName)
+                // Zoek de speler en verplaats deze naar het teleportatiedoel
+                GameObject player = GameObject.FindWithTag("Player");
+                if (player != null)
                 {
-                    // Zet de speler bij de juiste deur
-                    player.transform.position = door.transform.position;
-                    return;
+                    player.transform.position = spawnPoint.transform.position; // Verplaats speler naar de doelpositie
+                    player.transform.rotation = spawnPoint.transform.rotation; // Stel de rotatie in
+                }
+                else
+                {
+                    Debug.LogError("Speler met tag 'Player' niet gevonden in de scene.");
                 }
             }
+            else
+            {
+                Debug.LogError($"Teleportatiedoel '{spawnPointName}' niet gevonden in de scene.");
+            }
         }
-
-        // Geen deur gevonden? Gebruik standaard spawnpunt
-        player.transform.position = defaultSpawnPoint.position;
+        else
+        {
+            Debug.LogWarning("Er is geen spawnPointName opgegeven. De speler spawnt op de standaardpositie.");
+        }
     }
 }
