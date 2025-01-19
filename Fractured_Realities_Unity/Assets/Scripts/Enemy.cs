@@ -16,7 +16,7 @@ public class ZombieAI : MonoBehaviour // reset de component voor changes
     }
 
     public Zone currentZone = Zone.None;  // Start outside of any zone
-    public Transform player;              // The player the zombie will chase
+    public Transform playertrans;              // The player the zombie will chase
     public float detectionRadius = 50;   // Radius for detection
     public float roamRange = 100;         // Maximum roaming range from current position
     public float stopChaseDistance = 20; // Distance at which the zombie stops chasing the player
@@ -26,6 +26,18 @@ public class ZombieAI : MonoBehaviour // reset de component voor changes
     private string action;
     private bool exitedZone = false;
     public Transform startZone1;
+
+    public GameObject Player;
+    public void Awake()
+    {
+        
+        Player = GameObject.FindWithTag("Player");
+
+
+        playertrans = Player.transform;
+    }
+
+
     public void Start()
     {
         navAgent = GetComponent<NavMeshAgent>();
@@ -45,7 +57,7 @@ public class ZombieAI : MonoBehaviour // reset de component voor changes
             animator.SetBool("Chase", false);
             animator.SetBool("Attack", false);
 
-            float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+            float distanceToPlayer = Vector3.Distance(transform.position, playertrans.position);
             //Debug.Log("Distance to player: " + distanceToPlayer + " detectionradius : " + detectionRadius);
 
             if (distanceToPlayer < detectionRadius)
@@ -100,7 +112,7 @@ public class ZombieAI : MonoBehaviour // reset de component voor changes
 
         float attackRange = 40f; 
 
-        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+        float distanceToPlayer = Vector3.Distance(transform.position, playertrans.position);
 
         if (distanceToPlayer <= attackRange)
         {
@@ -111,7 +123,7 @@ public class ZombieAI : MonoBehaviour // reset de component voor changes
             action = "attack";
 
             // Make the zombie face the player
-            Vector3 directionToPlayer = (player.position - transform.position).normalized;
+            Vector3 directionToPlayer = (playertrans.position - transform.position).normalized;
             Quaternion lookRotation = Quaternion.LookRotation(new Vector3(directionToPlayer.x, 0, directionToPlayer.z));
             transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
 
@@ -126,8 +138,8 @@ public class ZombieAI : MonoBehaviour // reset de component voor changes
             animator.SetBool("Roam", false);
             animator.SetBool("Attack", false);
 
-            Vector3 directionToPlayer = (player.position - transform.position).normalized;
-            Vector3 stoppingPoint = player.position - directionToPlayer * attackRange;
+            Vector3 directionToPlayer = (playertrans.position - transform.position).normalized;
+            Vector3 stoppingPoint = playertrans.position - directionToPlayer * attackRange;
 
             navAgent.isStopped = false;
             navAgent.SetDestination(stoppingPoint);

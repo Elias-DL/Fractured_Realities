@@ -4,7 +4,7 @@ public class SpawnManager : MonoBehaviour
 {
     public static string spawnPointName; // Naam van het teleportatiedoel
 
-    private void Awake()
+    public void Awake()
     {
         if (!string.IsNullOrEmpty(spawnPointName))
         {

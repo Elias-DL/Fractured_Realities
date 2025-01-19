@@ -15,18 +15,28 @@ public class InventoryManager : MonoBehaviour
 
     public InventoryItemController[] InventoryItems;
 
-    private void Awake()
+    public GameObject Player;
+    public GameObject InventoryContent;
+
+
+    public void Awake()
     {
         Instance = this;
+        Player = GameObject.FindWithTag("Player");
+        PlayerTransform = Player.transform;
+
+        InventoryContent = GameObject.FindWithTag("InventoryContent");
+
+        ItemContent = InventoryContent.transform;
     }
 
-    private void Start()
-    {
-        if (InventoryPanel != null)
-        {
-            InventoryPanel.SetActive(false); // Hide inventory at start
-        }
-    }
+    //private void Start()
+    //{
+    //    if (InventoryPanel != null)
+    //    {
+    //        InventoryPanel.SetActive(false); // Hide inventory at start
+    //    }
+    //}
 
     private void Update()
     {
