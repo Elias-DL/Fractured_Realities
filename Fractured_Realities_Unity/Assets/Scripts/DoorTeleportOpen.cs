@@ -22,6 +22,7 @@ public class DoorTeleport : MonoBehaviour
             SpawnManager.spawnPointName = targetSpawnPointName;
 
             // Laad de nieuwe scene
+            Debug.Log("travel to " + targetScene + " door " + targetSpawnPointName);
             SceneManager.LoadScene(targetScene);
 
             Instantiate(Player); //hierdoor spawn je wel juiste plek maar irritant met inventory enzo
