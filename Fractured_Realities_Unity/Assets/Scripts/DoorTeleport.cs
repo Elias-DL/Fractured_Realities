@@ -21,15 +21,11 @@ public class DoorInteraction : MonoBehaviour
     public void OnMouseDown()
     {
         // Check if the left mouse button was clicked
-        if (Mouse.current.leftButton.wasPressedThisFrame)
-        {
-            string equippedItem = EquippedItemManager.Instance.EquippedItemName;
+        //if (Mouse.current.leftButton.wasPressedThisFrame)
+        //{
+        //    string equippedItem = EquippedItemManager.Instance.EquippedItemName;
            // if (equippedItem == neccescaryKey) // in inspector bv : Key4, volledig niet alleen getal
             //{
-
-
-                
-                
                     // Stel de spawnpointnaam in voordat de scene wordt geladen
                     SpawnManager.spawnPointName = targetSpawnPointName;
 
@@ -37,10 +33,11 @@ public class DoorInteraction : MonoBehaviour
                     Debug.Log("travel to " + targetScene + " door " + targetSpawnPointName);
                     SceneManager.LoadScene(targetScene);
 
-                    Instantiate(Player); //hierdoor spawn je wel juiste plek maar irritant met inventory enzo
+                   // Instantiate(Player); //hierdoor spawn je wel juiste plek maar irritant met inventory enzo
                                          //DontDestroyOnLoad(Player); je blijft ook bestaan in og scene dus als je teruggaat zijn er 2 player
-                    DontDestroyOnLoad(canvas);
-                
+            DontDestroyOnLoad(canvas);
+            DontDestroyOnLoad(Player);
+
 
             //}
             //else
@@ -59,4 +56,4 @@ public class DoorInteraction : MonoBehaviour
 
         }
     }
-}
+//}
