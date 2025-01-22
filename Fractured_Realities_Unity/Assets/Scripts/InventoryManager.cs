@@ -25,9 +25,9 @@ public class InventoryManager : MonoBehaviour
         Player = GameObject.FindWithTag("Player");
         PlayerTransform = Player.transform;
 
-        InventoryContent = GameObject.FindWithTag("InventoryContent");
+        //InventoryContent = GameObject.FindWithTag("InventoryContent");
 
-        ItemContent = InventoryContent.transform;
+        //ItemContent = InventoryContent.transform;
     }
 
     //private void Start()
@@ -40,6 +40,9 @@ public class InventoryManager : MonoBehaviour
 
     private void Update()
     {
+
+        Player = GameObject.Find("Player1");
+        PlayerTransform = Player.transform;
         // If you prefer to use the old Input system
         if (Input.GetKeyDown(KeyCode.T))
         {

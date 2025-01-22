@@ -30,12 +30,14 @@ public class SpawnManager : MonoBehaviour
                 Debug.LogError($"Teleportatiedoel '{spawnPointName}' niet gevonden in de scene.");
             }
         }
-        else
+        else 
         {
             // Zoek de speler en verplaats deze naar het teleportatiedoel
             GameObject player = GameObject.FindWithTag("Player");
-            player.transform.position = new Vector3(78, 0, -16);
-            Debug.LogWarning("Er is geen spawnPointName opgegeven. De speler spawnt op de standaardpositie.");
+            GameObject startspawn = GameObject.FindWithTag("StartSpawn");
+            player.transform.position = startspawn.transform.position;
+            player.transform.rotation = startspawn.transform .rotation;
+           // Debug.LogWarning("Er is geen spawnPointName opgegeven. De speler spawnt op de standaardpositie.");
         }
     }
 }
