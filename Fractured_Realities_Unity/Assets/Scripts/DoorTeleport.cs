@@ -12,6 +12,7 @@ public class DoorInteraction : MonoBehaviour
     public GameObject ItemCanvas;
     public GameObject InventoryContent;
     public GameObject Inventory;
+    public GameObject Managers;
 
 
 
@@ -21,7 +22,7 @@ public class DoorInteraction : MonoBehaviour
         ItemCanvas = GameObject.FindWithTag("InventoryCanvas");
         InventoryContent = GameObject.FindWithTag("InventoryContent");
         Inventory = GameObject.FindWithTag("Inventory");
-
+        Managers = GameObject.FindWithTag("Managers");
     }
 
     public void OnMouseDown()
@@ -44,12 +45,16 @@ public class DoorInteraction : MonoBehaviour
                 DontDestroyOnLoad(ItemCanvas);
                 DontDestroyOnLoad(InventoryContent);
                 DontDestroyOnLoad(Inventory);
+                DontDestroyOnLoad(Managers);
 
                 Player.SetActive(true);
                 ItemCanvas.SetActive(true);
                 InventoryContent.SetActive(true);
                 Inventory.SetActive(true);
+                Managers.SetActive(true);
 
+
+                
             }
             else
             {

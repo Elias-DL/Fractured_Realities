@@ -9,6 +9,7 @@ public class MenuLogic : MonoBehaviour
     public GameObject Player;
     public GameObject ItemCanvas;
     public GameObject Inventory;
+    public GameObject Managers;
 
     // Start is called before the first frame update
     void Start()
@@ -30,11 +31,13 @@ public class MenuLogic : MonoBehaviour
         DontDestroyOnLoad(ItemCanvas);
         DontDestroyOnLoad(Player);
         DontDestroyOnLoad(Inventory);
+        DontDestroyOnLoad(Managers);
 
 
         Player.SetActive(true);
         ItemCanvas.SetActive(true);
         Inventory.SetActive(true);
+        Managers.SetActive(true);
 
     }
 }

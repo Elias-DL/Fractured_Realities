@@ -21,7 +21,9 @@ public class InventoryManager : MonoBehaviour
 
     public void Awake()
     {
+
         Instance = this;
+
         Player = GameObject.FindWithTag("Player");
         PlayerTransform = Player.transform;
 
