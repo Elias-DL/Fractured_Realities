@@ -55,11 +55,31 @@ public class InventoryItemController : MonoBehaviour
                 Destroy(equippedItem);
             }
 
+
+
             Vector3 Equippoint = GameObject.FindGameObjectWithTag("EquipPosition").transform.position;
-            Debug.Log(Equippoint);
-            equippedItem = Instantiate(item.prefab, Equippoint, Quaternion.identity);
+            Quaternion Rotation = Quaternion.Euler(0, 0, 90);
+            Debug.Log("item op pos : " + Equippoint + " en rotatie " + Rotation);
+
+            equippedItem = Instantiate(item.prefab, Equippoint, Rotation);
             equippedItem.transform.parent = player;
             item.itemName = item.name;
+
+            Debug.Log(item.name);
+
+            if (item.name  != "Flashlight") // niet de beste manier maar kijk het werkt(voor nu)
+            {
+                 Rotation = Quaternion.Euler(0, 0, 90);
+
+            }
+            else
+            {
+                 Rotation = Quaternion.Euler(0, 90, 90);
+
+            }
+
+            equippedItem.transform.localRotation = Rotation; // Resets local rotation
+
             Rigidbody rb = equippedItem.GetComponent<Rigidbody>();
             if (rb != null)
             {
@@ -134,22 +154,5 @@ public class InventoryItemController : MonoBehaviour
         }
     }
 }
-    // Update equipped item position based on player and adjustments
-    //private void UpdateEquippedItemPosition()
-    //{
-    //    if (equippedItem != null)
-    //    {
-    //        equippedItem.transform.position = player.position + player.forward * offsetPosition.z + Vector3.up * offsetPosition.y * 5;
-    //        equippedItem.transform.position += manualPositionAdjustments;
-    //    }
-    //}
-
-    //// Update equipped item rotation based on adjustments
-    //private void UpdateEquippedItemRotation()
-    //{
-    //    if (equippedItem != null)
-    //    {
-    //        equippedItem.transform.rotation = Quaternion.Euler(manualRotationAdjustments);
-    //    }
-    //}
+    
 

@@ -8,6 +8,8 @@ public class MenuLogic : MonoBehaviour
 {
     public GameObject Player;
     public GameObject ItemCanvas;
+    public GameObject Inventory;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,8 +29,12 @@ public class MenuLogic : MonoBehaviour
         SceneManager.LoadScene("Map");
         DontDestroyOnLoad(ItemCanvas);
         DontDestroyOnLoad(Player);
+        DontDestroyOnLoad(Inventory);
+
 
         Player.SetActive(true);
         ItemCanvas.SetActive(true);
+        Inventory.SetActive(true);
+
     }
 }

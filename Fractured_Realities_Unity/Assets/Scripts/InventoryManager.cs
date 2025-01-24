@@ -25,24 +25,28 @@ public class InventoryManager : MonoBehaviour
         Player = GameObject.FindWithTag("Player");
         PlayerTransform = Player.transform;
 
-        //InventoryContent = GameObject.FindWithTag("InventoryContent");
+        InventoryContent = GameObject.FindWithTag("InventoryContent");
 
-        //ItemContent = InventoryContent.transform;
+        ItemContent = InventoryContent.transform;
     }
 
-    //private void Start()
-    //{
-    //    if (InventoryPanel != null)
-    //    {
-    //        InventoryPanel.SetActive(false); // Hide inventory at start
-    //    }
-    //}
+    private void Start()
+    {
+        if (InventoryPanel != null)
+        {
+            InventoryPanel.SetActive(false); // Hide inventory at start
+        }
+    }
 
     private void Update()
     {
 
-        Player = GameObject.Find("Player1");
+        Player = GameObject.FindWithTag("Player");
         PlayerTransform = Player.transform;
+
+        InventoryContent = GameObject.FindWithTag("InventoryContent");
+
+        ItemContent = InventoryContent.transform;
         // If you prefer to use the old Input system
         if (Input.GetKeyDown(KeyCode.T))
         {

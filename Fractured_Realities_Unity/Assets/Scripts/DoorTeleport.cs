@@ -9,51 +9,62 @@ public class DoorInteraction : MonoBehaviour
     public string targetScene;          // Naam van de nieuwe scene
     public string targetSpawnPointName; // Naam van het teleportatiedoel in de nieuwe scene
     public GameObject Player;
-    public GameObject canvas;
+    public GameObject ItemCanvas;
+    public GameObject InventoryContent;
+    public GameObject Inventory;
+
 
 
     public void Start()
     {
         Player = GameObject.FindWithTag("Player");
-        canvas = GameObject.FindWithTag("InventoryCanvas");
+        ItemCanvas = GameObject.FindWithTag("InventoryCanvas");
+        InventoryContent = GameObject.FindWithTag("InventoryContent");
+        Inventory = GameObject.FindWithTag("Inventory");
+
     }
 
     public void OnMouseDown()
     {
-        // Check if the left mouse button was clicked
-        //if (Mouse.current.leftButton.wasPressedThisFrame)
-        //{
-        //    string equippedItem = EquippedItemManager.Instance.EquippedItemName;
-           // if (equippedItem == neccescaryKey) // in inspector bv : Key4, volledig niet alleen getal
-            //{
-                    // Stel de spawnpointnaam in voordat de scene wordt geladen
+        //Check if the left mouse button was clicked
+        if (Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            string equippedItem = EquippedItemManager.Instance.EquippedItemName;
+            if (equippedItem == neccescaryKey) // in inspector bv : Key4, volledig niet alleen getal
+            {
+                //Stel de spawnpointnaam in voordat de scene wordt geladen
                     SpawnManager.spawnPointName = targetSpawnPointName;
 
-                    // Laad de nieuwe scene
+                //Laad de nieuwe scene
                     Debug.Log("travel to " + targetScene + " door " + targetSpawnPointName);
-                    SceneManager.LoadScene(targetScene);
+                SceneManager.LoadScene(targetScene);
 
-            // Instantiate(Player); //hierdoor spawn je wel juiste plek maar irritant met inventory enzo
-            //DontDestroyOnLoad(Player); je blijft ook bestaan in og scene dus als je teruggaat zijn er 2 player
-            Instantiate(canvas);
-            Instantiate(Player);
+                //Instantiate(Player); //hierdoor spawn je wel juiste plek maar irritant met inventory enzo
+                DontDestroyOnLoad(Player); //je blijft ook bestaan in og scene dus als je teruggaat zijn er 2 player
+                DontDestroyOnLoad(ItemCanvas);
+                DontDestroyOnLoad(InventoryContent);
+                DontDestroyOnLoad(Inventory);
 
+                Player.SetActive(true);
+                ItemCanvas.SetActive(true);
+                InventoryContent.SetActive(true);
+                Inventory.SetActive(true);
 
-            //}
-            //else
-            //{
-            //    if (equippedItem == null)
-            //    {
-            //        Debug.Log("NO KEYS????");
+            }
+            else
+            {
+                if (equippedItem == null)
+                {
+                    Debug.Log("NO KEYS????" + " - TIP FOR YOUR STUPID ASS : " + neccescaryKey);
 
-            //    }
-            //    else
-            //    {
-            //        Debug.Log("You don't have the necessary key equipped! , you have " + equippedItem + " and you need key " + neccescaryKey);
+                }
+                else
+                {
+                    Debug.Log("You don't have the necessary key equipped! , you have " + equippedItem + " and you need key " + neccescaryKey);
 
-            //    }
-            //}
+                }
+            }
 
         }
     }
-//}
+}
