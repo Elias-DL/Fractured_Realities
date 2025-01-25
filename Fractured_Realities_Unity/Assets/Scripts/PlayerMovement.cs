@@ -17,7 +17,10 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(transform.forward * forwardForce * Time.deltaTime);
         }
-
+        //if (Input.GetKey("w") && Input.GetKey("ctrl"))
+        //{
+        //    rb.AddForce(transform.forward * forwardForce * Time.deltaTime);
+        //}
         if (Input.GetKey("s"))
         {
             rb.AddForce(0, 0, -forwardForce * Time.deltaTime);
