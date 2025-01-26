@@ -22,14 +22,14 @@ public class FPSController : MonoBehaviour
     public bool canMove = true;
 
 
-    CharacterController characterController;
+    public CharacterController characterController;
     Animator animator; // Reference to Animator
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
         animator = GetComponentInChildren<Animator>(); // Get the Animator from the child object
-        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.lockState = CursorLockMode.Confined; // de muis blijft in de  "game" view
     }
 
     void Update()
@@ -50,15 +50,14 @@ public class FPSController : MonoBehaviour
 
         // Update Animator parameter "Move"
         float moveMagnitude = new Vector2(curSpeedX, curSpeedY).magnitude; // Calculate combined movement speed
-        animator.SetFloat("Move", moveMagnitude); // Update Move parameter
-        //Debug.Log(moveMagnitude);
+                                                                           // animator.SetFloat("Move", moveMagnitude); // Update Move parameter
+                                                                           //Debug.Log(moveMagnitude);
         #endregion
 
         #region Handles Jumping
         if (Input.GetKeyDown("space") && canMove && characterController.isGrounded)
         {
             moveDirection.y = jumpPower;
-            Debug.Log("jump");
         }
         else
         {

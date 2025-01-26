@@ -153,7 +153,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7503890136018857430}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.74143493, z: -0, w: -0.6710248}
+  m_LocalRotation: {x: -0, y: -0.74143744, z: 0, w: -0.671022}
   m_LocalPosition: {x: -81.1, y: 0, z: 8.1}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_ConstrainProportionsScale: 0
@@ -203,12 +203,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 2720435409281863754}
   walkSpeed: 25
-  runSpeed: 200
-  jumpPower: 7
+  runSpeed: 20
+  jumpPower: 15
   gravity: 10
   lookSpeed: 2
   lookXLimit: 45
   canMove: 1
+  characterController: {fileID: 5914548194925849910}
 --- !u!65 &5257121674274216570
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -274,6 +275,7 @@ MonoBehaviour:
   sideForce: 30
   sprintForce: 1000
   jump: 1
+  characterController: {fileID: 0}
 --- !u!23 &9094800375650939692
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -327,11 +329,11 @@ PrefabInstance:
     - target: {fileID: 6319086292968066481, guid: 56fc080e7bbacb24c86fd1e5760231bd, type: 3}
       propertyPath: m_Avatar
       value: 
-      objectReference: {fileID: 9000000, guid: d8e6717bd7507b44c9fc5a0a6749ec6c, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6319086292968066481, guid: 56fc080e7bbacb24c86fd1e5760231bd, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: f6ef3085c5087ae40a352ae36cb63891, type: 2}
+      objectReference: {fileID: 9100000, guid: 6b35f75fff9b96043a18b7a0297753b6, type: 2}
     - target: {fileID: 6319086292968066481, guid: 56fc080e7bbacb24c86fd1e5760231bd, type: 3}
       propertyPath: m_WarningMessage
       value: 
