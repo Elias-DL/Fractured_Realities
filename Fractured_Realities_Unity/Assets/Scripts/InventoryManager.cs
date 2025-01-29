@@ -58,8 +58,8 @@ public class InventoryManager : MonoBehaviour
 
     public void ToggleInventory()
     {
-        if (InventoryPanel != null)
-        {
+        //if (InventoryPanel != null)
+        //{
             bool isActive = InventoryPanel.activeSelf;
             InventoryPanel.SetActive(!isActive);
 
@@ -68,7 +68,7 @@ public class InventoryManager : MonoBehaviour
             {
                 ListItems(); // Refresh the inventory UI only when opening
             }
-        }
+        //}
     }
 
     public void Add(Item item)

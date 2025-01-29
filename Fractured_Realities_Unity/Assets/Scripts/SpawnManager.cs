@@ -3,10 +3,11 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     public static string spawnPointName; // Naam van het teleportatiedoel
-    int teller = 0;
+    int teller = 0;// soms fout dat else toch wordt opgeroepen, mogelijke opl
     public void Awake()
     {
        
+
             if (!string.IsNullOrEmpty(spawnPointName))
             {
                 // Zoek het teleportatiedoel op basis van zijn naam
@@ -38,7 +39,7 @@ public class SpawnManager : MonoBehaviour
                 GameObject startspawn = GameObject.FindWithTag("StartSpawn");
                 player.transform.position = startspawn.transform.position;
                 player.transform.rotation = startspawn.transform.rotation;
-                // Debug.LogWarning("Er is geen spawnPointName opgegeven. De speler spawnt op de standaardpositie.");
+                Debug.LogWarning("Er is geen spawnPointName opgegeven. De speler spawnt op de standaardpositie.");
             }
         }
        

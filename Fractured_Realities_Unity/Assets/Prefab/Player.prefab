@@ -40,8 +40,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5668417407881428555}
-  - component: {fileID: 2720435409281863754}
   - component: {fileID: 4614473059721319264}
+  - component: {fileID: 5910596871826251794}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -64,7 +64,15 @@ Transform:
   m_Children: []
   m_Father: {fileID: 658167272281758645}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!20 &2720435409281863754
+--- !u!81 &4614473059721319264
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6029377000463139798}
+  m_Enabled: 1
+--- !u!20 &5910596871826251794
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,14 +123,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &4614473059721319264
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6029377000463139798}
-  m_Enabled: 1
 --- !u!1 &7503890136018857430
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,6 +138,8 @@ GameObject:
   - component: {fileID: 8100542427939099576}
   - component: {fileID: 1278387510249634349}
   - component: {fileID: 9094800375650939692}
+  - component: {fileID: 4648293615077619576}
+  - component: {fileID: 3601863745506829745}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -153,8 +155,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7503890136018857430}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.74143744, z: 0, w: -0.671022}
-  m_LocalPosition: {x: -81.1, y: 0, z: 8.1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -162,7 +164,7 @@ Transform:
   - {fileID: 5668417407881428555}
   - {fileID: 8147409369206367094}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -264.292, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &5914548194925849910
 CharacterController:
   m_ObjectHideFlags: 0
@@ -201,11 +203,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1165148070897848a5cd0ca27232edc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCamera: {fileID: 2720435409281863754}
-  walkSpeed: 25
-  runSpeed: 20
+  playerCamera: {fileID: 5910596871826251794}
+  walkSpeed: 50
+  runSpeed: 100
   jumpPower: 15
-  gravity: 10
+  gravity: 0
   lookSpeed: 2
   lookXLimit: 45
   canMove: 1
@@ -275,7 +277,7 @@ MonoBehaviour:
   sideForce: 30
   sprintForce: 1000
   jump: 1
-  characterController: {fileID: 0}
+  characterController: {fileID: 5914548194925849910}
 --- !u!23 &9094800375650939692
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -318,6 +320,41 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &4648293615077619576
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7503890136018857430}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: ccd6c684af22357418455a989c6ce7a7, type: 3}
+  m_Controller: {fileID: 9100000, guid: 6b35f75fff9b96043a18b7a0297753b6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3601863745506829745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7503890136018857430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd8782a362a7e340b19bfd1c122d279, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  healthBar: {fileID: 0}
 --- !u!1001 &2637590250971644278
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -60,7 +60,7 @@ public class DoorInteraction : MonoBehaviour
             {
                 if (equippedItem == null)
                 {
-                    Debug.Log("NO KEYS????" + " - TIP FOR YOUR STUPID ASS : " + neccescaryKey);
+                    Debug.Log(" - TIP : " + neccescaryKey);
 
                 }
                 else

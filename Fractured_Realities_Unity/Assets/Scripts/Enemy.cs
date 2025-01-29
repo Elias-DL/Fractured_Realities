@@ -26,7 +26,7 @@ public class ZombieAI : MonoBehaviour // reset de component voor changes
     private string action;
     private bool exitedZone = false;
     public Transform startZone1;
-
+    public float damage;
     public GameObject Player;
     public void Awake()
     {
@@ -120,8 +120,10 @@ public class ZombieAI : MonoBehaviour // reset de component voor changes
             animator.SetBool("Chase", false);
 
             animator.SetBool("Attack", true);
-            action = "attack";
+            action = "Attack";
+            Debug.Log("PAS OP");
 
+            //Player.GetComponent<PlayerStats>().TakeDamage(damage); attack wordt te vaak gecontroleerd -> te snel geen health meer
             // Make the zombie face the player
             Vector3 directionToPlayer = (playertrans.position - transform.position).normalized;
             Quaternion lookRotation = Quaternion.LookRotation(new Vector3(directionToPlayer.x, 0, directionToPlayer.z));
@@ -147,8 +149,17 @@ public class ZombieAI : MonoBehaviour // reset de component voor changes
     }
 
 
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("PAS OP");
+        if (other.CompareTag("Player") && action == "Attack")
+        {
 
-  
+            other.GetComponent<PlayerStats>().TakeDamage(damage);
+
+        }
+    }
+
 
     private void OnTriggerExit(Collider other)
     { // 2 colliders?, timer is niet consistent

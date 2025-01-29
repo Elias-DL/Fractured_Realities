@@ -3,42 +3,24 @@ using static UnityEditor.Progress;
 
 public class InventoryItemController : MonoBehaviour
 {
-    public Item item; // Reference to the item data (ScriptableObject)
-    public GameObject itemPrefab; // Prefab of the item (from the item data)
-    public Transform player; // Reference to the player's transform
-    private GameObject equippedItem; // Reference to the equipped item instance
+    public Item item; 
+    public GameObject itemPrefab;
+    public Transform player;
+    private GameObject equippedItem;
 
-    [Header("Position and Rotation Settings")]
-    public Vector3 offsetPosition = new Vector3(0f, 1.5f, 1.5f); // Position offset for equipping
-    public Vector3 rotationSpeed = new Vector3(0f, 30f, 0f); // Rotation speed for equipped items
-
-    [Header("Manual Adjustments")]
-    public Vector3 manualPositionAdjustments; // Fine-tuning item position
-    public Vector3 manualRotationAdjustments; // Fine-tuning item rotation
+   
+   
 
     // Static reference to the currently equipped item's name
     public static string EquippedItemName { get; private set; }
 
     private void Start()
     {
-        // Get the player's transform (assuming the player has a tag "Player")
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    private void Update()
-    {
-        //// Continuously rotate the equipped item (if any)
-        //if (equippedItem != null)
-        //{
-        //    equippedItem.transform.Rotate(rotationSpeed * Time.deltaTime);
+  
 
-        //    // Update position and rotation based on adjustments
-        //    UpdateEquippedItemPosition();
-        //    UpdateEquippedItemRotation();
-        //}
-    }
-
-    // This is called when an item is clicked in the inventory UI
     public void OnItemClicked()
     {
         EquipItem();

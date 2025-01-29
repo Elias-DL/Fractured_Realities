@@ -26,20 +26,19 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("RunForward", false);
         animator.SetBool("RunBackward", false);
 
-        animator.SetBool("Run", false);
 
         animator.SetBool("Sneak", false);
         animator.SetBool("Jump", false);
-        animator.SetBool("Right", false);
-        animator.SetBool("Left", false);
+        animator.SetBool("RightWalk", false);
+        animator.SetBool("LeftWalk", false);
 
-
+        //animator.SetBool("RightRun", false);
+        //animator.SetBool("LeftRun", false);
 
         if (Input.GetKey("w"))
         {
             rb.AddForce(transform.forward * forwardForce * Time.deltaTime);
             animator.SetBool("WalkForward", true);
-            Debug.Log("loooooop");
 
         }
         //if (Input.GetKey("w") && Input.GetKey("ctrl"))
@@ -56,22 +55,26 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey("d"))
         {
             transform.Rotate(0, sideForce * Time.deltaTime, 0);
-            animator.SetBool("Right", true);
+            animator.SetBool("RightWalk", true);
 
         }
 
         if (Input.GetKey("a"))
         {
             transform.Rotate(0, -sideForce * Time.deltaTime, 0);
-            animator.SetBool("Left", true);
+            animator.SetBool("LeftWalk", true);
 
         }
 
         if (Input.GetKey(KeyCode.LeftShift) && (Input.GetKey("w"))) // sprint gefixed?, voor zo de sliding te vermijden -> drag = 1? (nrml 0)
         {
+
             rb.AddForce(transform.forward * sprintForce * Time.deltaTime);
-            animator.SetBool("Run", true);
-            Debug.Log("....");
+            animator.SetBool("WalkForward", false);
+            animator.SetBool("RunForward", true);
+
+
+         
 
         }
 
