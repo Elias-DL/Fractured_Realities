@@ -4,21 +4,29 @@ using UnityEngine.SceneManagement;
 
 public class MenuLogic : MonoBehaviour
 {
-    public GameObject Player;
-    public GameObject ItemCanvas;
-    public GameObject Inventory;
-    public GameObject Managers;
-    public GameObject Canvas;
-    public GameObject Menu;
-    public GameObject HealthStats;
+    public GameObject player;
+    public GameObject inventoryUI;
+    public GameObject managers;
+    public GameObject canvas;
+    public GameObject menuUI;
+    public GameObject healthUI;
+    public GameObject toggleInventory;
+    public GameObject hideInventory;
+    public GameObject showInventory;
 
     // Start is called before the first frame update
     void Start()
     {
-        //GameObject Player = GameObject.FindGameObjectWithTag("Player");
-        //GameObject ItemCanvas = GameObject.FindGameObjectWithTag("InventoryCanvas");
-        //GameObject Inventory = GameObject.FindGameObjectWithTag("Inventory");
-        //GameObject Managers = GameObject.FindGameObjectWithTag("Managers");
+        //GameObject player = GameObject.FindGameObjectWithTag("Player");
+        //GameObject inventoryUI = GameObject.FindGameObjectWithTag("Player");
+
+        //GameObject managers = GameObject.FindGameObjectWithTag("Managers");
+        //GameObject canvas = GameObject.FindGameObjectWithTag("Canvas");
+        //GameObject menuUI = GameObject.FindGameObjectWithTag("MenuUI");
+        //GameObject healthUI = GameObject.FindGameObjectWithTag("HealthUI");
+        //GameObject hideInventory = GameObject.FindGameObjectWithTag("HideInventory");
+        //GameObject showInventory = GameObject.FindGameObjectWithTag("ShowInventory");
+        //GameObject toggleInventory = GameObject.FindGameObjectWithTag("ToggleInventory");
 
     }
 
@@ -33,17 +41,20 @@ public class MenuLogic : MonoBehaviour
     {
 
         SceneManager.LoadScene("Map");
-        DontDestroyOnLoad(Managers);
-        DontDestroyOnLoad(Canvas);
-        DontDestroyOnLoad(Player);
+        DontDestroyOnLoad(managers);
+        DontDestroyOnLoad(canvas);
+        DontDestroyOnLoad(player);
         // DontDestroyOnLoad(Inventory);
 
-        Managers.SetActive(true);
-        Player.SetActive(true);
-        ItemCanvas.SetActive(true);
-        Inventory.SetActive(true);
-        Canvas.SetActive(true);
-        Menu.SetActive(false);
-        HealthStats.SetActive(true);
+        player.SetActive(true);
+        managers.SetActive(true);
+        canvas.SetActive(true);
+        showInventory.SetActive(true);
+        inventoryUI.SetActive(true);
+        healthUI.SetActive(true);
+        toggleInventory.SetActive(true);
+        menuUI.SetActive(false);
+        hideInventory.SetActive(false);
+
     }
 }

@@ -42,7 +42,7 @@ public class InventoryManager : MonoBehaviour
 
     private void Update()
     {
-
+        
         Player = GameObject.FindWithTag("Player");
         PlayerTransform = Player.transform;
 
@@ -52,6 +52,7 @@ public class InventoryManager : MonoBehaviour
         // If you prefer to use the old Input system
         if (Input.GetKeyDown(KeyCode.T))
         {
+            Debug.Log("aaaaaaaaaaaaa");
             ToggleInventory();
         }
     }

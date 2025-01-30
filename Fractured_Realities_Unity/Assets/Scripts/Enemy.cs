@@ -147,9 +147,18 @@ public class ZombieAI : MonoBehaviour // reset de component voor changes
             navAgent.SetDestination(stoppingPoint);
         }
     }
+    //private void OnTriggerStay(Collider other) // te snel dood, ook als  zombie nog niet echt slaat maar wel attack modus is al damage
+    //{
+    //    Debug.Log("PAS OP");
+    //    if (other.CompareTag("Player") && action == "Attack")
+    //    {
 
+    //        other.GetComponent<PlayerStats>().TakeDamage(damage);
 
-    private void OnTriggerEnter(Collider other)
+    //    }
+    //}
+
+    private void OnTriggerEnter(Collider other) // je kan bij de zombie blijven staan en geen damage krijge -> opl : hele tijd als triggeris
     {
         Debug.Log("PAS OP");
         if (other.CompareTag("Player") && action == "Attack")
