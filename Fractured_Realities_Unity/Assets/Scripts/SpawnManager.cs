@@ -1,13 +1,23 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SpawnManager : MonoBehaviour
 {
     public static string spawnPointName; // Naam van het teleportatiedoel
     int teller = 0;// soms fout dat else toch wordt opgeroepen, mogelijke opl
+
+
+    Scene currentScene;
+    string currentSceneName;
+
+
     public void Awake()
     {
-       
+        currentScene = SceneManager.GetActiveScene();
+        currentSceneName = currentScene.name;
 
+        if (currentSceneName != "Main Menu")
+        {
             if (!string.IsNullOrEmpty(spawnPointName))
             {
                 // Zoek het teleportatiedoel op basis van zijn naam
@@ -42,6 +52,7 @@ public class SpawnManager : MonoBehaviour
                 Debug.LogWarning("Er is geen spawnPointName opgegeven. De speler spawnt op de standaardpositie.");
             }
         }
-       
     }
 
+
+}

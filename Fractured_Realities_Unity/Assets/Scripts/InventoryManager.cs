@@ -1,76 +1,116 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager Instance;
 
     public List<Item> Items = new List<Item>();
-    public Transform PlayerTransform;
-    public GameObject itemPrefab;
+    public Transform PlayerTransform; // in script aangemaakt
+    public GameObject itemPrefab; // in inspector 
+    public Transform ItemContent; // in script aangemaakt
 
-    public Transform ItemContent;
     public GameObject InventoryItem;
-    public GameObject InventoryPanel; // Reference to the UI panel
 
     public InventoryItemController[] InventoryItems;
 
     public GameObject Player;
     public GameObject InventoryContent;
+    public GameObject Inventory;
 
+
+    public GameObject HideInventory;
+    public GameObject ShowInventory;
+
+
+    Scene currentScene;
+    string currentSceneName;
+
+    int InventoryActiveORNot = 0;
 
     public void Awake()
     {
 
         Instance = this;
 
-        Player = GameObject.FindWithTag("Player");
-        PlayerTransform = Player.transform;
-
-        InventoryContent = GameObject.FindWithTag("InventoryContent");
-
-        ItemContent = InventoryContent.transform;
     }
 
-    private void Start()
+    public void Start()
     {
-        if (InventoryPanel != null)
-        {
-            InventoryPanel.SetActive(false); // Hide inventory at start
-        }
-    }
 
-    private void Update()
-    {
+        currentScene = SceneManager.GetActiveScene();
+        currentSceneName = currentScene.name;
+        Debug.Log("start inventorymanager " + currentSceneName);
         
-        Player = GameObject.FindWithTag("Player");
-        PlayerTransform = Player.transform;
+        HideInventory = GameObject.FindWithTag("HideInventory");
+        ShowInventory = GameObject.FindWithTag("ShowInventory");
+    }
+    public void Update()
+    {
+        currentScene = SceneManager.GetActiveScene();
+        currentSceneName = currentScene.name;
 
-        InventoryContent = GameObject.FindWithTag("InventoryContent");
-
-        ItemContent = InventoryContent.transform;
-        // If you prefer to use the old Input system
-        if (Input.GetKeyDown(KeyCode.T))
+        if (currentSceneName != "Main Menu")
         {
-            Debug.Log("aaaaaaaaaaaaa");
+            //Player = GameObject.FindWithTag("Player");
+            //PlayerTransform = Player.transform;
+            //Inventory = GameObject.FindWithTag("Inventory");
+
+            if (InventoryActiveORNot %2 != 0)
+            {
+                //InventoryContent = GameObject.FindWithTag("InventoryContent");
+                ItemContent = InventoryContent.transform;
+
+            }
+
+            //if (Input.GetKeyDown(KeyCode.T)) omg ik krijg de inventory niet hidden bij spawn en dat het werkt
+            //{
+            //    Debug.Log("okeee");
+            //    Inventory = GameObject.FindWithTag("Inventory");
+            //    ToggleInventory();
+
+            //}
+        }
+        // Debug.Log("start game " + currentSceneName);
+
+
+        //old Input system
+        if (Input.GetKeyDown(KeyCode.T)) 
+        {
+            Debug.Log("okeee");
             ToggleInventory();
+
         }
     }
 
     public void ToggleInventory()
     {
-        //if (InventoryPanel != null)
-        //{
-            bool isActive = InventoryPanel.activeSelf;
-            InventoryPanel.SetActive(!isActive);
 
-            // Only refresh the UI if the inventory is being opened
-            if (!isActive)
-            {
-                ListItems(); // Refresh the inventory UI only when opening
-            }
-        //}
+        // Toggle  inventorys visibility
+        bool isActive = Inventory.activeSelf;
+        Inventory.SetActive(!isActive);
+
+        // UI Refresh als de inventory wordt geopend
+        if (!isActive)
+        {
+            ListItems();
+        }
+
+        // toggle invenotory visibility check
+        if (isActive) 
+        {
+           
+            ShowInventory.SetActive(true);
+            HideInventory.SetActive(false);
+        }
+        else
+        {
+            
+            ShowInventory.SetActive(false);
+            HideInventory.SetActive(true);
+        }
     }
+
 
     public void Add(Item item)
     {
@@ -141,3 +181,4 @@ public class InventoryManager : MonoBehaviour
         }
     }
 }
+

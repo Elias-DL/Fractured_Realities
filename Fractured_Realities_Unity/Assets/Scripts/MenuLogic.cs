@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -33,7 +32,7 @@ public class MenuLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
 
@@ -41,9 +40,9 @@ public class MenuLogic : MonoBehaviour
     {
 
         SceneManager.LoadScene("Map");
+        DontDestroyOnLoad(player);
         DontDestroyOnLoad(managers);
         DontDestroyOnLoad(canvas);
-        DontDestroyOnLoad(player);
         // DontDestroyOnLoad(Inventory);
 
         player.SetActive(true);
@@ -53,8 +52,9 @@ public class MenuLogic : MonoBehaviour
         inventoryUI.SetActive(true);
         healthUI.SetActive(true);
         toggleInventory.SetActive(true);
+
         menuUI.SetActive(false);
-        hideInventory.SetActive(false);
+        hideInventory.SetActive(true);
 
     }
 }
