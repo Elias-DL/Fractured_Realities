@@ -121,9 +121,9 @@ public class ZombieAI : MonoBehaviour // reset de component voor changes
 
             animator.SetBool("Attack", true);
             action = "Attack";
-            Debug.Log("PAS OP");
+            //Debug.Log("PAS OP");
 
-            //Player.GetComponent<PlayerStats>().TakeDamage(damage); attack wordt te vaak gecontroleerd -> te snel geen health meer
+            // Player.GetComponent<PlayerStats>().TakeDamage(damage); attack wordt te vaak gecontroleerd -> te snel geen health meer
             // Make the zombie face the player
             Vector3 directionToPlayer = (playerTrans.position - transform.position).normalized;
             Quaternion lookRotation = Quaternion.LookRotation(new Vector3(directionToPlayer.x, 0, directionToPlayer.z));
@@ -163,6 +163,7 @@ public class ZombieAI : MonoBehaviour // reset de component voor changes
         Debug.Log("PAS OP");
         if (other.CompareTag("Player") && action == "Attack")
         {
+            Debug.Log("DAMAGE");
 
             other.GetComponent<PlayerStats>().TakeDamage(damage);
 

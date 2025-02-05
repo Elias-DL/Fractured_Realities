@@ -4098,75 +4098,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 241520356}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &242668767
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 658167272281758645, guid: 2b0b5b22e6f7b30428039e36a17db052, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 658167272281758645, guid: 2b0b5b22e6f7b30428039e36a17db052, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 658167272281758645, guid: 2b0b5b22e6f7b30428039e36a17db052, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 658167272281758645, guid: 2b0b5b22e6f7b30428039e36a17db052, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 173.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 658167272281758645, guid: 2b0b5b22e6f7b30428039e36a17db052, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 658167272281758645, guid: 2b0b5b22e6f7b30428039e36a17db052, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 14.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 658167272281758645, guid: 2b0b5b22e6f7b30428039e36a17db052, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 658167272281758645, guid: 2b0b5b22e6f7b30428039e36a17db052, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 658167272281758645, guid: 2b0b5b22e6f7b30428039e36a17db052, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 658167272281758645, guid: 2b0b5b22e6f7b30428039e36a17db052, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 658167272281758645, guid: 2b0b5b22e6f7b30428039e36a17db052, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 658167272281758645, guid: 2b0b5b22e6f7b30428039e36a17db052, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 658167272281758645, guid: 2b0b5b22e6f7b30428039e36a17db052, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7503890136018857430, guid: 2b0b5b22e6f7b30428039e36a17db052, type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2b0b5b22e6f7b30428039e36a17db052, type: 3}
 --- !u!1001 &243863225
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11467,6 +11398,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 88509115014108045, guid: d6edcf5cfcd2926408a27068b783227b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 824019070}
+    - targetCorrespondingSourceObject: {fileID: 88509115014108045, guid: d6edcf5cfcd2926408a27068b783227b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 824019071}
   m_SourcePrefab: {fileID: 100100000, guid: d6edcf5cfcd2926408a27068b783227b, type: 3}
 --- !u!1 &824019065 stripped
 GameObject:
@@ -11489,7 +11423,7 @@ MonoBehaviour:
   detectionRadius: 50
   roamRange: 100
   stopChaseDistance: 20
-  damage: 0
+  damage: 5
   Player: {fileID: 0}
 --- !u!95 &824019067
 Animator:
@@ -11576,6 +11510,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &824019071
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824019065}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &824414695
 GameObject:
   m_ObjectHideFlags: 0
@@ -23189,6 +23144,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1363024495875198, guid: 656835c98f7180548bfc0a3c70bdbd94, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1699584437}
+    - targetCorrespondingSourceObject: {fileID: 1363024495875198, guid: 656835c98f7180548bfc0a3c70bdbd94, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1699584439}
   m_SourcePrefab: {fileID: 100100000, guid: 656835c98f7180548bfc0a3c70bdbd94, type: 3}
 --- !u!1 &1699584436 stripped
 GameObject:
@@ -23233,8 +23191,29 @@ MonoBehaviour:
   detectionRadius: 50
   roamRange: 100
   stopChaseDistance: 20
-  damage: 0
+  damage: 20
   Player: {fileID: 0}
+--- !u!65 &1699584439
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699584436}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.82, y: 1.41, z: 1}
+  m_Center: {x: 0, y: 1.15, z: 0}
 --- !u!1 &1704519395
 GameObject:
   m_ObjectHideFlags: 0
@@ -23629,6 +23608,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2043919424448136195, guid: 8f317dd6ea755c245930aa07e0fc3714, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1713497027}
+    - targetCorrespondingSourceObject: {fileID: 2043919424448136195, guid: 8f317dd6ea755c245930aa07e0fc3714, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1713497029}
   m_SourcePrefab: {fileID: 100100000, guid: 8f317dd6ea755c245930aa07e0fc3714, type: 3}
 --- !u!1 &1713497025 stripped
 GameObject:
@@ -23651,7 +23633,7 @@ MonoBehaviour:
   detectionRadius: 50
   roamRange: 100
   stopChaseDistance: 20
-  damage: 10
+  damage: 30
   Player: {fileID: 0}
 --- !u!195 &1713497028
 NavMeshAgent:
@@ -23675,6 +23657,27 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &1713497029
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713497025}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0.54, z: 0}
 --- !u!1 &1729984735
 GameObject:
   m_ObjectHideFlags: 0
@@ -29350,5 +29353,4 @@ SceneRoots:
   - {fileID: 1880481258}
   - {fileID: 824019064}
   - {fileID: 1713497024}
-  - {fileID: 242668767}
   - {fileID: 1699584435}

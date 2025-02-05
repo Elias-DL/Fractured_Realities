@@ -35,7 +35,10 @@ public class MenuLogic : MonoBehaviour
 
     }
 
-
+    public void loadScoreboard()
+    {
+        SceneManager.LoadScene("Scoreboard");
+    }
     public void loadGame()
     {
 
