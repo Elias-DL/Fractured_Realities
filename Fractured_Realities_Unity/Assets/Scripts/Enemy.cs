@@ -49,7 +49,7 @@ public class ZombieAI : MonoBehaviour // reset de component voor changes
 
     private void Update()
     {
-        Debug.Log(action);
+        //Debug.Log(action);
         //if (currentZone == Zone.Zone1)
 
         //{
@@ -99,7 +99,7 @@ public class ZombieAI : MonoBehaviour // reset de component voor changes
                 navAgent.isStopped = false;
                 navAgent.SetDestination(hit.position);
             }
-            Debug.Log(hit.position);
+            //Debug.Log(hit.position);  
 
         }
 
@@ -160,10 +160,10 @@ public class ZombieAI : MonoBehaviour // reset de component voor changes
 
     private void OnTriggerEnter(Collider other) // je kan bij de zombie blijven staan en geen damage krijge -> opl : hele tijd als triggeris
     {
-        Debug.Log("PAS OP");
+        // Debug.Log("PAS OP");
         if (other.CompareTag("Player") && action == "Attack")
         {
-            Debug.Log("DAMAGE");
+           // Debug.Log("DAMAGE");
 
             other.GetComponent<PlayerStats>().TakeDamage(damage);
 

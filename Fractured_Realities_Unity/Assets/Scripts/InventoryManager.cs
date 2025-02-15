@@ -75,7 +75,7 @@ public class InventoryManager : MonoBehaviour
 
 
         //old Input system
-        if (Input.GetKeyDown(KeyCode.T)) 
+        if (Input.GetKeyDown(KeyCode.E))  /// fornite : caps lock, Minecraf : E,  warzone : caps lock belangerijke keuze!!!!!!!!!!!!!
         {
             Debug.Log("okeee");
             ToggleInventory();

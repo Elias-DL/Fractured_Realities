@@ -5,21 +5,19 @@ using UnityEngine.Experimental.GlobalIllumination;
 
 public class FlashlightToggle : MonoBehaviour
 {
-    public GameObject lightGO; //light gameObject to work with
-    private bool isOn = false; //is flashlight on or off?
+    public GameObject lightGO; 
+    private bool isOn = false; 
 
-    // Use this for initialization
     void Start()
     {
-        //set default off
+        //start met licht uit
         lightGO.SetActive(isOn);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //toggle flashlight on key down
-        if (Input.GetKeyDown(KeyCode.X))
+        
+        if (Input.GetKeyDown(KeyCode.F))
         {
             //toggle light
             isOn = !isOn;

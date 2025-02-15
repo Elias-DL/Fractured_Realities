@@ -1,9 +1,10 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.UIElements;
 public class ScoreDisplay : MonoBehaviour
 {
-    public Text scoreText; // Reference to the Text UI component
+    public TextMeshProUGUI scoreText; // Reference to the Text UI component
     private int placeholderScore = 0; // Placeholder score
 
     void Start()

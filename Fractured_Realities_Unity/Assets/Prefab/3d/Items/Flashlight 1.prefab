@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: -5983652846248494458}
   - component: {fileID: -1374545319848443203}
   - component: {fileID: 2664526124816707249}
+  - component: {fileID: 6134339566723964809}
+  - component: {fileID: 621243958562491307}
   m_Layer: 0
   m_Name: Flashlight 1
   m_TagString: Untagged
@@ -95,10 +97,6 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: ef401caa30762e64eb4a1ad1c4a4bae9, type: 2}
   itemPrefab: {fileID: 1147965471979518}
   player: {fileID: 0}
-  offsetPosition: {x: 0, y: 1.5, z: 1.5}
-  rotationSpeed: {x: 0, y: 30, z: 0}
-  manualPositionAdjustments: {x: 0, y: 0, z: 0}
-  manualRotationAdjustments: {x: 0, y: 0, z: 0}
 --- !u!114 &-1374545319848443203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,6 +131,34 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6134339566723964809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147965471979518}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e79a0a16a1165164ab3610a37956812f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenPos: {x: 0, y: 0, z: 0}
+  worldPos: {x: 0, y: 0, z: 0}
+--- !u!114 &621243958562491307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147965471979518}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e79a0a16a1165164ab3610a37956812f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenPos: {x: 0, y: 0, z: 0}
+  worldPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1226127016364396
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,15 +294,15 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1229193494168842}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 0.4433962, g: 0.4433962, b: 0.4433962, a: 1}
-  m_Intensity: 0.5
-  m_Range: 12.12
-  m_SpotAngle: 91
-  m_InnerSpotAngle: 72.36387
+  m_Intensity: 20
+  m_Range: 200
+  m_SpotAngle: 33
+  m_InnerSpotAngle: 3
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
