@@ -15,12 +15,16 @@ public class PlayerStats : MonoBehaviour
     private void Start()
     {
 
-
+        player = GameObject.FindWithTag("Player");
         currentHealth = maxHealth;
 
         healthBar.SetSliderMax(maxHealth);
     }
+    private void Update()
+    {
+        StartSpawn = GameObject.FindWithTag("StartSpawn");
 
+    }
     public void TakeDamage(float damage)
     {
         Debug.Log(transform.position + " health : " + currentHealth);
@@ -36,17 +40,19 @@ public class PlayerStats : MonoBehaviour
     }
 
 
-    public void Respawn() // hoe tf werkt dit niet 
+    public void Respawn() // hoe tf werkt dit niet _> character controller spreekt teleportere tegen (effe uitzetten)
     {
-        
 
-        Vector3 RespawnLocation = StartSpawn.transform.position;
-        player.GetComponent<Rigidbody>().MovePosition(RespawnLocation);
-        Debug.Log(RespawnLocation + " health : " + currentHealth);
+        CharacterController CC = player.GetComponent<CharacterController>();
+        CC.enabled = false;
 
 
-        //currentHealth = 100;
-        //healthBar.SetSlider(currentHealth);
+        transform.position = StartSpawn.transform.position;
+        Debug.Log("Respawnded at " + player.transform.position + " health : " + currentHealth);
+
+        CC.enabled = true;
+        currentHealth = 100;
+        healthBar.SetSlider(currentHealth);
     }
 
     //private void Update() manueel testen

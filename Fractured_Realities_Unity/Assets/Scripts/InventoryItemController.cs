@@ -3,13 +3,13 @@ using static UnityEditor.Progress;
 
 public class InventoryItemController : MonoBehaviour
 {
-    public Item item; 
+    public Item item;
     public GameObject itemPrefab;
     public Transform player;
     private GameObject equippedItem;
 
-   
-   
+
+
 
     // Static reference to the currently equipped item's name
     public static string EquippedItemName { get; private set; }
@@ -19,7 +19,7 @@ public class InventoryItemController : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-  
+
 
     public void OnItemClicked()
     {
@@ -49,16 +49,25 @@ public class InventoryItemController : MonoBehaviour
 
             Debug.Log(item.name);
 
-            if (item.name  != "Flashlight") // niet de beste manier maar kijk het werkt(voor nu)
+
+            // niet de beste manier maar kijk het werkt(voor nu), gwn elke keer kijken welke het is aangezien veel items anders moeten gepositioneerd worden, makkelijker dan prefab want rotatation moet in code gedefinieerd worden anders is het item verkeerd gedraaid
+            if (item.name == "Flashlight")
             {
-                 Rotation = Quaternion.Euler(0, 0, 90);
+                Rotation = Quaternion.Euler(0, 90, 90);
 
             }
+            else if (item.name == "Candle")
+            {
+                Rotation = Quaternion.Euler(0, 0, 0);
+
+
+            }
+
             else
             {
-                 Rotation = Quaternion.Euler(0, 90, 90);
-
+                Rotation = Quaternion.Euler(0, 0, 90);
             }
+
 
             equippedItem.transform.localRotation = Rotation; // Resets local rotation
 
@@ -136,5 +145,3 @@ public class InventoryItemController : MonoBehaviour
         }
     }
 }
-    
-

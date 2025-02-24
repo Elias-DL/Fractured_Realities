@@ -173,7 +173,7 @@ public class InventoryManager : MonoBehaviour
 
     public void SetInventoryItems()
     {
-        InventoryItems = ItemContent.GetComponentsInChildren<InventoryItemController>();
+        
 
         for (int i = 0; i < Items.Count; i++)
         {

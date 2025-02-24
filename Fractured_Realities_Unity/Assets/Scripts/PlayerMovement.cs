@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public float forwardForce = 500, sideForce = 30, sprintForce = 1000, jump = 1000;
     public CharacterController characterController;
     Animator animator; // Reference to Animator
-
+    public bool gezien;
 
     private void Start()
     {

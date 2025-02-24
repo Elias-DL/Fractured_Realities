@@ -16,6 +16,7 @@ public class DoorInteraction : MonoBehaviour
 
     public void LoadScene()
     {
+
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         GameObject inventoryUI = GameObject.FindGameObjectWithTag("Player");
 

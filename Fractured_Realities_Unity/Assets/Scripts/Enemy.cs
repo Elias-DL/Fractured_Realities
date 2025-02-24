@@ -110,7 +110,7 @@ public class ZombieAI : MonoBehaviour // reset de component voor changes
     {
         navAgent.isStopped = false;
 
-        float attackRange = 40f; 
+        float attackRange = 30; 
 
         float distanceToPlayer = Vector3.Distance(transform.position, playerTrans.position);
 

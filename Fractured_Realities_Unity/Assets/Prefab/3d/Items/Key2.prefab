@@ -15,10 +15,11 @@ GameObject:
   - component: {fileID: 455525379143106958}
   - component: {fileID: -7133595084871419344}
   - component: {fileID: 1070420457245156709}
+  - component: {fileID: 2101752124442360827}
   m_Layer: 0
   m_Name: Key2
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -163,7 +164,18 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: 8b8eb8b8ba109354299507c9a527c3e2, type: 2}
   itemPrefab: {fileID: 3108169058445717798}
   player: {fileID: 0}
-  offsetPosition: {x: 0, y: 1.5, z: 1.5}
-  rotationSpeed: {x: 0, y: 30, z: 0}
-  manualPositionAdjustments: {x: 0, y: 0, z: 0}
-  manualRotationAdjustments: {x: 0, y: 0, z: 0}
+--- !u!114 &2101752124442360827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3108169058445717798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb23137bfa290c84b9defb751745e34d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  GlowKey: {fileID: 0}
+  MainCamera: {fileID: 0}

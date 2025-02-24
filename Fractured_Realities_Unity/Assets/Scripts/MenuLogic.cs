@@ -12,7 +12,6 @@ public class MenuLogic : MonoBehaviour
     public GameObject toggleInventory;
     public GameObject hideInventory;
     public GameObject showInventory;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -43,9 +42,10 @@ public class MenuLogic : MonoBehaviour
     {
 
         SceneManager.LoadScene("Map");
-        DontDestroyOnLoad(player);
+
         DontDestroyOnLoad(managers);
         DontDestroyOnLoad(canvas);
+        DontDestroyOnLoad(player);
         // DontDestroyOnLoad(Inventory);
 
         player.SetActive(true);
