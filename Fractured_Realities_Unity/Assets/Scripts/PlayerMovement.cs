@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,15 +12,39 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController characterController;
     Animator animator; // Reference to Animator
     public bool gezien;
-
+    Ray ray;
+    RaycastHit rayHit;
+    public Camera cam;
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
         animator = GetComponentInChildren<Animator>(); // Get the Animator from the child object
+        
+    }
+
+    IEnumerator Scanning()
+    {
+        
+        if (Physics.Raycast(ray, out rayHit, 100))
+        {
+            // Debug.Log(rayHit.transform.name);
+            gezien = true;
+        }
+
+        else
+        {
+            gezien = false;
+        }
+
+        yield return new WaitForSeconds(10f);
+        gezien = false;
     }
     void Update()
     {
-
+        //ray = cam.ScreenPointToRay(Input.mousePosition);
+        //Debug.DrawRay(new Vector3(cam.transform.position.x, cam.transform.position.y - 10, cam.transform.position.z), transform.forward * 200, Color.red);
+        //StartCoroutine(Scanning);   
+            
         animator.SetBool("WalkForward", false);
         animator.SetBool("WalkBackward", false);
 
@@ -85,5 +110,10 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("Jump", true);
 
         }
+    }
+
+    private void StartCoroutine(Func<IEnumerator> scanning)
+    {
+        throw new NotImplementedException();
     }
 }

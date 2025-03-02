@@ -3,8 +3,8 @@ using UnityEngine.UI;
 
 public class GuessingGame : MonoBehaviour
 {
-    public TMP_InputField guessInput;
-    public TMP_Text feedbackText;
+    public TMPro.TMP_InputField guessInput;
+    public TMPro.TMP_Text feedbackText;
     private int objRandomNr;
 
     void Start()
