@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2909335203577781110}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.06504741, z: -0, w: 0.99788225}
-  m_LocalPosition: {x: -0.006, y: 1.736, z: 0.424}
+  m_LocalPosition: {x: -0.022, y: 1.736, z: 0.301}
   m_LocalScale: {x: 0.05000001, y: 0.05, z: 0.05000001}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -218,14 +218,13 @@ GameObject:
   - component: {fileID: 1278387510249634349}
   - component: {fileID: 9094800375650939692}
   - component: {fileID: 4648293615077619576}
-  - component: {fileID: 3601863745506829745}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &658167272281758645
 Transform:
   m_ObjectHideFlags: 0
@@ -358,6 +357,7 @@ MonoBehaviour:
   jump: 1
   characterController: {fileID: 5914548194925849910}
   gezien: 0
+  cam: {fileID: 224913757155190688}
 --- !u!23 &9094800375650939692
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -421,23 +421,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3601863745506829745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7503890136018857430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fd8782a362a7e340b19bfd1c122d279, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 0
-  player: {fileID: 0}
-  StartSpawn: {fileID: 0}
-  healthBar: {fileID: 0}
 --- !u!1001 &2637590250971644278
 PrefabInstance:
   m_ObjectHideFlags: 0

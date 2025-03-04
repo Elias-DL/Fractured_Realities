@@ -14,7 +14,7 @@ public class DoorInteraction : MonoBehaviour
 
     }
 
-    public void LoadScene()
+    public void LoadScene()// nodig voor juiste teleportatie
     {
 
         GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -24,8 +24,8 @@ public class DoorInteraction : MonoBehaviour
         GameObject canvas = GameObject.FindGameObjectWithTag("Canvas");
         //GameObject menuUI = GameObject.FindGameObjectWithTag("MenuUI");
         GameObject healthUI = GameObject.FindGameObjectWithTag("HealthUI");
-        GameObject hideInventory = GameObject.FindGameObjectWithTag("HideInventory");
-        GameObject showInventory = GameObject.FindGameObjectWithTag("ShowInventory");
+        //GameObject hideInventory = GameObject.FindGameObjectWithTag("HideInventory");
+        //GameObject showInventory = GameObject.FindGameObjectWithTag("ShowInventory");
         GameObject toggleInventory = GameObject.FindGameObjectWithTag("ToggleInventory");
 
 
@@ -38,13 +38,13 @@ public class DoorInteraction : MonoBehaviour
         player.SetActive(true);
         managers.SetActive(true);
         canvas.SetActive(true);
-        showInventory.SetActive(true);
+        //showInventory.SetActive(true);
         inventoryUI.SetActive(true);
         //healthUI.SetActive(true);
         toggleInventory.SetActive(true);
 
         //menuUI.SetActive(false);
-        hideInventory.SetActive(false);
+        //hideInventory.SetActive(false);
     }
 
     public void OnMouseDown()

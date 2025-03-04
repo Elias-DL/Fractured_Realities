@@ -1,5 +1,5 @@
 using UnityEngine;
-using static UnityEditor.Progress;
+
 
 public class InventoryItemController : MonoBehaviour
 {
@@ -47,7 +47,7 @@ public class InventoryItemController : MonoBehaviour
             equippedItem.transform.parent = player;
             item.itemName = item.name;
 
-            Debug.Log(item.name);
+            Debug.Log(item.name);   
 
 
             // niet de beste manier maar kijk het werkt(voor nu), gwn elke keer kijken welke het is aangezien veel items anders moeten gepositioneerd worden, makkelijker dan prefab want rotatation moet in code gedefinieerd worden anders is het item verkeerd gedraaid

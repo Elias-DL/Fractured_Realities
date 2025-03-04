@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 public class SpawnManager : MonoBehaviour
 {
     public static string spawnPointName; // Naam van het teleportatiedoel
-    int teller = 0;// soms fout dat else toch wordt opgeroepen, mogelijke opl
 
 
     Scene currentScene;

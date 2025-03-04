@@ -28,12 +28,14 @@ public class ZombieAI : MonoBehaviour // reset de component voor changes
     //public Transform startZone1;
     public float damage;
     public GameObject Player;
+    public GameObject Managers;
+    AudioSource audioSrc;
     public void Awake()
     {
         
         Player = GameObject.FindWithTag("Player");
 
-
+        Managers = GameObject.FindWithTag("Managers");
         playerTrans = Player.transform;
     }
 
@@ -44,14 +46,14 @@ public class ZombieAI : MonoBehaviour // reset de component voor changes
         // Default zone is None, which means the zombie doesn't do anything yet.
         animator = GetComponent<Animator>();
          startPOS = transform.position;
-
+        audioSrc = GetComponent<AudioSource>();
     }
 
     private void Update()
     {
         //Debug.Log(action);
         //if (currentZone == Zone.Zone1)
-
+        audioSrc.Play();
         //{
             animator.SetBool("Roam", true);
             animator.SetBool("Chase", false);
@@ -163,9 +165,9 @@ public class ZombieAI : MonoBehaviour // reset de component voor changes
         // Debug.Log("PAS OP");
         if (other.CompareTag("Player") && action == "Attack")
         {
-           // Debug.Log("DAMAGE");
-
-            other.GetComponent<PlayerStats>().TakeDamage(damage);
+            // Debug.Log("DAMAGE");
+            Managers.GetComponent<PlayerStats>().TakeDamage(damage);
+            
 
         }
     }
