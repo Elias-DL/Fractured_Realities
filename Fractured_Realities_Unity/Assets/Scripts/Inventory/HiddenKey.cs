@@ -16,10 +16,10 @@ public class HiddenKey : MonoBehaviour
         GlowKey = GameObject.FindWithTag("GlowKey");
 
         Scene currentScene = SceneManager.GetActiveScene();
-        
+
         if (currentScene.name == "Room1")
         {
-            GlowKleur =  GlowKey.GetComponent<MeshRenderer>();
+            GlowKleur = GlowKey.GetComponent<MeshRenderer>();
         }
     }
 
@@ -63,6 +63,6 @@ public class HiddenKey : MonoBehaviour
             }
 
         }
-        
+
     }
 }

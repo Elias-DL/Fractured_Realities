@@ -41,9 +41,9 @@ public class PlayerMovement : MonoBehaviour
     }
     void Update()
     {
-        //ray = cam.ScreenPointToRay(Input.mousePosition);
-        //Debug.DrawRay(new Vector3(cam.transform.position.x, cam.transform.position.y - 10, cam.transform.position.z), transform.forward * 200, Color.red);
-        //StartCoroutine(Scanning);   
+        ray = cam.ScreenPointToRay(Input.mousePosition);
+        Debug.DrawRay(new Vector3(transform.position.x, cam.transform.position.y - 3, transform.position.z), transform.forward * 200, Color.red);
+        StartCoroutine(Scanning());   
             
         animator.SetBool("WalkForward", false);
         animator.SetBool("WalkBackward", false);

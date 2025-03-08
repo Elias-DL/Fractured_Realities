@@ -32,7 +32,7 @@ public class PlayerStats : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name != "Scoreboard" && SceneManager.GetActiveScene().name != "Main Menu")
         {
-            Debug.Log(SceneManager.GetActiveScene().name);
+            //Debug.Log(SceneManager.GetActiveScene().name);
             time += Time.deltaTime;
             //Debug.Log("je speelt al " + time + " tijd");
         }
