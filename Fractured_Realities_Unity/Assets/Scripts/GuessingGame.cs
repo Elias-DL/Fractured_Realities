@@ -1,17 +1,19 @@
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
+using TMPro; //NOOIT VERGETEN BRO
 
 public class GuessingGame : MonoBehaviour
 {
     public TMPro.TMP_InputField guessInput;
     public TMPro.TMP_Text feedbackText;
     private int objRandomNr;
+    public GameObject sleutel;
 
     void Start()
     {
         objRandomNr = Random.Range(1, 101);
         feedbackText.text = "Guess a number between 1 and 100!";
+        sleutel.SetActive(false);
     }
 
     public void CheckGuess()
@@ -30,6 +32,7 @@ public class GuessingGame : MonoBehaviour
             else
             {
                 feedbackText.text = "Correct! You guessed it!";
+                sleutel.SetActive(true);
             }
         }
         else
