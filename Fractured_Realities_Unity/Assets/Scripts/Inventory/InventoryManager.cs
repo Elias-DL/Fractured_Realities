@@ -63,21 +63,13 @@ public class InventoryManager : MonoBehaviour
 
             }
 
-            //if (Input.GetKeyDown(KeyCode.T)) omg ik krijg de inventory niet hidden bij spawn en dat het werkt
-            //{
-            //    Debug.Log("okeee");
-            //    Inventory = GameObject.FindWithTag("Inventory");
-            //    ToggleInventory();
-
-            //}
+            
         }
-        // Debug.Log("start game " + currentSceneName);
 
 
         //old Input system
         if (Input.GetKeyDown(KeyCode.E))  /// fornite : caps lock, Minecraf : E,  warzone : caps lock belangerijke keuze!!!!!!!!!!!!!
         {
-            Debug.Log("okeee");
             ToggleInventory();
 
         }

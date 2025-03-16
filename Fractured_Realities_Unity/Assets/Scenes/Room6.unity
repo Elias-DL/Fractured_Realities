@@ -1206,7 +1206,7 @@ Transform:
   m_GameObject: {fileID: 1479574806}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -361, y: 0, z: -443.8}
+  m_LocalPosition: {x: -361, y: 1, z: -443.8}
   m_LocalScale: {x: 20, y: 20, z: 15}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1479,6 +1479,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 23277872924221192, guid: b5a5a17dc3a6d9e47bd468828a2dec34, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 33ac7246c5219654192df38e196da5cb, type: 2}
     - target: {fileID: 114024263972142150, guid: b5a5a17dc3a6d9e47bd468828a2dec34, type: 3}
       propertyPath: open
       value: 0
@@ -1514,6 +1518,8 @@ MonoBehaviour:
   neccescaryKey: Key6
   targetScene: Map
   targetSpawnPointName: Door6SP
+  src: {fileID: 0}
+  sfx1: {fileID: 0}
 --- !u!65 &1874901852
 BoxCollider:
   m_ObjectHideFlags: 0

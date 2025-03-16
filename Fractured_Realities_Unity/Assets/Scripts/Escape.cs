@@ -6,12 +6,12 @@ using UnityEngine;
 
 public class escape : MonoBehaviour
 {
-    public GameObject Player;
+    public GameObject Managers;
 
     // Start is called before the first frame update
     void Start()
     {
-        Player = GameObject.FindWithTag("Player");
+        Managers = GameObject.FindWithTag("Managers");
     }
 
     // Update is called once per frame
@@ -22,7 +22,7 @@ public class escape : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Player.GetComponent<PlayerStats>().Escape();
+        Managers.GetComponent<PlayerStats>().Escape();
 
     }
 }

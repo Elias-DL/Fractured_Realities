@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 5136960719604749398}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.1819, y: 0, z: 0.288}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 52a3747c6aad15c4d9fad3fa695a530a, type: 2}
+  - {fileID: 2100000, guid: 6bb0ef934b30739409f1574d5ffe742c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57fff1af2b16f1f449dca04baa214949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MainCamera: {fileID: 0}
   Item: {fileID: 11400000, guid: 17255d82d7a8f1146a1bcf7ae17f3a88, type: 2}
 --- !u!54 &-7463660504821907082
 Rigidbody:
@@ -163,7 +164,3 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: 17255d82d7a8f1146a1bcf7ae17f3a88, type: 2}
   itemPrefab: {fileID: 0}
   player: {fileID: 0}
-  offsetPosition: {x: 0, y: 1.5, z: 1.5}
-  rotationSpeed: {x: 0, y: 30, z: 0}
-  manualPositionAdjustments: {x: 0, y: 0, z: 0}
-  manualRotationAdjustments: {x: 0, y: 0, z: 0}

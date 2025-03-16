@@ -10,7 +10,6 @@ public class InventoryItemController : MonoBehaviour
 
 
 
-
     // Static reference to the currently equipped item's name
     public static string EquippedItemName { get; private set; }
 
@@ -63,6 +62,11 @@ public class InventoryItemController : MonoBehaviour
 
             }
 
+            else if (item.name == "Key6")
+            {
+                Rotation = Quaternion.Euler(270, -90, -90);
+
+            }
             else
             {
                 Rotation = Quaternion.Euler(0, 0, 90);

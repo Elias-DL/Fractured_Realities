@@ -8,10 +8,15 @@ public class DoorInteraction : MonoBehaviour
     [SerializeField] private string neccescaryKey;
     public string targetScene;          // Naam van de nieuwe scene
     public string targetSpawnPointName; // Naam van het teleportatiedoel in de nieuwe scene
-
+    public AudioSource src;
+    public AudioClip sfx1;
     public void Start()
     {
+        if (src == null)
+        {
+            src = GetComponent<AudioSource>();
 
+        }
     }
 
     public void LoadScene()// nodig voor juiste teleportatie
@@ -49,6 +54,8 @@ public class DoorInteraction : MonoBehaviour
 
     public void OnMouseDown()
     {
+
+        SoundEffects();
         //Check if the left mouse button was clicked
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
@@ -82,5 +89,24 @@ public class DoorInteraction : MonoBehaviour
             }
 
         }
+    }
+
+    public void SoundEffects()
+    {
+        src.clip = sfx1;
+        src.volume = 1;
+        src.Play();
+
+
+        //if (src != null) NIET NODIG DENK Ik
+        //{
+        //    if (string.IsNullOrEmpty(action) || (action != "Walk" && src.isPlaying))
+        //    {
+        //        src.Stop(); // Stop the sound instantly when no action is detected
+        //    }
+
+        //}
+
+
     }
 }

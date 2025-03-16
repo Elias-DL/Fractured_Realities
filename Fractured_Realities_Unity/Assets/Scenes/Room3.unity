@@ -1517,6 +1517,7 @@ MonoBehaviour:
   inventoryUI: {fileID: 1579643080}
   managers: {fileID: 0}
   canvas: {fileID: 1884254886}
+  IngameMenu: {fileID: 0}
   menuUI: {fileID: 401332349}
   healthUI: {fileID: 2076398729}
   toggleInventory: {fileID: 2053025070}
@@ -6379,6 +6380,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 23277872924221192, guid: b5a5a17dc3a6d9e47bd468828a2dec34, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 33ac7246c5219654192df38e196da5cb, type: 2}
     - target: {fileID: 114024263972142150, guid: b5a5a17dc3a6d9e47bd468828a2dec34, type: 3}
       propertyPath: open
       value: 0
@@ -6417,6 +6422,8 @@ MonoBehaviour:
   neccescaryKey: Key3
   targetScene: Map
   targetSpawnPointName: Door3SP
+  src: {fileID: 0}
+  sfx1: {fileID: 0}
 --- !u!114 &1903153517
 MonoBehaviour:
   m_ObjectHideFlags: 0

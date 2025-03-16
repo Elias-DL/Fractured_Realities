@@ -252,7 +252,7 @@ Transform:
   m_GameObject: {fileID: 81839937}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -407.8, y: 0, z: 227.6}
+  m_LocalPosition: {x: -407.8, y: 1, z: 227.6}
   m_LocalScale: {x: 20, y: 20, z: 15}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -474,6 +474,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 23277872924221192, guid: b5a5a17dc3a6d9e47bd468828a2dec34, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 33ac7246c5219654192df38e196da5cb, type: 2}
     - target: {fileID: 114024263972142150, guid: b5a5a17dc3a6d9e47bd468828a2dec34, type: 3}
       propertyPath: open
       value: 0
@@ -509,6 +513,8 @@ MonoBehaviour:
   neccescaryKey: Key5
   targetScene: Map
   targetSpawnPointName: Door5.5SP
+  src: {fileID: 0}
+  sfx1: {fileID: 0}
 --- !u!65 &272363445
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1680,6 +1686,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 23277872924221192, guid: b5a5a17dc3a6d9e47bd468828a2dec34, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 33ac7246c5219654192df38e196da5cb, type: 2}
     - target: {fileID: 114024263972142150, guid: b5a5a17dc3a6d9e47bd468828a2dec34, type: 3}
       propertyPath: open
       value: 0
@@ -1715,6 +1725,8 @@ MonoBehaviour:
   neccescaryKey: Key5
   targetScene: Map
   targetSpawnPointName: Door5SP
+  src: {fileID: 0}
+  sfx1: {fileID: 0}
 --- !u!65 &1938822006
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1796,7 +1808,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9f01b4868f536e445be28d3b66616279, type: 2}
+  - {fileID: 2100000, guid: b9720983ccd2c5549b73fbaa9296dc85, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

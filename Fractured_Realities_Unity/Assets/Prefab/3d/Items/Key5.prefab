@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 2234315884845596731}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.17, y: 0, z: 0.551}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 490851ce5076b6d4ba8d7ba7984ae191, type: 2}
+  - {fileID: 2100000, guid: 8c7b8ba8b45a2bf41a969d192f546ff9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57fff1af2b16f1f449dca04baa214949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MainCamera: {fileID: 0}
   Item: {fileID: 11400000, guid: d1e19b3dec582514091a5181526bc308, type: 2}
 --- !u!54 &-5330575549578700648
 Rigidbody:
@@ -163,4 +164,3 @@ MonoBehaviour:
   item: {fileID: 0}
   itemPrefab: {fileID: 0}
   player: {fileID: 0}
-  offset: {x: 10, y: 20, z: 20}

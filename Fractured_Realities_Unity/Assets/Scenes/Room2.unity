@@ -502,7 +502,7 @@ Transform:
   m_GameObject: {fileID: 408316578}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 198.6, y: 0, z: -160.1}
+  m_LocalPosition: {x: 184.4, y: 1, z: -148.4}
   m_LocalScale: {x: 20, y: 20, z: 15}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -533,7 +533,7 @@ Transform:
   m_GameObject: {fileID: 462217155}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 327.82, y: 0, z: -352.92}
+  m_LocalPosition: {x: 327.82, y: 1, z: -362.87}
   m_LocalScale: {x: 20, y: 20, z: 15}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1504,6 +1504,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 23277872924221192, guid: b5a5a17dc3a6d9e47bd468828a2dec34, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 33ac7246c5219654192df38e196da5cb, type: 2}
     - target: {fileID: 114024263972142150, guid: b5a5a17dc3a6d9e47bd468828a2dec34, type: 3}
       propertyPath: open
       value: 0
@@ -1550,6 +1554,8 @@ MonoBehaviour:
   neccescaryKey: Key2
   targetScene: Map
   targetSpawnPointName: Door2SP
+  src: {fileID: 0}
+  sfx1: {fileID: 0}
 --- !u!114 &730122576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2132,8 +2138,8 @@ Transform:
   m_GameObject: {fileID: 1045202952}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.666121, y: 49.5188, z: -1.5069908}
-  m_LocalScale: {x: 0.01458385, y: 25.783192, z: 0.23547713}
+  m_LocalPosition: {x: 1.666121, y: 49.0547, z: -1.5069908}
+  m_LocalScale: {x: 0.01458385, y: 26.711388, z: 0.23547713}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1281457481}
@@ -2456,7 +2462,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 55e0ca47a73def6408ffc66bc2e20c37, type: 2}
+  - {fileID: 2100000, guid: b24943742f4e6164f97ad737db228a4a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3157,6 +3163,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 23277872924221192, guid: b5a5a17dc3a6d9e47bd468828a2dec34, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 33ac7246c5219654192df38e196da5cb, type: 2}
     - target: {fileID: 114024263972142150, guid: b5a5a17dc3a6d9e47bd468828a2dec34, type: 3}
       propertyPath: open
       value: 0
@@ -3203,6 +3213,8 @@ MonoBehaviour:
   neccescaryKey: Key2
   targetScene: Map
   targetSpawnPointName: Door2.2SP
+  src: {fileID: 0}
+  sfx1: {fileID: 0}
 --- !u!114 &1547677925
 MonoBehaviour:
   m_ObjectHideFlags: 0
