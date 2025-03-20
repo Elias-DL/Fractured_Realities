@@ -1,10 +1,10 @@
 Using pre-set license
 Built from '2022.3/staging' branch; Version is '2022.3.46f1 (8e9b8558c41a) revision 9345925'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 11  (10.0.26100) 64bit Professional' Language: 'en' Physical Memory: 32631 MB
+OS: 'Windows 10  (10.0.19045) 64bit Core' Language: 'en' Physical Memory: 32690 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity 2022.3.46f1\Editor\Unity.exe
+C:\Program Files\Unity\Hub\Editor\2022.3.46f1-x86_64\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
@@ -15,7 +15,7 @@ C:/Fractured_Realities/Fractured_Realities_Unity
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-52458
+60815
 Successfully changed project path to: C:/Fractured_Realities/Fractured_Realities_Unity
 C:/Fractured_Realities/Fractured_Realities_Unity
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,66 +49,66 @@ C:/Fractured_Realities/Fractured_Realities_Unity
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [3460]  Target information:
+Player connection [25676]  Target information:
 
-Player connection [3460]  * "[IP] 192.168.7.152 [Port] 0 [Flags] 2 [Guid] 1976975130 [EditorId] 1976975130 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-QV04GU8) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [25676]  * "[IP] 192.168.1.32 [Port] 0 [Flags] 2 [Guid] 3059713689 [EditorId] 3059713689 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-01BQQQH) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [3460] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [3460] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [25676] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [25676] Host joined alternative multi-casting on [225.0.0.222:34997]...
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-Refreshing native plugins compatible for Editor in 30.43 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 15.43 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.46f1 (8e9b8558c41a)
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity 2022.3.46f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.46f1-x86_64/Editor/Data/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path C:/Fractured_Realities/Fractured_Realities_Unity/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce RTX 3070 Ti (ID=0x2482)
+    Renderer: NVIDIA GeForce RTX 2070 SUPER (ID=0x1e84)
     Vendor:   NVIDIA
-    VRAM:     8018 MB
-    Driver:   32.0.15.7270
+    VRAM:     7989 MB
+    Driver:   32.0.15.5612
 Initialize mono
-Mono path[0] = 'C:/Program Files/Unity 2022.3.46f1/Editor/Data/Managed'
-Mono path[1] = 'C:/Program Files/Unity 2022.3.46f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
-Mono config path = 'C:/Program Files/Unity 2022.3.46f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56072
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.46f1-x86_64/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.46f1-x86_64/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.46f1-x86_64/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56828
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity 2022.3.46f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.017199 seconds.
-- Loaded All Assemblies, in  0.385 seconds
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.46f1-x86_64/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.010670 seconds.
+- Loaded All Assemblies, in  0.352 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.213 seconds
-Domain Reload Profiling: 590ms
-	BeginReloadAssembly (154ms)
+- Finished resetting the current domain, in  0.238 seconds
+Domain Reload Profiling: 588ms
+	BeginReloadAssembly (114ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (32ms)
-	RebuildNativeTypeToScriptingClass (8ms)
-	initialDomainReloadingComplete (76ms)
-	LoadAllAssembliesAndSetupDomain (107ms)
-		LoadAssemblies (145ms)
+	RebuildCommonClasses (34ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (64ms)
+	LoadAllAssembliesAndSetupDomain (126ms)
+		LoadAssemblies (111ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (105ms)
-			TypeCache.Refresh (104ms)
-				TypeCache.ScanAssembly (92ms)
+		AnalyzeDomain (124ms)
+			TypeCache.Refresh (123ms)
+				TypeCache.ScanAssembly (111ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (0ms)
-	FinalizeReload (213ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (238ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (178ms)
+		SetupLoadedEditorAssemblies (197ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (11ms)
-			SetLoadedEditorAssemblies (6ms)
+			InitializePlatformSupportModulesInManaged (9ms)
+			SetLoadedEditorAssemblies (7ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (2ms)
-			ProcessInitializeOnLoadAttributes (117ms)
+			ProcessInitializeOnLoadAttributes (135ms)
 			ProcessInitializeOnLoadMethodAttributes (43ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
@@ -118,823 +118,256 @@ Domain Reload Profiling: 590ms
 Worker process is ready to serve import requests
 Caller must complete domain reload
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.843 seconds
+- Loaded All Assemblies, in  0.676 seconds
 Native extension for WindowsStandalone target not found
 [MODES] ModeService[none].Initialize
 [MODES] ModeService[none].LoadModes
 [MODES] Loading mode Default (0) for mode-current-id-Fractured_Realities_Unity
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.758 seconds
-Domain Reload Profiling: 1582ms
-	BeginReloadAssembly (178ms)
+- Finished resetting the current domain, in  0.770 seconds
+Domain Reload Profiling: 1441ms
+	BeginReloadAssembly (138ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (5ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (17ms)
-	RebuildCommonClasses (31ms)
-	RebuildNativeTypeToScriptingClass (8ms)
-	initialDomainReloadingComplete (55ms)
-	LoadAllAssembliesAndSetupDomain (553ms)
-		LoadAssemblies (493ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (183ms)
-			TypeCache.Refresh (155ms)
-				TypeCache.ScanAssembly (141ms)
-			ScanForSourceGeneratedMonoScriptInfo (19ms)
-			ResolveRequiredComponents (7ms)
-	FinalizeReload (758ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (637ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (8ms)
-			SetLoadedEditorAssemblies (3ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (114ms)
-			ProcessInitializeOnLoadAttributes (474ms)
-			ProcessInitializeOnLoadMethodAttributes (17ms)
-			AfterProcessingInitializeOnLoad (21ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (5ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
-Refreshing native plugins compatible for Editor in 21.40 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5121 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 53 unused Assets / (2.2 MB). Loaded Objects now: 5611.
-Memory consumption went from 230.1 MB to 227.9 MB.
-Total: 6.966900 ms (FindLiveObjects: 0.680300 ms CreateObjectMapping: 0.261800 ms MarkObjects: 5.216500 ms  DeleteObjects: 0.807600 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Caller must complete domain reload
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.658 seconds
-Native extension for WindowsStandalone target not found
-[MODES] ModeService[none].Initialize
-[MODES] ModeService[none].LoadModes
-[MODES] Loading mode Default (0) for mode-current-id-Fractured_Realities_Unity
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.811 seconds
-Domain Reload Profiling: 2453ms
-	BeginReloadAssembly (204ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (4ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (38ms)
-	RebuildCommonClasses (27ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (47ms)
-	LoadAllAssembliesAndSetupDomain (355ms)
-		LoadAssemblies (461ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (14ms)
-			TypeCache.Refresh (5ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (7ms)
-	FinalizeReload (1811ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (690ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (9ms)
-			SetLoadedEditorAssemblies (3ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (143ms)
-			ProcessInitializeOnLoadAttributes (489ms)
-			ProcessInitializeOnLoadMethodAttributes (20ms)
-			AfterProcessingInitializeOnLoad (24ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (7ms)
-Refreshing native plugins compatible for Editor in 27.75 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4975 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 35 unused Assets / (2.2 MB). Loaded Objects now: 5627.
-Memory consumption went from 196.2 MB to 194.0 MB.
-Total: 7.912900 ms (FindLiveObjects: 0.858500 ms CreateObjectMapping: 0.410100 ms MarkObjects: 5.742500 ms  DeleteObjects: 0.900900 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 9301.227207 seconds.
-  path: Assets/Scenes/Room4.unity
-  artifactKey: Guid(2335d418d40c58b498f3ea6fd84ae375) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Room4.unity using Guid(2335d418d40c58b498f3ea6fd84ae375) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '7c2d405b5f6ea252aafa622864ca521b') in 0.001905 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.785181 seconds.
-  path: Assets/Scenes/Room3.unity
-  artifactKey: Guid(a3f6d2e63e7467e4caab9c8fbb755a8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Room3.unity using Guid(a3f6d2e63e7467e4caab9c8fbb755a8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '3796731415878a1462a6ef3d94ce19b4') in 0.000574 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 12.460533 seconds.
-  path: Assets/Scenes/Room2.unity
-  artifactKey: Guid(8c0e82c39b237e344bac5b7c08cc48cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Room2.unity using Guid(8c0e82c39b237e344bac5b7c08cc48cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'ed8c58e037ccb52c2f02c58567ee7efa') in 0.000567 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Prepare
-Caller must complete domain reload
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.678 seconds
-Native extension for WindowsStandalone target not found
-Error saving file Library/StateCache/LayerSettings/9e/9ecc5c3c162a7aba29bafa64c8b94b7c.json. Error: System.IO.IOException: Sharing violation on path C:\Fractured_Realities\Fractured_Realities_Unity\Library\StateCache\LayerSettings\9e\9ecc5c3c162a7aba29bafa64c8b94b7c.json
-  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x0019e] in <8ce0bd04a7a04b4b9395538239d3fdd8>:0 
-  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.IO.FileOptions options) [0x00000] in <8ce0bd04a7a04b4b9395538239d3fdd8>:0 
-  at (wrapper remoting-invoke-with-check) System.IO.FileStream..ctor(string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,int,System.IO.FileOptions)
-  at System.IO.StreamWriter..ctor (System.String path, System.Boolean append, System.Text.Encoding encoding, System.Int32 bufferSize) [0x00055] in <8ce0bd04a7a04b4b9395538239d3fdd8>:0 
-  at System.IO.StreamWriter..ctor (System.String path, System.Boolean append, System.Text.Encoding encoding) [0x00000] in <8ce0bd04a7a04b4b9395538239d3fdd8>:0 
-  at (wrapper remoting-invoke-with-check) System.IO.StreamWriter..ctor(string,bool,System.Text.Encoding)
-  at System.IO.File.WriteAllText (System.String path, System.String contents, System.Text.Encoding encoding) [0x00034] in <8ce0bd04a7a04b4b9395538239d3fdd8>:0 
-  at UnityEditor.StateCache`1[T].SetState (UnityEngine.Hash128 key, T obj) [0x0004b] in <e0a2c8363ef54a6393fed120beebdb7a>:0 
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:LogError (object)
-UnityEditor.StateCache`1<UnityEditor.Tools/LayerSettings>:SetState (UnityEngine.Hash128,UnityEditor.Tools/LayerSettings)
-UnityEditor.Tools:set_lockedLayers (int)
-UnityEditor.Tools:OnEnable ()
-UnityEngine.ScriptableObject:CreateInstance (System.Type)
-UnityEngine.ScriptableObject:CreateInstance<UnityEditor.Tools> ()
-UnityEditor.Tools:get_get ()
-UnityEditor.Tools:get_visibleLayers ()
-UnityEditor.Animations.Rigging.BoneRendererUtils:.cctor () (at ./Library/PackageCache/com.unity.animation.rigging@1.2.1/Editor/Utils/BoneRendererUtils.cs:121)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-(Filename: ./Library/PackageCache/com.unity.animation.rigging@1.2.1/Editor/Utils/BoneRendererUtils.cs Line: 121)
-
-[MODES] ModeService[none].Initialize
-[MODES] ModeService[none].LoadModes
-[MODES] Loading mode Default (0) for mode-current-id-Fractured_Realities_Unity
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.714 seconds
-Domain Reload Profiling: 2373ms
-	BeginReloadAssembly (198ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (3ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (32ms)
-	RebuildCommonClasses (28ms)
-	RebuildNativeTypeToScriptingClass (8ms)
-	initialDomainReloadingComplete (50ms)
-	LoadAllAssembliesAndSetupDomain (374ms)
-		LoadAssemblies (477ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (14ms)
-			TypeCache.Refresh (5ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (8ms)
-	FinalizeReload (1714ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (653ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (9ms)
-			SetLoadedEditorAssemblies (3ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (134ms)
-			ProcessInitializeOnLoadAttributes (461ms)
-			ProcessInitializeOnLoadMethodAttributes (21ms)
-			AfterProcessingInitializeOnLoad (25ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (9ms)
-Refreshing native plugins compatible for Editor in 29.71 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4974 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 35 unused Assets / (2.2 MB). Loaded Objects now: 5643.
-Memory consumption went from 196.0 MB to 193.8 MB.
-Total: 8.315300 ms (FindLiveObjects: 0.684500 ms CreateObjectMapping: 0.481100 ms MarkObjects: 6.257500 ms  DeleteObjects: 0.891200 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 82.820842 seconds.
-  path: Assets/Scenes/Room4.unity
-  artifactKey: Guid(2335d418d40c58b498f3ea6fd84ae375) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Room4.unity using Guid(2335d418d40c58b498f3ea6fd84ae375) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'e1c9c328aa5463eb0333f6733d13d31e') in 0.009815 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Prepare
-Caller must complete domain reload
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.636 seconds
-Native extension for WindowsStandalone target not found
-[MODES] ModeService[none].Initialize
-[MODES] ModeService[none].LoadModes
-[MODES] Loading mode Default (0) for mode-current-id-Fractured_Realities_Unity
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.815 seconds
-Domain Reload Profiling: 2436ms
-	BeginReloadAssembly (198ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (3ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (32ms)
-	RebuildCommonClasses (27ms)
-	RebuildNativeTypeToScriptingClass (8ms)
-	initialDomainReloadingComplete (42ms)
-	LoadAllAssembliesAndSetupDomain (346ms)
-		LoadAssemblies (450ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (14ms)
-			TypeCache.Refresh (5ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (8ms)
-	FinalizeReload (1815ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (664ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (10ms)
-			SetLoadedEditorAssemblies (3ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (138ms)
-			ProcessInitializeOnLoadAttributes (467ms)
-			ProcessInitializeOnLoadMethodAttributes (20ms)
-			AfterProcessingInitializeOnLoad (26ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (9ms)
-Refreshing native plugins compatible for Editor in 26.57 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4974 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 35 unused Assets / (2.2 MB). Loaded Objects now: 5659.
-Memory consumption went from 196.0 MB to 193.8 MB.
-Total: 7.634500 ms (FindLiveObjects: 0.727600 ms CreateObjectMapping: 0.327600 ms MarkObjects: 5.676000 ms  DeleteObjects: 0.902400 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 26.301028 seconds.
-  path: Assets/Scenes/Room4.unity
-  artifactKey: Guid(2335d418d40c58b498f3ea6fd84ae375) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Room4.unity using Guid(2335d418d40c58b498f3ea6fd84ae375) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '054d1b17cdc9f2b418ca5abdc43d0fe1') in 0.010582 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 10.742502 seconds.
-  path: Assets/Scenes/Room4.unity
-  artifactKey: Guid(2335d418d40c58b498f3ea6fd84ae375) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Room4.unity using Guid(2335d418d40c58b498f3ea6fd84ae375) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'd12f5b52f27f28b8715f60ad1fea0afe') in 0.000553 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Prepare
-Caller must complete domain reload
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.693 seconds
-Native extension for WindowsStandalone target not found
-[MODES] ModeService[none].Initialize
-[MODES] ModeService[none].LoadModes
-[MODES] Loading mode Default (0) for mode-current-id-Fractured_Realities_Unity
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.622 seconds
-Domain Reload Profiling: 2295ms
-	BeginReloadAssembly (202ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (4ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (32ms)
-	RebuildCommonClasses (28ms)
-	RebuildNativeTypeToScriptingClass (8ms)
-	initialDomainReloadingComplete (45ms)
-	LoadAllAssembliesAndSetupDomain (389ms)
-		LoadAssemblies (482ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (27ms)
-			TypeCache.Refresh (10ms)
-				TypeCache.ScanAssembly (2ms)
-			ScanForSourceGeneratedMonoScriptInfo (9ms)
-			ResolveRequiredComponents (7ms)
-	FinalizeReload (1622ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (530ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (8ms)
-			SetLoadedEditorAssemblies (2ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (110ms)
-			ProcessInitializeOnLoadAttributes (370ms)
-			ProcessInitializeOnLoadMethodAttributes (16ms)
-			AfterProcessingInitializeOnLoad (23ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (7ms)
-Refreshing native plugins compatible for Editor in 21.97 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4974 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 35 unused Assets / (2.2 MB). Loaded Objects now: 5675.
-Memory consumption went from 196.0 MB to 193.8 MB.
-Total: 7.222800 ms (FindLiveObjects: 0.644600 ms CreateObjectMapping: 0.367700 ms MarkObjects: 5.400900 ms  DeleteObjects: 0.808700 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Caller must complete domain reload
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.759 seconds
-Native extension for WindowsStandalone target not found
-[MODES] ModeService[none].Initialize
-[MODES] ModeService[none].LoadModes
-[MODES] Loading mode Default (0) for mode-current-id-Fractured_Realities_Unity
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.731 seconds
-Domain Reload Profiling: 2472ms
-	BeginReloadAssembly (217ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (4ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (37ms)
+		CreateAndSetChildDomain (19ms)
 	RebuildCommonClasses (32ms)
-	RebuildNativeTypeToScriptingClass (14ms)
-	initialDomainReloadingComplete (53ms)
-	LoadAllAssembliesAndSetupDomain (425ms)
-		LoadAssemblies (524ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (29ms)
-			TypeCache.Refresh (10ms)
-				TypeCache.ScanAssembly (2ms)
-			ScanForSourceGeneratedMonoScriptInfo (10ms)
-			ResolveRequiredComponents (7ms)
-	FinalizeReload (1732ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (561ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (9ms)
-			SetLoadedEditorAssemblies (3ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (119ms)
-			ProcessInitializeOnLoadAttributes (384ms)
-			ProcessInitializeOnLoadMethodAttributes (20ms)
-			AfterProcessingInitializeOnLoad (28ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (16ms)
-Refreshing native plugins compatible for Editor in 22.63 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4975 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 35 unused Assets / (2.2 MB). Loaded Objects now: 5691.
-Memory consumption went from 196.2 MB to 194.0 MB.
-Total: 6.487100 ms (FindLiveObjects: 0.628900 ms CreateObjectMapping: 0.186400 ms MarkObjects: 4.869100 ms  DeleteObjects: 0.801300 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Caller must complete domain reload
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.628 seconds
-Native extension for WindowsStandalone target not found
-Error saving file Library/StateCache/LayerSettings/9e/9ecc5c3c162a7aba29bafa64c8b94b7c.json. Error: System.IO.IOException: Sharing violation on path C:\Fractured_Realities\Fractured_Realities_Unity\Library\StateCache\LayerSettings\9e\9ecc5c3c162a7aba29bafa64c8b94b7c.json
-  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x0019e] in <8ce0bd04a7a04b4b9395538239d3fdd8>:0 
-  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.IO.FileOptions options) [0x00000] in <8ce0bd04a7a04b4b9395538239d3fdd8>:0 
-  at (wrapper remoting-invoke-with-check) System.IO.FileStream..ctor(string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,int,System.IO.FileOptions)
-  at System.IO.StreamWriter..ctor (System.String path, System.Boolean append, System.Text.Encoding encoding, System.Int32 bufferSize) [0x00055] in <8ce0bd04a7a04b4b9395538239d3fdd8>:0 
-  at System.IO.StreamWriter..ctor (System.String path, System.Boolean append, System.Text.Encoding encoding) [0x00000] in <8ce0bd04a7a04b4b9395538239d3fdd8>:0 
-  at (wrapper remoting-invoke-with-check) System.IO.StreamWriter..ctor(string,bool,System.Text.Encoding)
-  at System.IO.File.WriteAllText (System.String path, System.String contents, System.Text.Encoding encoding) [0x00034] in <8ce0bd04a7a04b4b9395538239d3fdd8>:0 
-  at UnityEditor.StateCache`1[T].SetState (UnityEngine.Hash128 key, T obj) [0x0004b] in <e0a2c8363ef54a6393fed120beebdb7a>:0 
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:LogError (object)
-UnityEditor.StateCache`1<UnityEditor.Tools/LayerSettings>:SetState (UnityEngine.Hash128,UnityEditor.Tools/LayerSettings)
-UnityEditor.Tools:set_lockedLayers (int)
-UnityEditor.Tools:OnEnable ()
-UnityEngine.ScriptableObject:CreateInstance (System.Type)
-UnityEngine.ScriptableObject:CreateInstance<UnityEditor.Tools> ()
-UnityEditor.Tools:get_get ()
-UnityEditor.Tools:get_visibleLayers ()
-UnityEditor.Animations.Rigging.BoneRendererUtils:.cctor () (at ./Library/PackageCache/com.unity.animation.rigging@1.2.1/Editor/Utils/BoneRendererUtils.cs:121)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-(Filename: ./Library/PackageCache/com.unity.animation.rigging@1.2.1/Editor/Utils/BoneRendererUtils.cs Line: 121)
-
-[MODES] ModeService[none].Initialize
-[MODES] ModeService[none].LoadModes
-[MODES] Loading mode Default (0) for mode-current-id-Fractured_Realities_Unity
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.699 seconds
-Domain Reload Profiling: 2310ms
-	BeginReloadAssembly (190ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (3ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (31ms)
-	RebuildCommonClasses (27ms)
-	RebuildNativeTypeToScriptingClass (8ms)
+	RebuildNativeTypeToScriptingClass (12ms)
 	initialDomainReloadingComplete (44ms)
-	LoadAllAssembliesAndSetupDomain (341ms)
-		LoadAssemblies (441ms)
+	LoadAllAssembliesAndSetupDomain (445ms)
+		LoadAssemblies (314ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (14ms)
-			TypeCache.Refresh (5ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
+		AnalyzeDomain (212ms)
+			TypeCache.Refresh (181ms)
+				TypeCache.ScanAssembly (167ms)
+			ScanForSourceGeneratedMonoScriptInfo (22ms)
 			ResolveRequiredComponents (7ms)
-	FinalizeReload (1700ms)
+	FinalizeReload (770ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (601ms)
+		SetupLoadedEditorAssemblies (620ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (9ms)
-			SetLoadedEditorAssemblies (2ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			SetLoadedEditorAssemblies (4ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (127ms)
-			ProcessInitializeOnLoadAttributes (419ms)
-			ProcessInitializeOnLoadMethodAttributes (20ms)
-			AfterProcessingInitializeOnLoad (24ms)
+			BeforeProcessingInitializeOnLoad (83ms)
+			ProcessInitializeOnLoadAttributes (495ms)
+			ProcessInitializeOnLoadMethodAttributes (21ms)
+			AfterProcessingInitializeOnLoad (10ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (12ms)
-Refreshing native plugins compatible for Editor in 25.32 ms, found 4 plugins.
+		AwakeInstancesAfterBackupRestoration (7ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 6.84 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4975 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 35 unused Assets / (2.2 MB). Loaded Objects now: 5707.
-Memory consumption went from 196.3 MB to 194.1 MB.
-Total: 7.741800 ms (FindLiveObjects: 0.623200 ms CreateObjectMapping: 0.495600 ms MarkObjects: 5.776800 ms  DeleteObjects: 0.845100 ms)
+Unloading 5122 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 196 unused Assets / (14.5 MB). Loaded Objects now: 5433.
+Memory consumption went from 208.9 MB to 194.4 MB.
+Total: 7.133800 ms (FindLiveObjects: 0.427200 ms CreateObjectMapping: 0.135000 ms MarkObjects: 2.689600 ms  DeleteObjects: 3.880700 ms)
 
-Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
+  custom:scripting/monoscript/fileName/DBConnection.cs: 55058e9dd19f080bc09ee218d648f730 -> 
+  custom:scripting/monoscript/fileName/InventoryManager.cs: a0a6660c0d681c130a6b50f78367ca45 -> 
+  custom:scripting/monoscript/fileName/DepthOfFieldDeprecated.cs: 8700a90d2d763e9c01f08a0cd128cca8 -> 
+  custom:scripting/monoscript/fileName/MobileInput.cs: dfa415439f330b7749adb2ef7567c3e4 -> 
+  custom:scripting/monoscript/fileName/InputAxisScrollbar.cs: ce23cb16d4e46181bfcdc67e0abad940 -> 
+  custom:scripting/monoscript/fileName/CameraMotionBlur.cs: 458c2b6f90eeea041921d89083a79e55 -> 
+  custom:scripting/monoscript/fileName/LagaeMonster.cs: 7b3c139e2184540df32124eb6bdbfe8c -> 
+  custom:scripting/monoscript/fileName/TiltShift.cs: 13ff1d7342528fc14a2e194c2bdc09fb -> 
+  custom:scripting/monoscript/fileName/SkewTextExample.cs: c142d02d70a129e0533975f7c2f96956 -> 
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/fileName/ActivateTrigger.cs: c94789aa9e8004cad1e54b531012d83a -> 
+  custom:scripting/monoscript/fileName/TMP_TextEventHandler.cs: f5cd9d5a43bfefc8f4fec80e6de896a4 -> 
+  custom:scripting/monoscript/fileName/TextMeshProFloatingText.cs: 92608fa4a6315cd0786d82205e77b697 -> 
+  custom:scripting/monoscript/fileName/WaypointCircuit.cs: 54e952fb6b763eca02bad0728655deb7 -> 
+  custom:scripting/monoscript/fileName/ParticleSystemDestroyer.cs: e9db870dc4c33b83d7965fdc6fe482f5 -> 
+  custom:scripting/monoscript/fileName/ScreenSpaceAmbientOcclusion.cs: 42eb6963a5f738a978938eb937f58d78 -> 
+  custom:scripting/monoscript/fileName/BasicMotionsCamera.cs: a61d861a0019726c63fc091273136ff4 -> 
+  custom:scripting/monoscript/fileName/CrossPlatformInputManager.cs: a6a27da3c2613aab4b889711813fe29f -> 
+  custom:scripting/monoscript/fileName/VertexZoom.cs: 650ab1e81d40126e3edcf737cce646e4 -> 
+  custom:scripting/monoscript/fileName/DragRigidbody.cs: af6487145851a9f92f2704a8e0948d6e -> 
+  custom:scripting/monoscript/fileName/VertexShakeA.cs: 63ec564c588058369499638dd899e05b -> 
+  custom:scripting/monoscript/fileName/TMP_ExampleScript_01.cs: a9d4be556104ff54e7d240529b3e01dc -> 
+  custom:scripting/monoscript/fileName/BasicMotionsCharacterController.cs: c62cac5ff2d0d53e17a9cec97112302f -> 
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/SunShafts.cs: abee30526487200fa16387df850e7daf -> 
+  custom:scripting/monoscript/fileName/TMP_TextEventCheck.cs: 13505d917eab5868c435e0c2986dadfa -> 
+  custom:scripting/monoscript/fileName/ItemPickup.cs: 26f584636922e50374ad60489f7e1ffa -> 
+  custom:scripting/monoscript/fileName/TMP_TextSelector_B.cs: ba2be21a7486d37b1011342977a2e49d -> 
+  custom:scripting/monoscript/fileName/MotionBlur.cs: 92b2659b88ad4aa26fb8c384c6435693 -> 823914e335803785a19e5990c6ab2911
+  custom:scripting/monoscript/fileName/Benchmark01.cs: 2d3e2cd961730ab95f139a49a673bace -> 
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/Grayscale.cs: 87671e23fd2948061f63e16eb704f3a3 -> 
+  custom:scripting/monoscript/fileName/TouchPad.cs: 71af049078ebd826d8919ba90a4412d3 -> 
+  custom:scripting/monoscript/fileName/GuessingGame.cs: 26233c5d2edf0d78cd5ad86cade24a22 -> 
+  custom:scripting/monoscript/fileName/TiltInput.cs: 298cab2ca5ef1ae659d7256d2dbeb1ed -> 
+  custom:scripting/monoscript/fileName/PlayerControls.cs: 849ed7f5b11c9db237ef61b01c5a5104 -> 
+  custom:scripting/monoscript/fileName/PlayerCam.cs: 2baf756480d7a3732f43ac30c19a37b9 -> 
+  custom:scripting/monoscript/fileName/BlurOptimized.cs: a99dff34286593c12b0fab92e7c0da68 -> 
+  custom:scripting/monoscript/fileName/Benchmark02.cs: 5640963252ce70910e726415f869ced6 -> 
+  custom:scripting/monoscript/fileName/Quads.cs: 2f24050aded65dda899533ba7849a43c -> 
+  custom:scripting/monoscript/fileName/Blur.cs: 16b33e375f19895ec61239c77165934f -> 
+  custom:scripting/monoscript/fileName/RigidbodyFirstPersonController.cs: 303e518c916e9011e00a96a1504f3543 -> 
+  custom:scripting/monoscript/fileName/DropdownSample.cs: 0a92251794e5f10400149f96c3c59e5d -> 
+  custom:scripting/monoscript/fileName/SmoothFollow.cs: a07fd7df12bc7fba739834867140f167 -> 
+  custom:scripting/monoscript/fileName/Luik.cs: 7aafc2df48fa925c3ef2b2d5b0ead9fa -> 
+  custom:scripting/monoscript/fileName/SpawnBarrels.cs: 5ad2569e83e3770722a7c51fb3a01faa -> 
+  custom:scripting/monoscript/fileName/ImageEffects.cs: fc49fae855f2f50655b411c31423a73d -> 
+  custom:scripting/monoscript/fileName/Ball.cs: c405c7c486f8c791b69a838bad56931d -> 
+  custom:scripting/monoscript/fileName/WarpTextExample.cs: 2663459c266363641981c7d17b698d7f -> 
+  custom:scripting/monoscript/fileName/PostEffectsBase.cs: 6aabc5a6e1a831a9196622d2796540be -> 
   custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/HealthBar.cs: e02a13ebfecfefd70171c0594cf22391 -> 
+  custom:scripting/monoscript/fileName/AICharacterControl.cs: a5d08ec5093687a59363b0e1fe1fbbf8 -> 
+  custom:scripting/monoscript/fileName/DynamicShadowSettings.cs: 325596f0baf85da0d965fea14b11bb8b -> 
+  custom:scripting/monoscript/fileName/CurveControlledBob.cs: 90e86216bd5f53d9fe3087ae7bf389f1 -> 
+  custom:scripting/monoscript/fileName/AutoMobileShaderSwitch.cs: e55bd94d791efdfd8def29f52dc8447b -> 
+  custom:scripting/monoscript/fileName/UserInfo.cs: 0c2251584585732aa595acbed681ec39 -> 
+  custom:scripting/monoscript/fileName/ColorCorrectionLookup.cs: cdade6b297f1c116727fa6035591313f -> 
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Triangles.cs: 64f7a3839fbac059155d5ec1d8597e9c -> 
+  custom:scripting/monoscript/fileName/ContrastStretch.cs: 606dc0496a32ea6e71f97dc962793c28 -> 
+  custom:scripting/monoscript/fileName/StandaloneInput.cs: 8cfda68f78df3b7dc3040fdb29fc2cd1 -> 
+  custom:scripting/monoscript/fileName/ChatController.cs: 876d5ccae6e345dd5d9450eb0a748f16 -> 
+  custom:scripting/monoscript/fileName/TextMeshSpawner.cs: 76f28e2ddb031571e6ec62b018f65fa8 -> 
+  custom:scripting/monoscript/fileName/USBCHECK.cs: 20ecb4218647338dfe6b9a0121cf3beb -> 
+  custom:scripting/monoscript/fileName/MouseMovesItems.cs: e165ac7f74298b6740af5e99e2a71506 -> 
+  custom:scripting/monoscript/fileName/TeleType.cs: 31fa97821c4c70f157ec81d507aa6b62 -> 
+  custom:scripting/monoscript/fileName/EnemyBookHead.cs: 5ee52c07ac21a3bcef7409ee7c10f1d1 -> 
+  custom:scripting/monoscript/fileName/Benchmark04.cs: 32220b148620e52aa81c13a114862bf4 -> 
+  custom:scripting/monoscript/fileName/FOVKick.cs: c76896347c620802192507d0a92d05a3 -> 
+  custom:scripting/monoscript/fileName/TimedObjectActivator.cs: 25495e754d3d277d8e763837b64bf2ba -> 
+  custom:scripting/monoscript/fileName/ClosetDoor.cs: 5c0f9206401a2bd3e0745561a3649e5b -> 
+  custom:scripting/monoscript/fileName/Escape.cs: 503082f7e18f569c740c34969eadadeb -> 
+  custom:scripting/monoscript/fileName/PlayerInputController.cs: 9dffa01c0adbb613a54447b3537cac38 -> 
+  custom:scripting/monoscript/fileName/WaypointProgressTracker.cs: fb6262ee8f74f6dc3758b58e5ee18955 -> 
+  custom:scripting/monoscript/fileName/ThirdPersonCharacter.cs: 2bfe283923f980e64bf82c42cd6513ec -> 
+  custom:scripting/monoscript/fileName/Door.cs: 4f7892c4028c5d4bdd4b58679380e0a4 -> 01c9614e23978f328b71d053948f991a
+  custom:scripting/monoscript/fileName/SimpleMouseRotator.cs: 9ea47a4777a3a00316a90faf1a6f313d -> 
   custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:scripting/monoscript/fileName/ContrastEnhance.cs: 25207a33818c5454fd86fad73189b2cd -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:scripting/monoscript/fileName/TMP_PhoneNumberValidator.cs: 7c3049f481e464c6a9a15dee56c3126f -> 
+  custom:scripting/monoscript/fileName/CameraOpenDoor.cs: 3e5174df6222edc4071a5aa3cfdab188 -> 
+  custom:scripting/monoscript/fileName/FlashlightToggle.cs: c5620d2916d4c92701121743d547c56b -> 
+  custom:scripting/monoscript/fileName/CameraRefocus.cs: 2faffd18ce20d29396a11c7a26d00f0b -> 
+  custom:scripting/monoscript/fileName/PostEffectsHelper.cs: 5b0aade5ee85030099a328bfa56e17eb -> 
+  custom:scripting/monoscript/fileName/Drawer.cs: ccb6f0440bdb6aca29a0c7c7ee9c01ff -> 
   custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:scripting/monoscript/fileName/TimedObjectDestructor.cs: bce1a4bbcc9460c16af8171b93c92130 -> 
   custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/CreaseShading.cs: 5b17bf81bff982a9605309492401c574 -> 
+  custom:scripting/monoscript/fileName/EnvMapAnimator.cs: 1b4f61c17e4b7283c3ac351aacff9d26 -> 
+  custom:scripting/monoscript/fileName/MobileControlRig.cs: 3524fff44c8126dee0548f9b6ab19d53 -> 
+  custom:scripting/monoscript/fileName/ShaderPropAnimator.cs: 55ce425812446482e623ff2695c94cb2 -> 
+  custom:scripting/monoscript/fileName/EnemyAnkleGrabber.cs: 14aeea2f656d46505ba95fea5229a562 -> 
+  custom:scripting/monoscript/fileName/RolDestroy.cs: b2430375f6234c286b7e193a3505b8c5 -> 
+  custom:scripting/monoscript/fileName/Antialiasing.cs: bec6c7367bf7f3b527b25907b25d4102 -> 
+  custom:scripting/monoscript/fileName/ScoreDisplay.cs: 7863cc51e0fb8cfa3f34add9f772adb3 -> 
+  custom:scripting/monoscript/fileName/SepiaTone.cs: 67c7b044a145b042dba91a1a8d54f9f4 -> 
+  custom:scripting/monoscript/fileName/ImageEffectBase.cs: 6d460e3d17a4175e44411c6923e62aed -> 
+  custom:scripting/monoscript/fileName/SimpleScript.cs: 454caab0c6c050f29b39d82e1d66d0fa -> 
+  custom:scripting/monoscript/fileName/DoorTeleport.cs: 691b74f44d3d09e2e48900b0653d92c6 -> 
+  custom:scripting/monoscript/fileName/NoiseAndGrain.cs: f4f7112c95c7474ffaf494b422803169 -> 
+  custom:scripting/monoscript/fileName/ObjectSpin.cs: 2b96bb2079dd7fa5108d981627a28e1e -> 
+  custom:scripting/monoscript/fileName/ParkourTeleport.cs: 10133f41fa359138d1ad401392cbf231 -> 
+  custom:scripting/monoscript/fileName/VirtualInput.cs: e290279061a851c625fb61c863776a94 -> 
+  custom:scripting/monoscript/fileName/ExtendedFlycam.cs: 15643ed9575746ceed8374f6bf01240b -> 
+  custom:scripting/monoscript/fileName/ScreenSpaceAmbientObscurance.cs: 958d0bf4e6842d24e3147fb5da01010e -> 
+  custom:scripting/monoscript/fileName/CameraController.cs: 34b6be4e23ce86dc89786916c5983296 -> 
+  custom:scripting/monoscript/fileName/TMP_TextInfoDebugTool.cs: 3f1709cfb2cc628169113a35b5e9be3f -> 
+  custom:scripting/monoscript/fileName/MouseLook.cs: 1413bf4c672f5aacfd2b457b6378eea6 -> 
+  custom:scripting/monoscript/fileName/Fisheye.cs: ad168996bfc8fa7824e22ed9b5548fe9 -> 
+  custom:scripting/monoscript/fileName/EquippedItemManager.cs: 5a64aae314ace56cfb8b9187dd01c654 -> 
+  custom:scripting/monoscript/fileName/Twirl.cs: 13260c2451d9e72af8c2f232859ba959 -> 
+  custom:scripting/monoscript/fileName/SpawnManager.cs: d0c5b56df1e276954e1de4ee4e7b5939 -> 
+  custom:scripting/monoscript/fileName/LerpControlledBob.cs: e3f8ea665fb8f4533c1004d43455b6e7 -> 
+  custom:scripting/monoscript/fileName/ScreenOverlay.cs: 8b6e368a4e3d0df848783015d0ee2b1e -> 
+  custom:scripting/monoscript/fileName/ButtonHandler.cs: e27d3f4c7505c394dad450c78dd6faf1 -> 
+  custom:scripting/monoscript/fileName/TMP_TextSelector_A.cs: 347309a09d56e367b188a6978f75b424 -> 
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/Bloom.cs: 30ec2f75a877490d61737e7133343649 -> 6f6d579a64201b97313a62a1e91b3575
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/BasicMotionsAnimatorStateChanger.cs: 8ee9a9d093deb4b5034fbdfdf8fb41b0 -> 
+  custom:scripting/monoscript/fileName/VertexJitter.cs: d27eb5498e48714a66aece98da065133 -> 
+  custom:scripting/monoscript/fileName/EnemyMutated.cs: 868277d5944ec93314e29b3c72b565d6 -> 
+  custom:scripting/monoscript/fileName/Vortex.cs: d2f7738ed789b7a977f000ffd0cf8890 -> 
+  custom:scripting/monoscript/fileName/AxisTouchButton.cs: 31be56f36d53422fd33aa4f9a14e630a -> 
+  custom:scripting/monoscript/fileName/HiddenKey.cs: 3158bb716920e3f06702a32f7a7b7f3b -> 
+  custom:scripting/monoscript/fileName/DoorTeleportOpen.cs: 2fab03f9e0dce9e39e3e3140dd9baa4c -> 
+  custom:scripting/monoscript/fileName/CameraFacing.cs: 0b8196571bb8da57c71abf6060104bf6 -> 
+  custom:scripting/monoscript/fileName/FollowTarget.cs: 93be4c02dc2bee8af48e06a6c7c2e042 -> 
+  custom:scripting/monoscript/fileName/TextConsoleSimulator.cs: 33fc311abb20b5b0ed8f00e4d86b574e -> 
+  custom:scripting/monoscript/fileName/VertexColorCycler.cs: 5f984ca91cf3609293aecc6bc5641572 -> 
+  custom:scripting/monoscript/fileName/TMP_FrameRateCounter.cs: 46f655df8cb483ac5958307137b1585a -> 
+  custom:scripting/monoscript/fileName/VertexShakeB.cs: a6f78c4fcda1a29a1a1c1baefedba9e7 -> 
+  custom:scripting/monoscript/fileName/Item.cs: edfd25bbe8f561e55c7415f9c3adacfe -> 
+  custom:scripting/monoscript/fileName/InventoryItemController.cs: 8a94c8c9fee7dc011b7b2bd8862c2546 -> 
+  custom:scripting/monoscript/fileName/TMP_UiFrameRateCounter.cs: b01021aea19247f14a98ab338907956a -> 
+  custom:scripting/monoscript/fileName/CloseCanvas.cs: 2584c15fb26b739c2954499b732ab244 -> 
+  custom:scripting/monoscript/fileName/FirstPersonController.cs: 4fa5841f7a7dfdfcf291c3718c4ae3a2 -> 
+  custom:scripting/monoscript/fileName/DepthOfField.cs: 210e30d8b82aad5f2e723712ae5c23ab -> d62178d8b5619f59fcdd6d24617ef5fd
+  custom:scripting/monoscript/fileName/Joystick.cs: 11d088fac7031e9ed548317b75c607b4 -> 1a1d9a9cba7940fed9939f7306abee3f
+  custom:scripting/monoscript/fileName/BallUserControl.cs: 9743cadab53965ad5e73baf18187d830 -> 
+  custom:scripting/monoscript/fileName/Movement.cs: 1bc12bc9370e727baa54e145392501fb -> 
+  custom:scripting/monoscript/fileName/TMPro_InstructionOverlay.cs: b626d2270e6ebd5c4311585c18b58d8d -> 
+  custom:scripting/monoscript/fileName/TMP_DigitValidator.cs: ac02af96215ae3951a3cce9e1a8c6085 -> 
+  custom:scripting/monoscript/fileName/PlayerMovement.cs: 42480eed24e61f9d7e7e895933644f96 -> 
+  custom:scripting/monoscript/fileName/BloomOptimized.cs: deef391a4062215fa64b13290b34b1e5 -> 
+  custom:scripting/monoscript/fileName/BloomAndFlares.cs: 8afb5ea14b913734370925506b923fb7 -> 
+  custom:scripting/monoscript/fileName/VignetteAndChromaticAberration.cs: 6f7816e6c6a96eb38e8b34a3171a3d7a -> 
+  custom:scripting/monoscript/fileName/GlobalFog.cs: cec4a166fe83b304dd694da080c37c22 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/Tonemapping.cs: c9f290b3ad74cc49f26aca1f0af02743 -> 
+  custom:scripting/monoscript/fileName/PlatformSpecificContent.cs: 5abb8e8ef7a06ce1842fe9ff26eac2dd -> 
+  custom:scripting/monoscript/fileName/FPSController.cs: bf1d1bba457f2c5fd5904be9fbc47b2f -> 
+  custom:scripting/monoscript/fileName/AutoMoveAndRotate.cs: ca0e96f72f32239308122375a052b980 -> 
+  custom:scripting/monoscript/fileName/Benchmark01_UGUI.cs: 6148cfe2627b7708298f301788144139 -> 
+  custom:scripting/monoscript/fileName/EdgeDetection.cs: 7e270773de6bd808e57f1eb909c3207a -> 
+  custom:scripting/monoscript/fileName/AnkleGrabberExample.cs: a5fbd4e75a3111d54f680861705af930 -> 
+  custom:scripting/monoscript/fileName/BasicMotionsAnimatorParameterRemover.cs: 994ea5fbbfab08e27f98923bbac5b9ab -> 
+  custom:scripting/monoscript/fileName/ColorCorrectionCurves.cs: 0fe9ce599982e40ac8aba010733d7bdc -> 
+  custom:scripting/monoscript/fileName/ThirdPersonUserControl.cs: e55dad970175c9485c04ecbb87a3ac80 -> 
+  custom:scripting/monoscript/fileName/HeadBob.cs: fde5c6524c06827dce9419ce121f4f6b -> 
+  custom:scripting/monoscript/fileName/ObjectResetter.cs: 037abf2de53ab0026436c32f7a941658 -> 
+  custom:scripting/monoscript/fileName/Benchmark03.cs: 17cc87e0529ac71d909a946afb47a274 -> 
+  custom:scripting/monoscript/fileName/MenuLogic.cs: a5a62ed587100c96f6ae48141c0b3637 -> 
+  custom:scripting/monoscript/fileName/ColorCorrectionRamp.cs: a7e8fab02fd9ee3f41f3660b4752114a -> 
+  custom:scripting/monoscript/fileName/NoiseAndScratches.cs: e0c1886d5a6b335ec4861c2068c91d03 -> 
+  custom:scripting/monoscript/fileName/PlayerStats.cs: b06cbe57aa4f0acb313536805311dc61 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 547777.762350 seconds.
+  path: Assets/Physics.physicMaterial
+  artifactKey: Guid(9ad77f2b8edf490429caa4b45097ca81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Physics.physicMaterial using Guid(9ad77f2b8edf490429caa4b45097ca81) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'a5044187c1e24608d3fe132a29a15f70') in 0.010701 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.244751 seconds.
+  path: Assets/Scripts
+  artifactKey: Guid(f120d3dedd28b4f45a8c74c33080c83b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts using Guid(f120d3dedd28b4f45a8c74c33080c83b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'af84ee8594fa6a306bc360ed13f63e55') in 0.000508 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 2.843775 seconds.
+  path: Assets/Scripts/PlayerControls.cs
+  artifactKey: Guid(537d69cd1029a3c41a0a4bb656617a7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/PlayerControls.cs using Guid(537d69cd1029a3c41a0a4bb656617a7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '4a91e3190477176c00d4a5dfde333572') in 0.000531 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
 ========================================================================
 Received Prepare
 Caller must complete domain reload
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.963 seconds
-Native extension for WindowsStandalone target not found
-Error saving file Library/StateCache/LayerSettings/9e/9ecc5c3c162a7aba29bafa64c8b94b7c.json. Error: System.IO.IOException: Sharing violation on path C:\Fractured_Realities\Fractured_Realities_Unity\Library\StateCache\LayerSettings\9e\9ecc5c3c162a7aba29bafa64c8b94b7c.json
-  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x0019e] in <8ce0bd04a7a04b4b9395538239d3fdd8>:0 
-  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.IO.FileOptions options) [0x00000] in <8ce0bd04a7a04b4b9395538239d3fdd8>:0 
-  at (wrapper remoting-invoke-with-check) System.IO.FileStream..ctor(string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,int,System.IO.FileOptions)
-  at System.IO.StreamWriter..ctor (System.String path, System.Boolean append, System.Text.Encoding encoding, System.Int32 bufferSize) [0x00055] in <8ce0bd04a7a04b4b9395538239d3fdd8>:0 
-  at System.IO.StreamWriter..ctor (System.String path, System.Boolean append, System.Text.Encoding encoding) [0x00000] in <8ce0bd04a7a04b4b9395538239d3fdd8>:0 
-  at (wrapper remoting-invoke-with-check) System.IO.StreamWriter..ctor(string,bool,System.Text.Encoding)
-  at System.IO.File.WriteAllText (System.String path, System.String contents, System.Text.Encoding encoding) [0x00034] in <8ce0bd04a7a04b4b9395538239d3fdd8>:0 
-  at UnityEditor.StateCache`1[T].SetState (UnityEngine.Hash128 key, T obj) [0x0004b] in <e0a2c8363ef54a6393fed120beebdb7a>:0 
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:LogError (object)
-UnityEditor.StateCache`1<UnityEditor.Tools/LayerSettings>:SetState (UnityEngine.Hash128,UnityEditor.Tools/LayerSettings)
-UnityEditor.Tools:set_lockedLayers (int)
-UnityEditor.Tools:OnEnable ()
-UnityEngine.ScriptableObject:CreateInstance (System.Type)
-UnityEngine.ScriptableObject:CreateInstance<UnityEditor.Tools> ()
-UnityEditor.Tools:get_get ()
-UnityEditor.Tools:get_visibleLayers ()
-UnityEditor.Animations.Rigging.BoneRendererUtils:.cctor () (at ./Library/PackageCache/com.unity.animation.rigging@1.2.1/Editor/Utils/BoneRendererUtils.cs:121)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-(Filename: ./Library/PackageCache/com.unity.animation.rigging@1.2.1/Editor/Utils/BoneRendererUtils.cs Line: 121)
-
-[MODES] ModeService[none].Initialize
-[MODES] ModeService[none].LoadModes
-[MODES] Loading mode Default (0) for mode-current-id-Fractured_Realities_Unity
-Error saving file Library/StateCache/LayerSettings/9e/9ecc5c3c162a7aba29bafa64c8b94b7c.json. Error: System.IO.IOException: Sharing violation on path C:\Fractured_Realities\Fractured_Realities_Unity\Library\StateCache\LayerSettings\9e\9ecc5c3c162a7aba29bafa64c8b94b7c.json
-  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x0019e] in <8ce0bd04a7a04b4b9395538239d3fdd8>:0 
-  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.IO.FileOptions options) [0x00000] in <8ce0bd04a7a04b4b9395538239d3fdd8>:0 
-  at (wrapper remoting-invoke-with-check) System.IO.FileStream..ctor(string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,int,System.IO.FileOptions)
-  at System.IO.StreamWriter..ctor (System.String path, System.Boolean append, System.Text.Encoding encoding, System.Int32 bufferSize) [0x00055] in <8ce0bd04a7a04b4b9395538239d3fdd8>:0 
-  at System.IO.StreamWriter..ctor (System.String path, System.Boolean append, System.Text.Encoding encoding) [0x00000] in <8ce0bd04a7a04b4b9395538239d3fdd8>:0 
-  at (wrapper remoting-invoke-with-check) System.IO.StreamWriter..ctor(string,bool,System.Text.Encoding)
-  at System.IO.File.WriteAllText (System.String path, System.String contents, System.Text.Encoding encoding) [0x00034] in <8ce0bd04a7a04b4b9395538239d3fdd8>:0 
-  at UnityEditor.StateCache`1[T].SetState (UnityEngine.Hash128 key, T obj) [0x0004b] in <e0a2c8363ef54a6393fed120beebdb7a>:0 
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:LogError (object)
-UnityEditor.StateCache`1<UnityEditor.Tools/LayerSettings>:SetState (UnityEngine.Hash128,UnityEditor.Tools/LayerSettings)
-UnityEditor.Tools:set_lockedLayers (int)
-UnityEditor.Tools:OnEnable ()
-
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.842 seconds
-Domain Reload Profiling: 2779ms
-	BeginReloadAssembly (262ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (4ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (34ms)
-	RebuildCommonClasses (38ms)
-	RebuildNativeTypeToScriptingClass (13ms)
-	initialDomainReloadingComplete (62ms)
-	LoadAllAssembliesAndSetupDomain (562ms)
-		LoadAssemblies (689ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (39ms)
-			TypeCache.Refresh (13ms)
-				TypeCache.ScanAssembly (2ms)
-			ScanForSourceGeneratedMonoScriptInfo (14ms)
-			ResolveRequiredComponents (11ms)
-	FinalizeReload (1843ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (536ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (10ms)
-			SetLoadedEditorAssemblies (2ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (113ms)
-			ProcessInitializeOnLoadAttributes (373ms)
-			ProcessInitializeOnLoadMethodAttributes (16ms)
-			AfterProcessingInitializeOnLoad (22ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (12ms)
-Refreshing native plugins compatible for Editor in 21.42 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4975 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 35 unused Assets / (2.2 MB). Loaded Objects now: 5723.
-Memory consumption went from 196.3 MB to 194.1 MB.
-Total: 7.423100 ms (FindLiveObjects: 0.939800 ms CreateObjectMapping: 0.379300 ms MarkObjects: 5.264600 ms  DeleteObjects: 0.838400 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Caller must complete domain reload
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.723 seconds
-Native extension for WindowsStandalone target not found
-[MODES] ModeService[none].Initialize
-[MODES] ModeService[none].LoadModes
-[MODES] Loading mode Default (0) for mode-current-id-Fractured_Realities_Unity
-Error saving file Library/StateCache/LayerSettings/9e/9ecc5c3c162a7aba29bafa64c8b94b7c.json. Error: System.IO.IOException: Sharing violation on path C:\Fractured_Realities\Fractured_Realities_Unity\Library\StateCache\LayerSettings\9e\9ecc5c3c162a7aba29bafa64c8b94b7c.json
-  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x0019e] in <8ce0bd04a7a04b4b9395538239d3fdd8>:0 
-  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.IO.FileOptions options) [0x00000] in <8ce0bd04a7a04b4b9395538239d3fdd8>:0 
-  at (wrapper remoting-invoke-with-check) System.IO.FileStream..ctor(string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,int,System.IO.FileOptions)
-  at System.IO.StreamWriter..ctor (System.String path, System.Boolean append, System.Text.Encoding encoding, System.Int32 bufferSize) [0x00055] in <8ce0bd04a7a04b4b9395538239d3fdd8>:0 
-  at System.IO.StreamWriter..ctor (System.String path, System.Boolean append, System.Text.Encoding encoding) [0x00000] in <8ce0bd04a7a04b4b9395538239d3fdd8>:0 
-  at (wrapper remoting-invoke-with-check) System.IO.StreamWriter..ctor(string,bool,System.Text.Encoding)
-  at System.IO.File.WriteAllText (System.String path, System.String contents, System.Text.Encoding encoding) [0x00034] in <8ce0bd04a7a04b4b9395538239d3fdd8>:0 
-  at UnityEditor.StateCache`1[T].SetState (UnityEngine.Hash128 key, T obj) [0x0004b] in <e0a2c8363ef54a6393fed120beebdb7a>:0 
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:LogError (object)
-UnityEditor.StateCache`1<UnityEditor.Tools/LayerSettings>:SetState (UnityEngine.Hash128,UnityEditor.Tools/LayerSettings)
-UnityEditor.Tools:set_lockedLayers (int)
-UnityEditor.Tools:OnEnable ()
-
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.892 seconds
-Domain Reload Profiling: 2594ms
-	BeginReloadAssembly (213ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (4ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (35ms)
-	RebuildCommonClasses (29ms)
-	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (46ms)
-	LoadAllAssembliesAndSetupDomain (405ms)
-		LoadAssemblies (519ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (14ms)
-			TypeCache.Refresh (5ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (7ms)
-	FinalizeReload (1892ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (739ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (12ms)
-			SetLoadedEditorAssemblies (3ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (153ms)
-			ProcessInitializeOnLoadAttributes (518ms)
-			ProcessInitializeOnLoadMethodAttributes (20ms)
-			AfterProcessingInitializeOnLoad (32ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (18ms)
-Refreshing native plugins compatible for Editor in 32.29 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4975 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 35 unused Assets / (2.2 MB). Loaded Objects now: 5739.
-Memory consumption went from 196.4 MB to 194.1 MB.
-Total: 8.216300 ms (FindLiveObjects: 0.777300 ms CreateObjectMapping: 0.294200 ms MarkObjects: 5.834700 ms  DeleteObjects: 1.308800 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Caller must complete domain reload
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.919 seconds
-Native extension for WindowsStandalone target not found
-[MODES] ModeService[none].Initialize
-[MODES] ModeService[none].LoadModes
-[MODES] Loading mode Default (0) for mode-current-id-Fractured_Realities_Unity
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.771 seconds
-Domain Reload Profiling: 2663ms
-	BeginReloadAssembly (268ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (6ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (38ms)
-	RebuildCommonClasses (35ms)
-	RebuildNativeTypeToScriptingClass (11ms)
-	initialDomainReloadingComplete (68ms)
-	LoadAllAssembliesAndSetupDomain (510ms)
-		LoadAssemblies (645ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (33ms)
-			TypeCache.Refresh (10ms)
-				TypeCache.ScanAssembly (2ms)
-			ScanForSourceGeneratedMonoScriptInfo (13ms)
-			ResolveRequiredComponents (8ms)
-	FinalizeReload (1772ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (573ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (8ms)
-			SetLoadedEditorAssemblies (2ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (116ms)
-			ProcessInitializeOnLoadAttributes (407ms)
-			ProcessInitializeOnLoadMethodAttributes (16ms)
-			AfterProcessingInitializeOnLoad (23ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (13ms)
-Refreshing native plugins compatible for Editor in 22.50 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4975 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 35 unused Assets / (2.2 MB). Loaded Objects now: 5755.
-Memory consumption went from 196.4 MB to 194.2 MB.
-Total: 6.492900 ms (FindLiveObjects: 0.714600 ms CreateObjectMapping: 0.430100 ms MarkObjects: 4.567900 ms  DeleteObjects: 0.779000 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Caller must complete domain reload
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.712 seconds
+- Loaded All Assemblies, in  0.480 seconds
 Native extension for WindowsStandalone target not found
 Error saving file Library/StateCache/LayerSettings/9e/9ecc5c3c162a7aba29bafa64c8b94b7c.json. Error: System.IO.IOException: Sharing violation on path C:\Fractured_Realities\Fractured_Realities_Unity\Library\StateCache\LayerSettings\9e\9ecc5c3c162a7aba29bafa64c8b94b7c.json
   at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x0019e] in <8ce0bd04a7a04b4b9395538239d3fdd8>:0 
@@ -966,427 +399,261 @@ UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
 [MODES] ModeService[none].LoadModes
 [MODES] Loading mode Default (0) for mode-current-id-Fractured_Realities_Unity
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.945 seconds
-Domain Reload Profiling: 2640ms
-	BeginReloadAssembly (205ms)
+- Finished resetting the current domain, in  1.047 seconds
+Domain Reload Profiling: 1522ms
+	BeginReloadAssembly (147ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (5ms)
+		DisableScriptedObjects (4ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (33ms)
-	RebuildCommonClasses (29ms)
-	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (48ms)
-	LoadAllAssembliesAndSetupDomain (403ms)
-		LoadAssemblies (510ms)
+	RebuildCommonClasses (31ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (29ms)
+	LoadAllAssembliesAndSetupDomain (258ms)
+		LoadAssemblies (303ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (17ms)
-			TypeCache.Refresh (6ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
+		AnalyzeDomain (32ms)
+			TypeCache.Refresh (10ms)
+				TypeCache.ScanAssembly (2ms)
+			ScanForSourceGeneratedMonoScriptInfo (12ms)
 			ResolveRequiredComponents (9ms)
-	FinalizeReload (1946ms)
+	FinalizeReload (1047ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (678ms)
+		SetupLoadedEditorAssemblies (517ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (10ms)
+			InitializePlatformSupportModulesInManaged (7ms)
 			SetLoadedEditorAssemblies (3ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (132ms)
-			ProcessInitializeOnLoadAttributes (480ms)
-			ProcessInitializeOnLoadMethodAttributes (24ms)
-			AfterProcessingInitializeOnLoad (29ms)
+			BeforeProcessingInitializeOnLoad (77ms)
+			ProcessInitializeOnLoadAttributes (402ms)
+			ProcessInitializeOnLoadMethodAttributes (19ms)
+			AfterProcessingInitializeOnLoad (10ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (20ms)
-Refreshing native plugins compatible for Editor in 26.83 ms, found 4 plugins.
+		AwakeInstancesAfterBackupRestoration (9ms)
+Refreshing native plugins compatible for Editor in 5.50 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4975 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 35 unused Assets / (2.2 MB). Loaded Objects now: 5771.
-Memory consumption went from 196.3 MB to 194.1 MB.
-Total: 7.322500 ms (FindLiveObjects: 0.673900 ms CreateObjectMapping: 0.362300 ms MarkObjects: 5.488800 ms  DeleteObjects: 0.796400 ms)
+Unloading 5116 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 178 unused Assets / (14.5 MB). Loaded Objects now: 5449.
+Memory consumption went from 208.3 MB to 193.9 MB.
+Total: 7.250700 ms (FindLiveObjects: 0.401700 ms CreateObjectMapping: 0.132400 ms MarkObjects: 2.616600 ms  DeleteObjects: 4.099100 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
+  custom:scripting/monoscript/fileName/DBConnection.cs: 55058e9dd19f080bc09ee218d648f730 -> 
+  custom:scripting/monoscript/fileName/InventoryManager.cs: a0a6660c0d681c130a6b50f78367ca45 -> 
+  custom:scripting/monoscript/fileName/DepthOfFieldDeprecated.cs: 8700a90d2d763e9c01f08a0cd128cca8 -> 
+  custom:scripting/monoscript/fileName/MobileInput.cs: dfa415439f330b7749adb2ef7567c3e4 -> 
+  custom:scripting/monoscript/fileName/InputAxisScrollbar.cs: ce23cb16d4e46181bfcdc67e0abad940 -> 
+  custom:scripting/monoscript/fileName/CameraMotionBlur.cs: 458c2b6f90eeea041921d89083a79e55 -> 
+  custom:scripting/monoscript/fileName/LagaeMonster.cs: 7b3c139e2184540df32124eb6bdbfe8c -> 
+  custom:scripting/monoscript/fileName/TiltShift.cs: 13ff1d7342528fc14a2e194c2bdc09fb -> 
+  custom:scripting/monoscript/fileName/SkewTextExample.cs: c142d02d70a129e0533975f7c2f96956 -> 
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/fileName/ActivateTrigger.cs: c94789aa9e8004cad1e54b531012d83a -> 
+  custom:scripting/monoscript/fileName/TMP_TextEventHandler.cs: f5cd9d5a43bfefc8f4fec80e6de896a4 -> 
+  custom:scripting/monoscript/fileName/TextMeshProFloatingText.cs: 92608fa4a6315cd0786d82205e77b697 -> 
+  custom:scripting/monoscript/fileName/WaypointCircuit.cs: 54e952fb6b763eca02bad0728655deb7 -> 
+  custom:scripting/monoscript/fileName/ParticleSystemDestroyer.cs: e9db870dc4c33b83d7965fdc6fe482f5 -> 
+  custom:scripting/monoscript/fileName/ScreenSpaceAmbientOcclusion.cs: 42eb6963a5f738a978938eb937f58d78 -> 
+  custom:scripting/monoscript/fileName/BasicMotionsCamera.cs: a61d861a0019726c63fc091273136ff4 -> 
+  custom:scripting/monoscript/fileName/CrossPlatformInputManager.cs: a6a27da3c2613aab4b889711813fe29f -> 
+  custom:scripting/monoscript/fileName/VertexZoom.cs: 650ab1e81d40126e3edcf737cce646e4 -> 
+  custom:scripting/monoscript/fileName/DragRigidbody.cs: af6487145851a9f92f2704a8e0948d6e -> 
+  custom:scripting/monoscript/fileName/VertexShakeA.cs: 63ec564c588058369499638dd899e05b -> 
+  custom:scripting/monoscript/fileName/TMP_ExampleScript_01.cs: a9d4be556104ff54e7d240529b3e01dc -> 
+  custom:scripting/monoscript/fileName/BasicMotionsCharacterController.cs: c62cac5ff2d0d53e17a9cec97112302f -> 
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/SunShafts.cs: abee30526487200fa16387df850e7daf -> 
+  custom:scripting/monoscript/fileName/TMP_TextEventCheck.cs: 13505d917eab5868c435e0c2986dadfa -> 
+  custom:scripting/monoscript/fileName/ItemPickup.cs: 26f584636922e50374ad60489f7e1ffa -> 
+  custom:scripting/monoscript/fileName/TMP_TextSelector_B.cs: ba2be21a7486d37b1011342977a2e49d -> 
+  custom:scripting/monoscript/fileName/MotionBlur.cs: 92b2659b88ad4aa26fb8c384c6435693 -> 823914e335803785a19e5990c6ab2911
+  custom:scripting/monoscript/fileName/Benchmark01.cs: 2d3e2cd961730ab95f139a49a673bace -> 
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/Grayscale.cs: 87671e23fd2948061f63e16eb704f3a3 -> 
+  custom:scripting/monoscript/fileName/TouchPad.cs: 71af049078ebd826d8919ba90a4412d3 -> 
+  custom:scripting/monoscript/fileName/GuessingGame.cs: 26233c5d2edf0d78cd5ad86cade24a22 -> 
+  custom:scripting/monoscript/fileName/TiltInput.cs: 298cab2ca5ef1ae659d7256d2dbeb1ed -> 
+  custom:scripting/monoscript/fileName/PlayerControls.cs: 849ed7f5b11c9db237ef61b01c5a5104 -> 
+  custom:scripting/monoscript/fileName/PlayerCam.cs: 2baf756480d7a3732f43ac30c19a37b9 -> 
+  custom:scripting/monoscript/fileName/BlurOptimized.cs: a99dff34286593c12b0fab92e7c0da68 -> 
+  custom:scripting/monoscript/fileName/Benchmark02.cs: 5640963252ce70910e726415f869ced6 -> 
+  custom:scripting/monoscript/fileName/Quads.cs: 2f24050aded65dda899533ba7849a43c -> 
+  custom:scripting/monoscript/fileName/Blur.cs: 16b33e375f19895ec61239c77165934f -> 
+  custom:scripting/monoscript/fileName/RigidbodyFirstPersonController.cs: 303e518c916e9011e00a96a1504f3543 -> 
+  custom:scripting/monoscript/fileName/DropdownSample.cs: 0a92251794e5f10400149f96c3c59e5d -> 
+  custom:scripting/monoscript/fileName/SmoothFollow.cs: a07fd7df12bc7fba739834867140f167 -> 
+  custom:scripting/monoscript/fileName/Luik.cs: 7aafc2df48fa925c3ef2b2d5b0ead9fa -> 
+  custom:scripting/monoscript/fileName/SpawnBarrels.cs: 5ad2569e83e3770722a7c51fb3a01faa -> 
+  custom:scripting/monoscript/fileName/ImageEffects.cs: fc49fae855f2f50655b411c31423a73d -> 
+  custom:scripting/monoscript/fileName/Ball.cs: c405c7c486f8c791b69a838bad56931d -> 
+  custom:scripting/monoscript/fileName/WarpTextExample.cs: 2663459c266363641981c7d17b698d7f -> 
+  custom:scripting/monoscript/fileName/PostEffectsBase.cs: 6aabc5a6e1a831a9196622d2796540be -> 
   custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:scripting/monoscript/fileName/HealthBar.cs: e02a13ebfecfefd70171c0594cf22391 -> 
+  custom:scripting/monoscript/fileName/AICharacterControl.cs: a5d08ec5093687a59363b0e1fe1fbbf8 -> 
+  custom:scripting/monoscript/fileName/DynamicShadowSettings.cs: 325596f0baf85da0d965fea14b11bb8b -> 
+  custom:scripting/monoscript/fileName/CurveControlledBob.cs: 90e86216bd5f53d9fe3087ae7bf389f1 -> 
+  custom:scripting/monoscript/fileName/AutoMobileShaderSwitch.cs: e55bd94d791efdfd8def29f52dc8447b -> 
+  custom:scripting/monoscript/fileName/UserInfo.cs: 0c2251584585732aa595acbed681ec39 -> 
+  custom:scripting/monoscript/fileName/ColorCorrectionLookup.cs: cdade6b297f1c116727fa6035591313f -> 
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/Triangles.cs: 64f7a3839fbac059155d5ec1d8597e9c -> 
+  custom:scripting/monoscript/fileName/ContrastStretch.cs: 606dc0496a32ea6e71f97dc962793c28 -> 
+  custom:scripting/monoscript/fileName/StandaloneInput.cs: 8cfda68f78df3b7dc3040fdb29fc2cd1 -> 
+  custom:scripting/monoscript/fileName/ChatController.cs: 876d5ccae6e345dd5d9450eb0a748f16 -> 
+  custom:scripting/monoscript/fileName/TextMeshSpawner.cs: 76f28e2ddb031571e6ec62b018f65fa8 -> 
+  custom:scripting/monoscript/fileName/USBCHECK.cs: 20ecb4218647338dfe6b9a0121cf3beb -> 
+  custom:scripting/monoscript/fileName/MouseMovesItems.cs: e165ac7f74298b6740af5e99e2a71506 -> 
+  custom:scripting/monoscript/fileName/TeleType.cs: 31fa97821c4c70f157ec81d507aa6b62 -> 
+  custom:scripting/monoscript/fileName/EnemyBookHead.cs: 5ee52c07ac21a3bcef7409ee7c10f1d1 -> 
+  custom:scripting/monoscript/fileName/Benchmark04.cs: 32220b148620e52aa81c13a114862bf4 -> 
+  custom:scripting/monoscript/fileName/FOVKick.cs: c76896347c620802192507d0a92d05a3 -> 
+  custom:scripting/monoscript/fileName/TimedObjectActivator.cs: 25495e754d3d277d8e763837b64bf2ba -> 
+  custom:scripting/monoscript/fileName/ClosetDoor.cs: 5c0f9206401a2bd3e0745561a3649e5b -> 
+  custom:scripting/monoscript/fileName/Escape.cs: 503082f7e18f569c740c34969eadadeb -> 
+  custom:scripting/monoscript/fileName/PlayerInputController.cs: 9dffa01c0adbb613a54447b3537cac38 -> 
+  custom:scripting/monoscript/fileName/WaypointProgressTracker.cs: fb6262ee8f74f6dc3758b58e5ee18955 -> 
+  custom:scripting/monoscript/fileName/ThirdPersonCharacter.cs: 2bfe283923f980e64bf82c42cd6513ec -> 
+  custom:scripting/monoscript/fileName/Door.cs: 4f7892c4028c5d4bdd4b58679380e0a4 -> 01c9614e23978f328b71d053948f991a
+  custom:scripting/monoscript/fileName/SimpleMouseRotator.cs: 9ea47a4777a3a00316a90faf1a6f313d -> 
   custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:scripting/monoscript/fileName/ContrastEnhance.cs: 25207a33818c5454fd86fad73189b2cd -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:scripting/monoscript/fileName/TMP_PhoneNumberValidator.cs: 7c3049f481e464c6a9a15dee56c3126f -> 
+  custom:scripting/monoscript/fileName/CameraOpenDoor.cs: 3e5174df6222edc4071a5aa3cfdab188 -> 
+  custom:scripting/monoscript/fileName/FlashlightToggle.cs: c5620d2916d4c92701121743d547c56b -> 
+  custom:scripting/monoscript/fileName/CameraRefocus.cs: 2faffd18ce20d29396a11c7a26d00f0b -> 
+  custom:scripting/monoscript/fileName/PostEffectsHelper.cs: 5b0aade5ee85030099a328bfa56e17eb -> 
+  custom:scripting/monoscript/fileName/Drawer.cs: ccb6f0440bdb6aca29a0c7c7ee9c01ff -> 
   custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:scripting/monoscript/fileName/TimedObjectDestructor.cs: bce1a4bbcc9460c16af8171b93c92130 -> 
   custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/CreaseShading.cs: 5b17bf81bff982a9605309492401c574 -> 
+  custom:scripting/monoscript/fileName/EnvMapAnimator.cs: 1b4f61c17e4b7283c3ac351aacff9d26 -> 
+  custom:scripting/monoscript/fileName/MobileControlRig.cs: 3524fff44c8126dee0548f9b6ab19d53 -> 
+  custom:scripting/monoscript/fileName/ShaderPropAnimator.cs: 55ce425812446482e623ff2695c94cb2 -> 
+  custom:scripting/monoscript/fileName/EnemyAnkleGrabber.cs: 14aeea2f656d46505ba95fea5229a562 -> 
+  custom:scripting/monoscript/fileName/RolDestroy.cs: b2430375f6234c286b7e193a3505b8c5 -> 
+  custom:scripting/monoscript/fileName/Antialiasing.cs: bec6c7367bf7f3b527b25907b25d4102 -> 
+  custom:scripting/monoscript/fileName/ScoreDisplay.cs: 7863cc51e0fb8cfa3f34add9f772adb3 -> 
+  custom:scripting/monoscript/fileName/SepiaTone.cs: 67c7b044a145b042dba91a1a8d54f9f4 -> 
+  custom:scripting/monoscript/fileName/ImageEffectBase.cs: 6d460e3d17a4175e44411c6923e62aed -> 
+  custom:scripting/monoscript/fileName/SimpleScript.cs: 454caab0c6c050f29b39d82e1d66d0fa -> 
+  custom:scripting/monoscript/fileName/DoorTeleport.cs: 691b74f44d3d09e2e48900b0653d92c6 -> 
+  custom:scripting/monoscript/fileName/NoiseAndGrain.cs: f4f7112c95c7474ffaf494b422803169 -> 
+  custom:scripting/monoscript/fileName/ObjectSpin.cs: 2b96bb2079dd7fa5108d981627a28e1e -> 
+  custom:scripting/monoscript/fileName/ParkourTeleport.cs: 10133f41fa359138d1ad401392cbf231 -> 
+  custom:scripting/monoscript/fileName/VirtualInput.cs: e290279061a851c625fb61c863776a94 -> 
+  custom:scripting/monoscript/fileName/ExtendedFlycam.cs: 15643ed9575746ceed8374f6bf01240b -> 
+  custom:scripting/monoscript/fileName/ScreenSpaceAmbientObscurance.cs: 958d0bf4e6842d24e3147fb5da01010e -> 
+  custom:scripting/monoscript/fileName/CameraController.cs: 34b6be4e23ce86dc89786916c5983296 -> 
+  custom:scripting/monoscript/fileName/TMP_TextInfoDebugTool.cs: 3f1709cfb2cc628169113a35b5e9be3f -> 
+  custom:scripting/monoscript/fileName/MouseLook.cs: 1413bf4c672f5aacfd2b457b6378eea6 -> 
+  custom:scripting/monoscript/fileName/Fisheye.cs: ad168996bfc8fa7824e22ed9b5548fe9 -> 
+  custom:scripting/monoscript/fileName/EquippedItemManager.cs: 5a64aae314ace56cfb8b9187dd01c654 -> 
+  custom:scripting/monoscript/fileName/Twirl.cs: 13260c2451d9e72af8c2f232859ba959 -> 
+  custom:scripting/monoscript/fileName/SpawnManager.cs: d0c5b56df1e276954e1de4ee4e7b5939 -> 
+  custom:scripting/monoscript/fileName/LerpControlledBob.cs: e3f8ea665fb8f4533c1004d43455b6e7 -> 
+  custom:scripting/monoscript/fileName/ScreenOverlay.cs: 8b6e368a4e3d0df848783015d0ee2b1e -> 
+  custom:scripting/monoscript/fileName/ButtonHandler.cs: e27d3f4c7505c394dad450c78dd6faf1 -> 
+  custom:scripting/monoscript/fileName/TMP_TextSelector_A.cs: 347309a09d56e367b188a6978f75b424 -> 
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/Bloom.cs: 30ec2f75a877490d61737e7133343649 -> 6f6d579a64201b97313a62a1e91b3575
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/BasicMotionsAnimatorStateChanger.cs: 8ee9a9d093deb4b5034fbdfdf8fb41b0 -> 
+  custom:scripting/monoscript/fileName/VertexJitter.cs: d27eb5498e48714a66aece98da065133 -> 
+  custom:scripting/monoscript/fileName/EnemyMutated.cs: 868277d5944ec93314e29b3c72b565d6 -> 
+  custom:scripting/monoscript/fileName/Vortex.cs: d2f7738ed789b7a977f000ffd0cf8890 -> 
+  custom:scripting/monoscript/fileName/AxisTouchButton.cs: 31be56f36d53422fd33aa4f9a14e630a -> 
+  custom:scripting/monoscript/fileName/HiddenKey.cs: 3158bb716920e3f06702a32f7a7b7f3b -> 
+  custom:scripting/monoscript/fileName/DoorTeleportOpen.cs: 2fab03f9e0dce9e39e3e3140dd9baa4c -> 
+  custom:scripting/monoscript/fileName/CameraFacing.cs: 0b8196571bb8da57c71abf6060104bf6 -> 
+  custom:scripting/monoscript/fileName/FollowTarget.cs: 93be4c02dc2bee8af48e06a6c7c2e042 -> 
+  custom:scripting/monoscript/fileName/TextConsoleSimulator.cs: 33fc311abb20b5b0ed8f00e4d86b574e -> 
+  custom:scripting/monoscript/fileName/VertexColorCycler.cs: 5f984ca91cf3609293aecc6bc5641572 -> 
+  custom:scripting/monoscript/fileName/TMP_FrameRateCounter.cs: 46f655df8cb483ac5958307137b1585a -> 
+  custom:scripting/monoscript/fileName/VertexShakeB.cs: a6f78c4fcda1a29a1a1c1baefedba9e7 -> 
+  custom:scripting/monoscript/fileName/Item.cs: edfd25bbe8f561e55c7415f9c3adacfe -> 
+  custom:scripting/monoscript/fileName/InventoryItemController.cs: 8a94c8c9fee7dc011b7b2bd8862c2546 -> 
+  custom:scripting/monoscript/fileName/TMP_UiFrameRateCounter.cs: b01021aea19247f14a98ab338907956a -> 
+  custom:scripting/monoscript/fileName/CloseCanvas.cs: 2584c15fb26b739c2954499b732ab244 -> 
+  custom:scripting/monoscript/fileName/FirstPersonController.cs: 4fa5841f7a7dfdfcf291c3718c4ae3a2 -> 
+  custom:scripting/monoscript/fileName/DepthOfField.cs: 210e30d8b82aad5f2e723712ae5c23ab -> d62178d8b5619f59fcdd6d24617ef5fd
+  custom:scripting/monoscript/fileName/Joystick.cs: 11d088fac7031e9ed548317b75c607b4 -> 1a1d9a9cba7940fed9939f7306abee3f
+  custom:scripting/monoscript/fileName/BallUserControl.cs: 9743cadab53965ad5e73baf18187d830 -> 
+  custom:scripting/monoscript/fileName/Movement.cs: 1bc12bc9370e727baa54e145392501fb -> 
+  custom:scripting/monoscript/fileName/TMPro_InstructionOverlay.cs: b626d2270e6ebd5c4311585c18b58d8d -> 
+  custom:scripting/monoscript/fileName/TMP_DigitValidator.cs: ac02af96215ae3951a3cce9e1a8c6085 -> 
+  custom:scripting/monoscript/fileName/PlayerMovement.cs: 42480eed24e61f9d7e7e895933644f96 -> 
+  custom:scripting/monoscript/fileName/BloomOptimized.cs: deef391a4062215fa64b13290b34b1e5 -> 
+  custom:scripting/monoscript/fileName/BloomAndFlares.cs: 8afb5ea14b913734370925506b923fb7 -> 
+  custom:scripting/monoscript/fileName/VignetteAndChromaticAberration.cs: 6f7816e6c6a96eb38e8b34a3171a3d7a -> 
+  custom:scripting/monoscript/fileName/GlobalFog.cs: cec4a166fe83b304dd694da080c37c22 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/Tonemapping.cs: c9f290b3ad74cc49f26aca1f0af02743 -> 
+  custom:scripting/monoscript/fileName/PlatformSpecificContent.cs: 5abb8e8ef7a06ce1842fe9ff26eac2dd -> 
+  custom:scripting/monoscript/fileName/FPSController.cs: bf1d1bba457f2c5fd5904be9fbc47b2f -> 
+  custom:scripting/monoscript/fileName/AutoMoveAndRotate.cs: ca0e96f72f32239308122375a052b980 -> 
+  custom:scripting/monoscript/fileName/Benchmark01_UGUI.cs: 6148cfe2627b7708298f301788144139 -> 
+  custom:scripting/monoscript/fileName/EdgeDetection.cs: 7e270773de6bd808e57f1eb909c3207a -> 
+  custom:scripting/monoscript/fileName/AnkleGrabberExample.cs: a5fbd4e75a3111d54f680861705af930 -> 
+  custom:scripting/monoscript/fileName/BasicMotionsAnimatorParameterRemover.cs: 994ea5fbbfab08e27f98923bbac5b9ab -> 
+  custom:scripting/monoscript/fileName/ColorCorrectionCurves.cs: 0fe9ce599982e40ac8aba010733d7bdc -> 
+  custom:scripting/monoscript/fileName/ThirdPersonUserControl.cs: e55dad970175c9485c04ecbb87a3ac80 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: ece8b6c113ccfabd51aeaed84262af7e -> 
+  custom:scripting/monoscript/fileName/HeadBob.cs: fde5c6524c06827dce9419ce121f4f6b -> 
+  custom:scripting/monoscript/fileName/ObjectResetter.cs: 037abf2de53ab0026436c32f7a941658 -> 
+  custom:scripting/monoscript/fileName/Benchmark03.cs: 17cc87e0529ac71d909a946afb47a274 -> 
+  custom:scripting/monoscript/fileName/MenuLogic.cs: a5a62ed587100c96f6ae48141c0b3637 -> 
+  custom:scripting/monoscript/fileName/ColorCorrectionRamp.cs: a7e8fab02fd9ee3f41f3660b4752114a -> 
+  custom:scripting/monoscript/fileName/NoiseAndScratches.cs: e0c1886d5a6b335ec4861c2068c91d03 -> 
+  custom:scripting/monoscript/fileName/PlayerStats.cs: b06cbe57aa4f0acb313536805311dc61 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 547.218326 seconds.
-  path: Assets/Scenes/Room3.unity
-  artifactKey: Guid(a3f6d2e63e7467e4caab9c8fbb755a8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Room3.unity using Guid(a3f6d2e63e7467e4caab9c8fbb755a8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '38900efe7217e587a1cc7950054a67aa') in 0.008274 seconds
+  Time since last request: 34.710783 seconds.
+  path: Assets/Scenes
+  artifactKey: Guid(e9204950100d0614791391451923a63d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes using Guid(e9204950100d0614791391451923a63d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0bc9208fbc6e1d5accda66b337d25f8f') in 0.001767 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 0.588670 seconds.
+  Time since last request: 1.120450 seconds.
+  path: Assets/Scenes/Assets_Characters.unity
+  artifactKey: Guid(9dce0b8e597db5247b677e50883918c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Assets_Characters.unity using Guid(9dce0b8e597db5247b677e50883918c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b03637998fc7106c1b784d32590b278e') in 0.000553 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.336272 seconds.
+  path: Assets/Scenes/Main Menu.unity
+  artifactKey: Guid(05364424b96168f4a9e840cf033a7ac0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Main Menu.unity using Guid(05364424b96168f4a9e840cf033a7ac0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '17f7e163452a2658406a3b942912c76e') in 0.000554 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 23.439778 seconds.
+  path: Assets/Scenes/Map.unity
+  artifactKey: Guid(3f28b2a86c37d9745bae61d3da9f1c4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Map.unity using Guid(3f28b2a86c37d9745bae61d3da9f1c4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '4ad507a9e053745936f46b3db6f5c792') in 0.000585 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 88.976076 seconds.
   path: Assets/Scenes/Room4.unity
   artifactKey: Guid(2335d418d40c58b498f3ea6fd84ae375) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scenes/Room4.unity using Guid(2335d418d40c58b498f3ea6fd84ae375) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'f2cf79a9df23091cf69f288aa9afd10e') in 0.000658 seconds
+ -> (artifact id: '56cd725354a3dbb02a09da6a88f2d6d3') in 0.000469 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
-========================================================================
-Received Prepare
-Caller must complete domain reload
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.647 seconds
-Native extension for WindowsStandalone target not found
-Error saving file Library/StateCache/LayerSettings/9e/9ecc5c3c162a7aba29bafa64c8b94b7c.json. Error: System.IO.IOException: Sharing violation on path C:\Fractured_Realities\Fractured_Realities_Unity\Library\StateCache\LayerSettings\9e\9ecc5c3c162a7aba29bafa64c8b94b7c.json
-  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x0019e] in <8ce0bd04a7a04b4b9395538239d3fdd8>:0 
-  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.IO.FileOptions options) [0x00000] in <8ce0bd04a7a04b4b9395538239d3fdd8>:0 
-  at (wrapper remoting-invoke-with-check) System.IO.FileStream..ctor(string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,int,System.IO.FileOptions)
-  at System.IO.StreamWriter..ctor (System.String path, System.Boolean append, System.Text.Encoding encoding, System.Int32 bufferSize) [0x00055] in <8ce0bd04a7a04b4b9395538239d3fdd8>:0 
-  at System.IO.StreamWriter..ctor (System.String path, System.Boolean append, System.Text.Encoding encoding) [0x00000] in <8ce0bd04a7a04b4b9395538239d3fdd8>:0 
-  at (wrapper remoting-invoke-with-check) System.IO.StreamWriter..ctor(string,bool,System.Text.Encoding)
-  at System.IO.File.WriteAllText (System.String path, System.String contents, System.Text.Encoding encoding) [0x00034] in <8ce0bd04a7a04b4b9395538239d3fdd8>:0 
-  at UnityEditor.StateCache`1[T].SetState (UnityEngine.Hash128 key, T obj) [0x0004b] in <e0a2c8363ef54a6393fed120beebdb7a>:0 
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:LogError (object)
-UnityEditor.StateCache`1<UnityEditor.Tools/LayerSettings>:SetState (UnityEngine.Hash128,UnityEditor.Tools/LayerSettings)
-UnityEditor.Tools:set_lockedLayers (int)
-UnityEditor.Tools:OnEnable ()
-UnityEngine.ScriptableObject:CreateInstance (System.Type)
-UnityEngine.ScriptableObject:CreateInstance<UnityEditor.Tools> ()
-UnityEditor.Tools:get_get ()
-UnityEditor.Tools:get_visibleLayers ()
-UnityEditor.Animations.Rigging.BoneRendererUtils:.cctor () (at ./Library/PackageCache/com.unity.animation.rigging@1.2.1/Editor/Utils/BoneRendererUtils.cs:121)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-(Filename: ./Library/PackageCache/com.unity.animation.rigging@1.2.1/Editor/Utils/BoneRendererUtils.cs Line: 121)
-
-[MODES] ModeService[none].Initialize
-[MODES] ModeService[none].LoadModes
-[MODES] Loading mode Default (0) for mode-current-id-Fractured_Realities_Unity
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.637 seconds
-Domain Reload Profiling: 2267ms
-	BeginReloadAssembly (198ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (4ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (35ms)
-	RebuildCommonClasses (27ms)
-	RebuildNativeTypeToScriptingClass (8ms)
-	initialDomainReloadingComplete (46ms)
-	LoadAllAssembliesAndSetupDomain (352ms)
-		LoadAssemblies (450ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (16ms)
-			TypeCache.Refresh (5ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (9ms)
-	FinalizeReload (1637ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (608ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (9ms)
-			SetLoadedEditorAssemblies (2ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (120ms)
-			ProcessInitializeOnLoadAttributes (433ms)
-			ProcessInitializeOnLoadMethodAttributes (19ms)
-			AfterProcessingInitializeOnLoad (24ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (17ms)
-Refreshing native plugins compatible for Editor in 23.22 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4974 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 35 unused Assets / (2.2 MB). Loaded Objects now: 5787.
-Memory consumption went from 196.1 MB to 193.9 MB.
-Total: 7.079400 ms (FindLiveObjects: 0.857100 ms CreateObjectMapping: 0.472800 ms MarkObjects: 4.941500 ms  DeleteObjects: 0.807400 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Caller must complete domain reload
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.643 seconds
-Native extension for WindowsStandalone target not found
-[MODES] ModeService[none].Initialize
-[MODES] ModeService[none].LoadModes
-[MODES] Loading mode Default (0) for mode-current-id-Fractured_Realities_Unity
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.772 seconds
-Domain Reload Profiling: 2401ms
-	BeginReloadAssembly (198ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (4ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (30ms)
-	RebuildCommonClasses (28ms)
-	RebuildNativeTypeToScriptingClass (14ms)
-	initialDomainReloadingComplete (45ms)
-	LoadAllAssembliesAndSetupDomain (344ms)
-		LoadAssemblies (448ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (14ms)
-			TypeCache.Refresh (5ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (7ms)
-	FinalizeReload (1772ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (579ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (9ms)
-			SetLoadedEditorAssemblies (2ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (119ms)
-			ProcessInitializeOnLoadAttributes (408ms)
-			ProcessInitializeOnLoadMethodAttributes (17ms)
-			AfterProcessingInitializeOnLoad (23ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (17ms)
-Refreshing native plugins compatible for Editor in 27.28 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4975 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 35 unused Assets / (2.2 MB). Loaded Objects now: 5803.
-Memory consumption went from 196.5 MB to 194.3 MB.
-Total: 7.091400 ms (FindLiveObjects: 0.691500 ms CreateObjectMapping: 0.325500 ms MarkObjects: 5.211800 ms  DeleteObjects: 0.861700 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Caller must complete domain reload
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.691 seconds
-Native extension for WindowsStandalone target not found
-[MODES] ModeService[none].Initialize
-[MODES] ModeService[none].LoadModes
-[MODES] Loading mode Default (0) for mode-current-id-Fractured_Realities_Unity
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.754 seconds
-Domain Reload Profiling: 2426ms
-	BeginReloadAssembly (200ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (4ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (28ms)
-	RebuildCommonClasses (28ms)
-	RebuildNativeTypeToScriptingClass (8ms)
-	initialDomainReloadingComplete (47ms)
-	LoadAllAssembliesAndSetupDomain (387ms)
-		LoadAssemblies (491ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (17ms)
-			TypeCache.Refresh (7ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (8ms)
-	FinalizeReload (1755ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (661ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (10ms)
-			SetLoadedEditorAssemblies (3ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (139ms)
-			ProcessInitializeOnLoadAttributes (459ms)
-			ProcessInitializeOnLoadMethodAttributes (21ms)
-			AfterProcessingInitializeOnLoad (28ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (19ms)
-Refreshing native plugins compatible for Editor in 27.12 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4975 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 35 unused Assets / (2.2 MB). Loaded Objects now: 5819.
-Memory consumption went from 196.5 MB to 194.3 MB.
-Total: 8.388500 ms (FindLiveObjects: 0.777100 ms CreateObjectMapping: 0.423300 ms MarkObjects: 5.675400 ms  DeleteObjects: 1.511900 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Caller must complete domain reload
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.688 seconds
-Native extension for WindowsStandalone target not found
-[MODES] ModeService[none].Initialize
-[MODES] ModeService[none].LoadModes
-[MODES] Loading mode Default (0) for mode-current-id-Fractured_Realities_Unity
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.726 seconds
-Domain Reload Profiling: 2394ms
-	BeginReloadAssembly (206ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (3ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (28ms)
-	RebuildCommonClasses (28ms)
-	RebuildNativeTypeToScriptingClass (8ms)
-	initialDomainReloadingComplete (54ms)
-	LoadAllAssembliesAndSetupDomain (372ms)
-		LoadAssemblies (481ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (14ms)
-			TypeCache.Refresh (5ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (8ms)
-	FinalizeReload (1726ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (587ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (9ms)
-			SetLoadedEditorAssemblies (3ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (125ms)
-			ProcessInitializeOnLoadAttributes (411ms)
-			ProcessInitializeOnLoadMethodAttributes (18ms)
-			AfterProcessingInitializeOnLoad (21ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (16ms)
-Refreshing native plugins compatible for Editor in 26.55 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4975 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 35 unused Assets / (2.2 MB). Loaded Objects now: 5835.
-Memory consumption went from 196.5 MB to 194.3 MB.
-Total: 7.734900 ms (FindLiveObjects: 0.749500 ms CreateObjectMapping: 0.241900 ms MarkObjects: 5.850500 ms  DeleteObjects: 0.892200 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Caller must complete domain reload
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.628 seconds
-Native extension for WindowsStandalone target not found
-[MODES] ModeService[none].Initialize
-[MODES] ModeService[none].LoadModes
-[MODES] Loading mode Default (0) for mode-current-id-Fractured_Realities_Unity
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.554 seconds
-Domain Reload Profiling: 2168ms
-	BeginReloadAssembly (188ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (4ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (28ms)
-	RebuildCommonClasses (28ms)
-	RebuildNativeTypeToScriptingClass (8ms)
-	initialDomainReloadingComplete (43ms)
-	LoadAllAssembliesAndSetupDomain (346ms)
-		LoadAssemblies (446ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (14ms)
-			TypeCache.Refresh (6ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (7ms)
-	FinalizeReload (1555ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (580ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (9ms)
-			SetLoadedEditorAssemblies (3ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (121ms)
-			ProcessInitializeOnLoadAttributes (407ms)
-			ProcessInitializeOnLoadMethodAttributes (17ms)
-			AfterProcessingInitializeOnLoad (24ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (19ms)
-Refreshing native plugins compatible for Editor in 26.07 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4975 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 35 unused Assets / (2.2 MB). Loaded Objects now: 5851.
-Memory consumption went from 196.5 MB to 194.3 MB.
-Total: 7.804800 ms (FindLiveObjects: 0.744300 ms CreateObjectMapping: 0.221700 ms MarkObjects: 5.847900 ms  DeleteObjects: 0.989800 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
