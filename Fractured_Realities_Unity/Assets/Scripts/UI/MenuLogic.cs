@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,6 +14,7 @@ public class MenuLogic : MonoBehaviour
     public GameObject toggleInventory;
     public GameObject hideInventory;
     public GameObject showInventory;
+    public GameObject LoadingScreen;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +28,7 @@ public class MenuLogic : MonoBehaviour
         //showInventory = GameObject.FindGameObjectWithTag("ShowInventory");
         //toggleInventory = GameObject.FindGameObjectWithTag("ToggleInventory");
         //IngameMenu = GameObject.FindWithTag("InGameMenu");
+        //LoadingScreen = GameObject.FindWithTag("LoadingScreen");
     }
 
     // Update is called once per frame
@@ -57,6 +60,11 @@ public class MenuLogic : MonoBehaviour
 
         SceneManager.LoadScene("Map");
 
+        menuUI.SetActive(false);
+
+        LoadingScreen.SetActive(true);
+        StartCoroutine(StartGame());
+
         DontDestroyOnLoad(managers);
         DontDestroyOnLoad(canvas);
         DontDestroyOnLoad(player);
@@ -70,7 +78,6 @@ public class MenuLogic : MonoBehaviour
         healthUI.SetActive(true);
         toggleInventory.SetActive(true);
 
-        menuUI.SetActive(false);
         hideInventory.SetActive(true);
 
     }
@@ -84,4 +91,14 @@ public class MenuLogic : MonoBehaviour
     {
         Application.Quit();
     }
+    private IEnumerator StartGame()
+    {
+        yield return new WaitForSeconds(1f);
+        menuUI.SetActive(false);
+        LoadingScreen.SetActive(false);
+
+
+    }
+
+
 }

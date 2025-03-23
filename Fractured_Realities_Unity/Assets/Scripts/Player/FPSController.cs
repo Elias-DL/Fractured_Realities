@@ -29,7 +29,7 @@ public class FPSController : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         animator = GetComponentInChildren<Animator>(); // Get the Animator from the child object
-        Cursor.lockState = CursorLockMode.Confined; // de muis blijft in de  "game" view
+        //Cursor.lockState = CursorLockMode.Confined; // de muis blijft in de  "game" view
     }
 
     void Update()

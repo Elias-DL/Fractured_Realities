@@ -20,6 +20,9 @@ public class PlayerMovement : MonoBehaviour
     RaycastHit rayHit;
     public Camera cam;
     private string action;
+
+
+
     private void Start()
     {
         characterController = GetComponent<CharacterController>();

@@ -29,8 +29,11 @@ public class SpawnManager : MonoBehaviour
                     GameObject player = GameObject.FindWithTag("Player");
                     if (player != null)
                     {
+                        CharacterController CC = player.GetComponent<CharacterController>();
+                        CC.enabled = false;
                         player.transform.position = spawnPoint.transform.position; // Verplaats speler naar de doelpositie
                         player.transform.rotation = spawnPoint.transform.rotation; // Stel de rotatie in
+                        CC.enabled = true;
                     }
                     else
                     {

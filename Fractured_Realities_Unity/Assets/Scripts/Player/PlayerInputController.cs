@@ -1,3 +1,4 @@
+using PlayerControlsScript;
 using UnityEngine;
 using UnityEngine.InputSystem; // Required for the new Input System
 
