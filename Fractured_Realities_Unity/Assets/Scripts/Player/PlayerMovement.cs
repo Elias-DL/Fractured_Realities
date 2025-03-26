@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController characterController;
     Animator animator; // Reference to Animator
     public bool gezien;
+    public string naamGezien;
     Ray ray;
     RaycastHit rayHit;
     public Camera cam;
@@ -37,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
         {
             // Debug.Log(rayHit.transform.name);
             gezien = true;
+            naamGezien = rayHit.transform.name;
         }
 
         else

@@ -8,6 +8,7 @@ public class GuessingGame : MonoBehaviour
     public TMPro.TMP_Text feedbackText;
     private int objRandomNr;
     public GameObject sleutel;
+    public GameObject guessingGameCanvas;
 
     void Start()
     {
@@ -33,6 +34,8 @@ public class GuessingGame : MonoBehaviour
             {
                 feedbackText.text = "Correct! You guessed it!";
                 sleutel.SetActive(true);
+                guessingGameCanvas.SetActive(false);
+
             }
         }
         else

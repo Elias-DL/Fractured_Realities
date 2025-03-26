@@ -7,7 +7,7 @@ using UnityEngine.Experimental.GlobalIllumination;
 public class FlashlightToggle : MonoBehaviour
 {
     public GameObject licht;
-    private bool isOn = false;
+    public bool isOn = false;
 
     void Start()
     {

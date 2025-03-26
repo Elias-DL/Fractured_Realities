@@ -18,15 +18,18 @@ public class EnemyBookHead : MonoBehaviour
     public float damage;
     public GameObject Player;
     public GameObject Managers;
-    private float attackDuration = 2; // chech animatie
+    private float attackDuration = 0.1f; // chech animatie
     AudioSource audioSrc;
     public AudioSource src;
     public AudioClip sfx1;
+
+    public bool coolDown = false;
+    public bool enemyGezien;
+    public GameObject JumpscareUI;
     public void Awake()
     {
 
         Player = GameObject.FindWithTag("Player");
-
         Managers = GameObject.FindWithTag("Managers");
         playerTrans = Player.transform;
     }
@@ -46,9 +49,10 @@ public class EnemyBookHead : MonoBehaviour
         SoundEffects();
         action = null;
 
-        if (src == null)
+        if (src == null /* || JumpscareUI == null*/)
         {
             src = GetComponent<AudioSource>();
+            //JumpscareUI = GameObject.FindWithTag("JumpscareUI");
 
         }
         animator.SetBool("Roam", true);
@@ -58,28 +62,63 @@ public class EnemyBookHead : MonoBehaviour
         float distanceToPlayer = Vector3.Distance(transform.position, playerTrans.position);
         //Debug.Log("Distance to player: " + distanceToPlayer + " detectionradius : " + detectionRadius);
 
-        if (distanceToPlayer <= detectionRadius && action != "Attack")
-        {
-            ChasePlayer();
+        
 
-        }
-        else if (action != "Attack")
+         if (Player.GetComponent<PlayerMovement>().naamGezien == "BookHeadMonster")
         {
-            action = "roam";
+            StartCoroutine(Scared());
 
-            RoamAround();
+            Debug.Log("aaaaaaaaa");
         }
         else
         {
-            AttackPlayer();
+            if (coolDown == false)
+            {
+                if (Managers.GetComponent<PlayerStats>().Respawning == true)
+                {
+                    RoamAround();
+                    action = "Roam";
 
+                }
+
+                else if (distanceToPlayer <= detectionRadius && action != "Attack")
+                {
+                   
+                        ChasePlayer();
+
+
+                }
+                else if (action != "Attack")
+                {
+                    action = "Roam";
+
+                    RoamAround();
+                }
+                else
+                {
+                    
+
+                   
+                        AttackPlayer();
+                    action = "Attack";
+
+                }
+            }
         }
+
 
 
 
     }
 
+    IEnumerator Scared()
+    {
+        coolDown = true;
+        RoamAround();
+        yield return new WaitForSeconds(10f);
 
+        coolDown = false;
+    }
     private void RoamAround()
     {
 
@@ -134,7 +173,7 @@ public class EnemyBookHead : MonoBehaviour
 
 
         float distanceToPlayer = Vector3.Distance(transform.position, playerTrans.position);
-        Debug.Log(distanceToPlayer + " , " + attackRange);
+        //Debug.Log(distanceToPlayer + " , " + attackRange);
 
         if (distanceToPlayer <= attackRange + 2) // +2 voor veiligheid, anders vaak in de buurt van bv 30 (attack range) maar niet helemaal voor wtv reden
         {
@@ -169,6 +208,8 @@ public class EnemyBookHead : MonoBehaviour
         {
             Managers.GetComponent<PlayerStats>().TakeDamage(damage);
             isDamaging = false;
+            //JumpscareUI.SetActive(true);
+
         }
         else
         {
@@ -181,17 +222,7 @@ public class EnemyBookHead : MonoBehaviour
 
     }
 
-    //private void OnTriggerStay(Collider other) // je kan bij de zombie blijven staan en geen damage krijge -> opl : hele tijd als triggeris
-    //{
-    //    if (other.CompareTag("Player") && action == "Attack")
-    //    {
-    //        Debug.Log("persobnal space plssss");
-
-
-
-    //    }
-    //}
-
+   
     public void SoundEffects()
     {
 
@@ -203,16 +234,7 @@ public class EnemyBookHead : MonoBehaviour
             src.Play();
         }
 
-        //if (src != null) NIET NODIG DENK Ik
-        //{
-        //    if (string.IsNullOrEmpty(action) || (action != "Walk" && src.isPlaying))
-        //    {
-        //        src.Stop(); // Stop the sound instantly when no action is detected
-        //    }
-
-        //}
-
+      
 
     }
 }
-

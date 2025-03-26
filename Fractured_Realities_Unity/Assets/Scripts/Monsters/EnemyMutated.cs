@@ -59,8 +59,15 @@ public class EnemyMutated : MonoBehaviour
         float distanceToPlayer = Vector3.Distance(transform.position, playerTrans.position);
         //Debug.Log("Distance to player: " + distanceToPlayer + " detectionradius : " + detectionRadius);
 
-        if (distanceToPlayer <= detectionRadius && action != "Attack")
+        if (Managers.GetComponent<PlayerStats>().Respawning == true)
         {
+            RoamAround();
+            action = "Roam";
+        }
+
+        else if (distanceToPlayer <= detectionRadius && action != "Attack")
+        {
+
             ChasePlayer();
 
         }
@@ -182,16 +189,7 @@ public class EnemyMutated : MonoBehaviour
 
     }
 
-    //private void OnTriggerStay(Collider other) // je kan bij de zombie blijven staan en geen damage krijge -> opl : hele tijd als triggeris
-    //{
-    //    if (other.CompareTag("Player") && action == "Attack")
-    //    {
-    //        Debug.Log("persobnal space plssss");
 
-
-
-    //    }
-    //}
 
     public void SoundEffects()
     {
@@ -203,16 +201,6 @@ public class EnemyMutated : MonoBehaviour
             src.volume = 1f;
             src.Play();
         }
-
-        //if (src != null) NIET NODIG DENK Ik
-        //{
-        //    if (string.IsNullOrEmpty(action) || (action != "Walk" && src.isPlaying))
-        //    {
-        //        src.Stop(); // Stop the sound instantly when no action is detected
-        //    }
-
-        //}
-
 
     }
 }

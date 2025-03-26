@@ -15,6 +15,7 @@ public class MenuLogic : MonoBehaviour
     public GameObject hideInventory;
     public GameObject showInventory;
     public GameObject LoadingScreen;
+    public GameObject JumpscareUI;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +30,7 @@ public class MenuLogic : MonoBehaviour
         //toggleInventory = GameObject.FindGameObjectWithTag("ToggleInventory");
         //IngameMenu = GameObject.FindWithTag("InGameMenu");
         //LoadingScreen = GameObject.FindWithTag("LoadingScreen");
+        //Jumpscare = GameObject.FindWithTag("Jumpscare");
     }
 
     // Update is called once per frame
@@ -77,8 +79,8 @@ public class MenuLogic : MonoBehaviour
         inventoryUI.SetActive(true);
         healthUI.SetActive(true);
         toggleInventory.SetActive(true);
-
         hideInventory.SetActive(true);
+        //JumpscareUI.SetActive(true);
 
     }
 

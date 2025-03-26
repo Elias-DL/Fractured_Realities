@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,23 +17,24 @@ public class PlayerStats : MonoBehaviour
     public int deaths;
     public float time;
     public bool escaped = false;
+    public bool Respawning = true;
+    public GameObject JumpscareUI;
     private void Start() // of awake? idk voor nu voor in game time te zetten in DB
     {
         //Debug.Log("start");
         currentHealth = maxHealth;
 
         healthBar.SetSliderMax(maxHealth);
-
+        JumpscareUI = GameObject.FindWithTag("JumpscareUI");
     }
 
 
     private void Update()
     {
         StartSpawn = GameObject.FindWithTag("StartSpawn");
-        if (player == null)
+        if (player == null || healthBar == null)
         {
             player = GameObject.FindWithTag("Player");
-
         }
         if (SceneManager.GetActiveScene().name != "Scoreboard" && SceneManager.GetActiveScene().name != "Main Menu")
         {
@@ -59,7 +61,11 @@ public class PlayerStats : MonoBehaviour
 
     public void Respawn(GameObject spawnPlek) // character controller spreekt teleportere tegen (effe uitzetten)
     {
-
+        if (SceneManager.GetActiveScene().name == "Map")
+        {
+            Respawning = true;
+            
+        }
         CharacterController CC = player.GetComponent<CharacterController>();
         CC.enabled = false;
 
@@ -73,6 +79,8 @@ public class PlayerStats : MonoBehaviour
         healthBar.SetSlider(currentHealth);
         deaths++;
         Debug.Log("Death(s):" + deaths);
+        //JumpscareUI.SetActive(false);
+
     }
 
 

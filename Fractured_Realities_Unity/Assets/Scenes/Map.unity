@@ -12766,6 +12766,10 @@ PrefabInstance:
       propertyPath: m_ApplyRootMotion
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3957522710725431349, guid: 656835c98f7180548bfc0a3c70bdbd94, type: 3}
+      propertyPath: m_Speed
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 6844229710180867577, guid: 656835c98f7180548bfc0a3c70bdbd94, type: 3}
       propertyPath: Managers
       value: 
@@ -20647,6 +20651,73 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &843207415
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 843207418}
+  - component: {fileID: 843207417}
+  - component: {fileID: 843207416}
+  m_Layer: 0
+  m_Name: RespawnCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &843207416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843207415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a56d90a7c22df342addbb321d84db82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Managers: {fileID: 0}
+--- !u!65 &843207417
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843207415}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 50, z: 52}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &843207418
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843207415}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -723.7, y: 17.7, z: 19.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &843678844
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26804,7 +26875,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 65107623
   m_Radius: 0.5
-  m_Speed: 50
+  m_Speed: 30
   m_Acceleration: 50
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -50634,11 +50705,14 @@ MonoBehaviour:
   detectionRadius: 100
   roamRange: 1000
   stopChaseDistance: 25
-  damage: 20
+  damage: 100
   Player: {fileID: 0}
   Managers: {fileID: 0}
   src: {fileID: 0}
   sfx1: {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
+  coolDown: 0
+  enemyGezien: 0
+  Jumpscare: {fileID: 0}
 --- !u!82 &2094870524
 AudioSource:
   m_ObjectHideFlags: 0
@@ -50829,7 +50903,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 65107623
   m_Radius: 0.5
-  m_Speed: 10
+  m_Speed: 70
   m_Acceleration: 50
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -51651,3 +51725,4 @@ SceneRoots:
   - {fileID: 1095883022}
   - {fileID: 624693804}
   - {fileID: 1973704841}
+  - {fileID: 843207418}

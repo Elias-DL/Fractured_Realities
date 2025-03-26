@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -26,11 +27,13 @@ public class EnemyAnkleGrabber : MonoBehaviour
     public AudioClip sfx1;
     public AudioClip sfxBiteAttack;
     private float distanceToPlayer;
+
+    public bool coolDown = false;
     public void Awake()
     {
 
         Player = GameObject.FindWithTag("Player");
-
+        
         Managers = GameObject.FindWithTag("Managers");
         playerTrans = Player.transform;
     }
@@ -50,6 +53,7 @@ public class EnemyAnkleGrabber : MonoBehaviour
         SoundEffects();
         action = null;
 
+
         if (src == null)
         {
             src = GetComponent<AudioSource>();
@@ -62,23 +66,44 @@ public class EnemyAnkleGrabber : MonoBehaviour
         float distanceToPlayer = Vector3.Distance(transform.position, playerTrans.position);
         //Debug.Log("Distance to player: " + distanceToPlayer + " detectionradius : " + detectionRadius);
 
-        if (distanceToPlayer <= detectionRadius && action != "Attack")
-        {
-            ChasePlayer();
 
-        }
-        else if (action != "Attack")
+        if (coolDown == false)
         {
-            action = "Roam";
+            if (Managers.GetComponent<PlayerStats>().Respawning == true)
+            {
+                RoamAround();
+                action = "Roam";
 
-            RoamAround();
-        }
-        else
-        {
-            AttackPlayer();
-            action = "Attack";
+            }
+            
+            else if (distanceToPlayer <= detectionRadius && action != "Attack")
+            {
 
+               
+                    ChasePlayer();
+
+               
+
+            }
+            else if (action != "Attack")
+            {
+                action = "Roam";
+
+                RoamAround();
+            }
+            else
+            {
+
+                
+               
+                    RoamAround();
+                    action = "Roam";
+               
+                    
+
+            }
         }
+
 
 
 
@@ -117,6 +142,17 @@ public class EnemyAnkleGrabber : MonoBehaviour
         animator.SetBool("Attack", true);
         action = "Attack";
 
+        if (Player.GetComponentInChildren<FlashlightToggle>() != null && Player.GetComponentInChildren<FlashlightToggle>().isOn == true)
+        {
+
+
+            StartCoroutine(Scared());
+
+                Debug.Log("aaaaaaaaa");
+           
+                
+
+        }
 
         // Make the zombie face the player
         Vector3 directionToPlayer = (playerTrans.position - transform.position).normalized;
@@ -136,16 +172,24 @@ public class EnemyAnkleGrabber : MonoBehaviour
     private void ChasePlayer()
     {
         navAgent.isStopped = false;
+        if (coolDown) return;
 
+        distanceToPlayer = Vector3.Distance(transform.position, playerTrans.position);
+        //Debug.Log(distanceToPlayer + " , " + attackRange);
 
-         distanceToPlayer = Vector3.Distance(transform.position, playerTrans.position);
-         //Debug.Log(distanceToPlayer + " , " + attackRange);
+        if (Player.GetComponentInChildren<FlashlightToggle>() != null && Player.GetComponentInChildren<FlashlightToggle>().isOn == true)
+        {
+            StartCoroutine(Scared());
+
+            Debug.Log("scaaaaaaaaaaared");
+
+        }
 
         if (distanceToPlayer <= attackRange + 2) // +2 voor veiligheid, anders vaak in de buurt van bv 30 (attack range) maar niet helemaal voor wtv reden
         {
 
-            AttackPlayer();
-            action = "Attack";
+                AttackPlayer();
+                action = "Attack";
 
         }
         else
@@ -172,12 +216,12 @@ public class EnemyAnkleGrabber : MonoBehaviour
         action = "Attack";
 
         yield return new WaitForSeconds(attackDuration); // damaga na animatie zodat je tijd hebt om weg te lopen
-    
+
         if (action == "Attack") //als na de animatie speler nog in de buurt is en de action dus nog steeds attack is wel damage doen.
         {
             Managers.GetComponent<PlayerStats>().TakeDamage(damage);
             isDamaging = false;
-            Debug.Log("aaa " + action);
+            Debug.Log(action);
 
         }
         else
@@ -191,16 +235,14 @@ public class EnemyAnkleGrabber : MonoBehaviour
 
     }
 
-    //private void OnTriggerStay(Collider other) // je kan bij de zombie blijven staan en geen damage krijge -> opl : hele tijd als triggeris
-    //{
-    //    if (other.CompareTag("Player") && action == "Attack")
-    //    {
-    //        Debug.Log("persobnal space plssss");
+    IEnumerator Scared()
+    {
+        coolDown = true;
+        RoamAround();
+        yield return new WaitForSeconds(10f);
 
-
-
-    //    }
-    //}
+        coolDown = false;
+    }
 
 
     public void SoundEffects()
@@ -221,16 +263,7 @@ public class EnemyAnkleGrabber : MonoBehaviour
             src.Play();
         }
 
-        //if (src != null) NIET NODIG DENK Ik
-        //{
-        //    if (string.IsNullOrEmpty(action) || (action != "Walk" && src.isPlaying))
-        //    {
-        //        src.Stop(); // Stop the sound instantly when no action is detected
-        //    }
-
-        //}
 
 
     }
 }
-
