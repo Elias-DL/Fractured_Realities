@@ -212,7 +212,7 @@ GameObject:
   - component: {fileID: 385908248}
   - component: {fileID: 385908247}
   m_Layer: 5
-  m_Name: txtTime (1)
+  m_Name: txtTime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -511,7 +511,7 @@ GameObject:
   - component: {fileID: 491279877}
   - component: {fileID: 491279876}
   m_Layer: 5
-  m_Name: txtDeaths (1)
+  m_Name: txtDeaths
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -722,7 +722,7 @@ GameObject:
   - component: {fileID: 582379564}
   - component: {fileID: 582379563}
   m_Layer: 5
-  m_Name: txtConnect
+  m_Name: txtPlayAgain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -767,7 +767,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Back to menu
+  m_text: Play again
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -856,7 +856,7 @@ GameObject:
   - component: {fileID: 717509297}
   - component: {fileID: 717509296}
   m_Layer: 5
-  m_Name: txtId (1)
+  m_Name: txtUsername
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -901,9 +901,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Id
-
-'
+  m_text: Username
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -930,7 +928,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 44.75
+  m_fontSize: 38.9
   m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1492,6 +1490,7 @@ MonoBehaviour:
   UserInformationContent: {fileID: 496413901}
   UserInfoPrefab: {fileID: 4692065925750401584, guid: c6f37f34e3708cf4f92c9a15a914f548, type: 3}
   Managers: {fileID: 0}
+  username: 
   usernameInput: {fileID: 0}
   feedbackText: {fileID: 0}
 --- !u!4 &1032339833
@@ -1800,8 +1799,20 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1032339832}
         m_TargetAssemblyTypeName: DBConnection, Assembly-CSharp
-        m_MethodName: DataHalen
+        m_MethodName: StartUploadProcess
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1184534161}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2066,7 +2077,7 @@ GameObject:
   - component: {fileID: 1526234140}
   - component: {fileID: 1526234139}
   m_Layer: 5
-  m_Name: btnConnect (1)
+  m_Name: btnPlayAgain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2138,7 +2149,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1486077648}
         m_TargetAssemblyTypeName: MenuLogic, Assembly-CSharp
-        m_MethodName: loadMenu
+        m_MethodName: PlayAgain
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

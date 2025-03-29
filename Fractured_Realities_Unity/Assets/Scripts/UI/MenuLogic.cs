@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -102,5 +103,9 @@ public class MenuLogic : MonoBehaviour
 
     }
 
+    public void PlayAgain()
+    {
+        SceneManager.LoadScene("LogIn");
+    }
 
 }

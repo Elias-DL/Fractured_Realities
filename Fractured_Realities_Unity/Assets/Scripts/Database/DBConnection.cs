@@ -8,31 +8,46 @@ using UnityEngine.SceneManagement;
 public class DBConnection : MonoBehaviour
 {
     // URL of the PHP script
-    private string phpUrlSturen = "http://localhost/School/UnityDBScripts/Pages/SendData.php";
-    private string phpUrlHalen = "http://localhost/school/UnityDBScripts/Pages/GetData.php";
+    private string phpUrlSturen = "http://localhost/School/Project/UnityDBScripts/Pages/SendData.php";
+    private string phpUrlHalen = "http://localhost/School/Project/UnityDBScripts/Pages/GetData.php";
     public GameObject UserInformationContent;
     public GameObject UserInfoPrefab;
 
     public GameObject Managers;
-    private string username;
+    public string username;
     public TMPro.TMP_InputField usernameInput;
     public TMPro.TMP_Text feedbackText;
 
     void Start()
     {
-      
+        Managers = GameObject.FindWithTag("Managers");
 
+        if (PlayerPrefs.HasKey("Username"))
+        {
+            username = PlayerPrefs.GetString("Username");
+            Debug.Log("Loaded Username: " + username);
+        }
     }
 
 
-    public void GatherData()
+    private IEnumerator GatherData()
     {
-        Managers = GameObject.FindWithTag("Managers");
-
+        string usernamedb = username;
+      
         int deaths = Managers.GetComponent<PlayerStats>().deaths;
         float time = Managers.GetComponent<PlayerStats>().time;
-        Debug.Log("deaths : " + deaths + " , time : " + time);
-        StartCoroutine(SendRequest(time, deaths));
+        Debug.Log("Username : " + username + "deaths : " + deaths + " , time : " + time);
+        yield return StartCoroutine(SendRequest(time, deaths, usernamedb)); // Wacht op upload
+    }
+
+    public void StartUploadProcess()
+    {
+        StartCoroutine(GetUploadData());
+    }
+    private IEnumerator GetUploadData()
+    {
+        yield return StartCoroutine(GatherData()); // Wacht tot GatherData klaar is
+        yield return StartCoroutine(DataHalenCoroutine()); // Wacht tot DataHalen klaar is
     }
     public void Username()
     {
@@ -42,20 +57,23 @@ public class DBConnection : MonoBehaviour
         }
         else
         {
+
+            PlayerPrefs.SetString("Username", usernameInput.text);
+            PlayerPrefs.Save();
             username = usernameInput.text;
             SceneManager.LoadScene("Main Menu");
             Debug.Log(username);
 
         }
     }
-    IEnumerator SendRequest( float time, int deaths)
+    IEnumerator SendRequest( float time, int deaths, string username)
     {
 
         WWWForm form = new WWWForm();
-       
+        form.AddField("username", (string)username);
         form.AddField("time", (int)time);
         form.AddField("deaths", deaths);
-        Debug.Log("Sending POST data: Time = " + time + ", Deaths = " + deaths);
+        Debug.Log("Sending POST data: Username = " + username+ " Time = " + time + ", Deaths = " + deaths);
 
         // Send a GET request to the PHP script
         UnityWebRequest www = UnityWebRequest.Post(phpUrlSturen, form);
@@ -74,9 +92,9 @@ public class DBConnection : MonoBehaviour
         }
     }
 
-    public void DataHalen()
+    private IEnumerator DataHalenCoroutine()
     {
-        StartCoroutine(GetRequest("http://localhost/school/UnityDBScripts/Pages/GetData.php"));
+        yield return StartCoroutine(GetRequest(phpUrlHalen));
     }
 
     IEnumerator GetRequest(string uri)
@@ -108,12 +126,12 @@ public class DBConnection : MonoBehaviour
                         //Debug.Log("current data " + users[i]);
                         if (users[i] != "")
                         {
-                            string[] userinfo = users[i].Split(",");
-                            Debug.Log("ID : " + userinfo[0] + " Deaths : " + userinfo[1] + " Time : " + userinfo[2]);
+                            string[] userinfo = users[i].Split(",");    
+                            Debug.Log("Username : " + userinfo[0] + " Deaths : " + userinfo[1] + " Time : " + userinfo[2]);
 
                             GameObject gameobj = (GameObject)Instantiate(UserInfoPrefab);
                             gameobj.transform.SetParent(UserInformationContent.transform);
-                            gameobj.GetComponent<UserInfo>().ID.text = userinfo[0];
+                            gameobj.GetComponent<UserInfo>().Username.text = userinfo[0];
                             gameobj.GetComponent<UserInfo>().Deaths.text = userinfo[1];
                             gameobj.GetComponent<UserInfo>().Time.text = userinfo[2];
 
