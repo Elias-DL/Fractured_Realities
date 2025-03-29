@@ -17,26 +17,28 @@ public class FlashlightToggle : MonoBehaviour
 
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.F))
+        if (EquippedItemManager.Instance.EquippedItemName == "Flashlight")
         {
-            //toggle light
-            isOn = !isOn;
-            //turn light on
-            if (isOn)
+            if (Input.GetKeyDown(KeyCode.F))
             {
-                licht.SetActive(true);
-                licht.GetComponent<Light>().enabled = true;
-            }
-            //turn light off
-            else
-            {
-                licht.GetComponent<Light>().enabled = false;
+                //toggle light
+                isOn = !isOn;
+                //turn light on
+                if (isOn)
+                {
+                    licht.SetActive(true);
+                    licht.GetComponent<Light>().enabled = true;
+                }
+                //turn light off
+                else
+                {
+                    licht.GetComponent<Light>().enabled = false;
 
-                licht.SetActive(false);
+                    licht.SetActive(false);
 
+                }
             }
+
         }
     }
 }
-

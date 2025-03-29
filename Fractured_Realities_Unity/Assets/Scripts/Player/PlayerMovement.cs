@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     public bool gezien;
     public string naamGezien;
     Ray ray;
+    float sphereRadius = 2.0f; // Same radius as SphereCast
+    float rayDistance = 100f;   // Max distance for the SphereCast
     RaycastHit rayHit;
     public Camera cam;
     private string action;
@@ -33,14 +35,19 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator Scanning()
     {
-
-        if (Physics.Raycast(ray, out rayHit, 100))
+        // Perform SphereCast instead of Raycast
+        if (Physics.SphereCast(ray, sphereRadius, out RaycastHit rayHit, rayDistance))
         {
-            // Debug.Log(rayHit.transform.name);
-            gezien = true;
             naamGezien = rayHit.transform.name;
-        }
+            if (naamGezien == "Anklegrabber" || naamGezien == "ZombieWithBlood" || naamGezien == "Mutated")
+            {
+                Debug.Log(rayHit.transform.name);
 
+            }
+
+            gezien = true;
+
+        }
         else
         {
             gezien = false;
@@ -48,6 +55,23 @@ public class PlayerMovement : MonoBehaviour
 
         yield return new WaitForSeconds(10f);
         gezien = false;
+    }
+
+    void OnDrawGizmos()
+    {
+        if (ray.origin != null)
+        {
+            // Draw a sphere at the ray's origin
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireSphere(ray.origin, sphereRadius);
+
+            // Draw spheres along the ray path to visualize the cast
+            for (float i = 0; i < rayDistance; i += sphereRadius * 2)
+            {
+                Vector3 pointAlongRay = ray.origin + ray.direction * i;
+                Gizmos.DrawWireSphere(pointAlongRay, sphereRadius);
+            }
+        }
     }
     void Update()
     {
@@ -61,8 +85,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         ray = cam.ScreenPointToRay(Input.mousePosition);
-        Debug.DrawRay(new Vector3(transform.position.x, cam.transform.position.y - 3, transform.position.z), transform.forward * 200, Color.red);
-        
+
         StartCoroutine(Scanning());
 
         animator.SetBool("WalkForward", false);
@@ -77,7 +100,10 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("RightWalk", false);
         animator.SetBool("LeftWalk", false);
 
-       
+        //if (EquippedItemManager.Instance.EquippedItemName == "Camera")
+        // {
+
+        // }
 
         if (Input.GetKey("w"))
         {
@@ -86,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
             action = "Walk";
 
         }
-      
+
         if (Input.GetKey("s"))
         {
             rb.AddForce(0, 0, -forwardForce * Time.deltaTime);
@@ -146,7 +172,7 @@ public class PlayerMovement : MonoBehaviour
             src.Play();
         }
 
-       
+
 
 
     }

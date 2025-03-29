@@ -3,6 +3,7 @@ using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 
 public class DBConnection : MonoBehaviour
 {
@@ -13,20 +14,40 @@ public class DBConnection : MonoBehaviour
     public GameObject UserInfoPrefab;
 
     public GameObject Managers;
-    
+    private string username;
+    public TMPro.TMP_InputField usernameInput;
+    public TMPro.TMP_Text feedbackText;
+
     void Start()
     {
-        Managers = GameObject.FindWithTag("Managers");
-        
-        int deaths = Managers.GetComponent<PlayerStats>().deaths;
-        float time = Managers.GetComponent<PlayerStats>().time;
-        Debug.Log("deaths : " + deaths + " , time : " + time);
-        StartCoroutine(SendRequest(time, deaths));
+      
 
     }
 
 
+    public void GatherData()
+    {
+        Managers = GameObject.FindWithTag("Managers");
 
+        int deaths = Managers.GetComponent<PlayerStats>().deaths;
+        float time = Managers.GetComponent<PlayerStats>().time;
+        Debug.Log("deaths : " + deaths + " , time : " + time);
+        StartCoroutine(SendRequest(time, deaths));
+    }
+    public void Username()
+    {
+        if ( usernameInput.text == "")
+        {
+            feedbackText.text = "Enter a valid username";
+        }
+        else
+        {
+            username = usernameInput.text;
+            SceneManager.LoadScene("Main Menu");
+            Debug.Log(username);
+
+        }
+    }
     IEnumerator SendRequest( float time, int deaths)
     {
 
