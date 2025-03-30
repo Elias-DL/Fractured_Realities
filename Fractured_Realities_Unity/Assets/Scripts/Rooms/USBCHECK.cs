@@ -13,7 +13,7 @@ public class USBCHECK : MonoBehaviour
     {
         //check wat vast
         string equippedItem = EquippedItemManager.Instance.EquippedItemName;
-        Debug.Log("cliaaaa");
+        
         //heeft USBKey vast?
         if (equippedItem == "USBR3") // naam van de item/scriptable object niet de prefab naam
         {

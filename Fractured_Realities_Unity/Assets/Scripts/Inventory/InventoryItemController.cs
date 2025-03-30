@@ -55,18 +55,25 @@ public class InventoryItemController : MonoBehaviour
                 Rotation = Quaternion.Euler(0, 90, 90);
 
             }
-            else if (item.name.Contains("Candle") )
+            else if (item.name.Contains("Candle") || item.name == "Zombie" || item.name == "Bookhead" || item.name == "Anklegrabber")
             {
                 Rotation = Quaternion.Euler(0, 0, 0);
 
 
             }
 
-            else if (item.name == "Key6")
+            else if (item.name == "FinalKey")
             {
                 Rotation = Quaternion.Euler(270, -90, -90);
 
             }
+
+            else if (item.name == "Camera")
+            {
+                Rotation = Quaternion.Euler(-180, 0, 0);
+            }
+
+
             else
             {
                 Rotation = Quaternion.Euler(0, 0, 90);
@@ -148,5 +155,7 @@ public class InventoryItemController : MonoBehaviour
             return Vector3.zero;
         }
     }
+
+    
 
 }

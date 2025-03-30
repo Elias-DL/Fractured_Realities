@@ -21,7 +21,9 @@ public class escape : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Managers.GetComponent<PlayerStats>().Escape();
+       
+            Managers.GetComponent<PlayerStats>().Escape();
 
+        
     }
 }

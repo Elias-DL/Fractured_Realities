@@ -22,8 +22,9 @@ public class ItemPickup : MonoBehaviour
 
 
     // Update is called once per frame
-    private void OnMouseDown() // probkeem -> altijd click niet alleen op object? (gefixed zie inventorymanager)
+    private void OnMouseDown() // gameobject MOET een rigibody EN collider hebben
     {
         Pickup();
+        Debug.Log("aaaaa");
     }
 }

@@ -49,7 +49,7 @@ public class EnemyAnkleGrabber : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(action);
+        //Debug.Log(action);
         SoundEffects();
         action = null;
 
@@ -247,7 +247,7 @@ public class EnemyAnkleGrabber : MonoBehaviour
 
     public void SoundEffects()
     {
-        Debug.Log("geluiden");
+        //Debug.Log("geluiden");
         if ((action == "Roam" && !src.isPlaying))
         {
 

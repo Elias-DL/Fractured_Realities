@@ -19,6 +19,7 @@ public class PlayerStats : MonoBehaviour
     public bool escaped = false;
     public bool Respawning = true;
     public GameObject JumpscareUI;
+    public GameObject Canvas;
     private void Start() // of awake? idk voor nu voor in game time te zetten in DB
     {
         //Debug.Log("start");
@@ -26,6 +27,7 @@ public class PlayerStats : MonoBehaviour
 
         healthBar.SetSliderMax(maxHealth);
         JumpscareUI = GameObject.FindWithTag("JumpscareUI");
+        Canvas = GameObject.FindWithTag("Canvas");
     }
 
 
@@ -88,7 +90,8 @@ public class PlayerStats : MonoBehaviour
 
     {
         escaped = true;
-        Debug.Log("je bent escaped enzo");
+        Destroy(player);
+        Destroy(Canvas);
         SceneManager.LoadScene("Scoreboard");
     }
     

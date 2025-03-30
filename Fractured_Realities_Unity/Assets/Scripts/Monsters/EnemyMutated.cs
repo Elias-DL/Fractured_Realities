@@ -43,7 +43,7 @@ public class EnemyMutated : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(action);
+        //Debug.Log(action);
         SoundEffects();
         action = null;
 

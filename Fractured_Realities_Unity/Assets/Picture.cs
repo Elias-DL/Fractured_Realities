@@ -20,21 +20,27 @@ public class Picture : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && Player.GetComponent<PlayerMovement>().naamGezien == "Anklegrabber")
+
+
+        if (Input.GetKeyDown(KeyCode.F) && Player.GetComponent<PlayerMovement>().naamGezien == "AnkleGrabber")
         {
             Managers.GetComponent<InventoryManager>().Items.Add(pictureAnklegrabber);
+            Debug.Log("anklegrabber stalked");
+            InventoryManager.Instance.ListItems();// update de ui direct 
         }
 
-        else if (Input.GetKeyDown(KeyCode.F) && Player.GetComponent<PlayerMovement>().naamGezien == "ZombieWithBlood")
+        else if (Input.GetKeyDown(KeyCode.F) && Player.GetComponent<PlayerMovement>().naamGezien == "Bookhead")
         {
             Managers.GetComponent<InventoryManager>().Items.Add(pictureZombieWithBlood);
-
+            Debug.Log("bookhead stalked");
+            InventoryManager.Instance.ListItems();
         }
 
-        else if (Input.GetKeyDown(KeyCode.F) && Player.GetComponent<PlayerMovement>().naamGezien == "Mutated")
+        else if (Input.GetKeyDown(KeyCode.F) && Player.GetComponent<PlayerMovement>().naamGezien == "Zombie")
         {
             Managers.GetComponent<InventoryManager>().Items.Add(pictureMutated);
-
+            Debug.Log("zombie stalked");
+            InventoryManager.Instance.ListItems();
         }
     }
 }

@@ -17,6 +17,7 @@ public class MenuLogic : MonoBehaviour
     public GameObject showInventory;
     public GameObject LoadingScreen;
     public GameObject JumpscareUI;
+    public GameObject TipsUI;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +33,7 @@ public class MenuLogic : MonoBehaviour
         //IngameMenu = GameObject.FindWithTag("InGameMenu");
         //LoadingScreen = GameObject.FindWithTag("LoadingScreen");
         //Jumpscare = GameObject.FindWithTag("Jumpscare");
+        //TipsUI = GameObject.FindWithTag("TipsUI");
     }
 
     // Update is called once per frame
@@ -72,7 +74,7 @@ public class MenuLogic : MonoBehaviour
         DontDestroyOnLoad(canvas);
         DontDestroyOnLoad(player);
         // DontDestroyOnLoad(Inventory);
-
+        TipsUI.SetActive(true);
         player.SetActive(true);
         managers.SetActive(true);
         canvas.SetActive(true);

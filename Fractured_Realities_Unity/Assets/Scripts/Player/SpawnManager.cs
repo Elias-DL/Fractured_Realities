@@ -47,12 +47,28 @@ public class SpawnManager : MonoBehaviour
             }
             else
             {
-                // Zoek de speler en verplaats deze naar het teleportatiedoel
-                GameObject player = GameObject.FindWithTag("Player");
                 GameObject startspawn = GameObject.FindWithTag("StartSpawn");
-                player.transform.position = startspawn.transform.position;
-                player.transform.rotation = startspawn.transform.rotation;
-                Debug.LogWarning("Er is geen spawnPointName opgegeven. De speler spawnt op de standaardpositie.");
+                if (startspawn != null)
+                {
+                    GameObject player = GameObject.FindWithTag("Player");
+
+                    CharacterController CC = player.GetComponent<CharacterController>();
+                    CC.enabled = false;
+                    // Zoek de speler en verplaats deze naar het teleportatiedoel
+                    player.transform.position = startspawn.transform.position;
+                    player.transform.rotation = startspawn.transform.rotation;
+                    CC.enabled = true;
+                    Debug.LogWarning("Er is geen spawnPointName opgegeven. De speler spawnt op de standaardpositie.");
+                }
+
+                else
+                {
+                    GameObject player = GameObject.FindWithTag("Player");
+
+                    
+                    Debug.LogWarning("Er is geen spawnPointName opgegeven. De speler spawnt op de standaardpositie.");
+                }
+                
             }
         }
     }

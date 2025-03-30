@@ -7,12 +7,14 @@ using UnityEngine.Experimental.GlobalIllumination;
 public class FlashlightToggle : MonoBehaviour
 {
     public GameObject licht;
-    public bool isOn = false;
+    public bool isOn = true;
 
     void Start()
     {
         //start met licht uit
         licht.SetActive(isOn);
+        licht.GetComponent<Light>().enabled = true;
+
     }
 
     void Update()
