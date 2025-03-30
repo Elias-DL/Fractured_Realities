@@ -14,6 +14,11 @@ public class ItemPickup : MonoBehaviour
         int defaultLayer = LayerMask.NameToLayer("Default");
     
         MainCamera.layer = defaultLayer;
+        if (EquippedItemManager.Instance.EquippedItemName != null)
+        {
+            EquippedItemManager.Instance.ClearEquippedItem();
+        }
+        
         EquippedItemManager.Instance.ClearEquippedItem(); // zodat de item niet equipped is als je die terug is inventory zet
         InventoryManager.Instance.Add(Item);
         InventoryManager.Instance.ListItems(); // UI refreshed
@@ -24,7 +29,18 @@ public class ItemPickup : MonoBehaviour
     // Update is called once per frame
     private void OnMouseDown() // gameobject MOET een rigibody EN collider hebben
     {
+
         Pickup();
-        Debug.Log("aaaaa");
+        
+    }
+
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R) && EquippedItemManager.Instance.EquippedItemName == Item.name)
+       {
+            Pickup();
+            Debug.Log("a");
+        }
     }
 }
