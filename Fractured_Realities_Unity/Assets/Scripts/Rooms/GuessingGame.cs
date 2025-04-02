@@ -9,12 +9,19 @@ public class GuessingGame : MonoBehaviour
     private int objRandomNr;
     public GameObject sleutel;
     public GameObject guessingGameCanvas;
-
+    public GameObject canvas;
     void Start()
     {
+        canvas = GameObject.FindGameObjectWithTag("Canvas");
+
+        guessingGameCanvas = canvas.GetComponent<MenuLogic>().guessingGameUI;
+
+
+        sleutel = GameObject.FindWithTag("Key4");
+
         objRandomNr = Random.Range(1, 101);
         feedbackText.text = "Guess a number between 1 and 100!";
-        sleutel.SetActive(false);
+        sleutel.GetComponent<MeshRenderer>().enabled = false;
     }
 
     public void CheckGuess()
@@ -33,7 +40,7 @@ public class GuessingGame : MonoBehaviour
             else
             {
                 feedbackText.text = "Correct! You guessed it!";
-                sleutel.SetActive(true);
+                sleutel.GetComponent<MeshRenderer>().enabled = true;
                 guessingGameCanvas.SetActive(false);
 
             }

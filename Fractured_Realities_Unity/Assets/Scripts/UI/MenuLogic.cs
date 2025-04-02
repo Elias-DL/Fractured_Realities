@@ -18,6 +18,7 @@ public class MenuLogic : MonoBehaviour
     public GameObject LoadingScreen;
     public GameObject JumpscareUI;
     public GameObject TipsUI;
+    public GameObject guessingGameUI;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +35,7 @@ public class MenuLogic : MonoBehaviour
         //LoadingScreen = GameObject.FindWithTag("LoadingScreen");
         //Jumpscare = GameObject.FindWithTag("Jumpscare");
         //TipsUI = GameObject.FindWithTag("TipsUI");
+        //guessingGameUI = GameObject.FindWithTag("guessingGameUI");
     }
 
     // Update is called once per frame

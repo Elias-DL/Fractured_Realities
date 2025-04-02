@@ -126,35 +126,35 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey("w"))
         {
-            rb.AddForce(transform.forward * forwardForce * Time.deltaTime);
+            //rb.AddForce(transform.forward * forwardForce * Time.deltaTime);
             animator.SetBool("WalkForward", true);
             action = "Walk";
         }
 
         if (Input.GetKey("s"))
         {
-            rb.AddForce(0, 0, -forwardForce * Time.deltaTime);
+            //rb.AddForce(0, 0, -forwardForce * Time.deltaTime);
             animator.SetBool("WalkBackward", true);
             action = "Walk";
         }
 
         if (Input.GetKey("d"))
         {
-            transform.Rotate(0, sideForce * Time.deltaTime, 0);
+            //transform.Rotate(0, sideForce * Time.deltaTime, 0);
             animator.SetBool("RightWalk", true);
             action = "Walk";
         }
 
         if (Input.GetKey("a"))
         {
-            transform.Rotate(0, -sideForce * Time.deltaTime, 0);
+            //transform.Rotate(0, -sideForce * Time.deltaTime, 0);
             animator.SetBool("LeftWalk", true);
             action = "Walk";
         }
 
         if (Input.GetKey(KeyCode.LeftShift) && (Input.GetKey("w")))
         {
-            rb.AddForce(transform.forward * sprintForce * Time.deltaTime);
+            //rb.AddForce(transform.forward * sprintForce * Time.deltaTime);
             animator.SetBool("WalkForward", false);
             animator.SetBool("RunForward", true);
             action = "Walk & Run";
@@ -162,7 +162,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey("space"))
         {
-            rb.AddForce(0, jump, 0 * Time.deltaTime);
+            //rb.AddForce(0, jump, 0 * Time.deltaTime);
             animator.SetBool("Jump", true);
             action = "Jump";
         }

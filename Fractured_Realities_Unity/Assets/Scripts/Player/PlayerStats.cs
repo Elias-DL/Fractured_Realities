@@ -92,6 +92,7 @@ public class PlayerStats : MonoBehaviour
         escaped = true;
         Destroy(player);
         Destroy(Canvas);
+        Cursor.lockState = CursorLockMode.Confined;
         SceneManager.LoadScene("Scoreboard");
     }
     
