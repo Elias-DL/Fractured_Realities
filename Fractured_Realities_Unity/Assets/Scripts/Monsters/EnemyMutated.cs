@@ -170,7 +170,7 @@ public class EnemyMutated : MonoBehaviour
 
     {
         isDamaging = true;
-        Debug.Log("DAMAGE");
+        //Debug.Log("DAMAGE");
 
         yield return new WaitForSeconds(attackDuration); // damaga na animatie zodat je tijd hebt om weg te lopen
         if (action == "Attack") //als na de animatie speler nog in de buurt is en de action dus nog steeds attack is wel damage doen.

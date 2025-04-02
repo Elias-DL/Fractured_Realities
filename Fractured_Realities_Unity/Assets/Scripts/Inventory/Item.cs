@@ -8,5 +8,5 @@ public class Item : ScriptableObject
     public int id;
     public string itemName;
     public Sprite icon;
-    public GameObject prefab; // Add a reference to the item's prefab
+    public GameObject prefab; 
 }

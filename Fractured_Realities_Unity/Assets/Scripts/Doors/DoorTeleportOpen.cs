@@ -58,7 +58,7 @@ public class DoorTeleport : MonoBehaviour
             SpawnManager.spawnPointName = targetSpawnPointName;
 
             // Laad de nieuwe scene
-            Debug.Log("travel to " + targetScene + " door " + targetSpawnPointName);
+            //Debug.Log("travel to " + targetScene + " door " + targetSpawnPointName);
             SceneManager.LoadScene(targetScene);
 
             LoadScene();

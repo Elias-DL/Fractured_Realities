@@ -48,7 +48,7 @@ public class PlayerStats : MonoBehaviour
     }
     public void TakeDamage(float damage)
     {
-        Debug.Log(transform.position + " health : " + currentHealth);
+        //Debug.Log(transform.position + " health : " + currentHealth);
 
         currentHealth -= damage;
         healthBar.SetSlider(currentHealth);
@@ -56,7 +56,7 @@ public class PlayerStats : MonoBehaviour
         if (currentHealth <= 0)
         {
             Respawn(StartSpawn);
-            Debug.Log("DEAD LOL LLLLLLLLLLLLLLL");
+            //Debug.Log("DEAD LOL LLLLLLLLLLLLLLL");
         }
     }
 
@@ -74,13 +74,13 @@ public class PlayerStats : MonoBehaviour
 
         player.transform.position = spawnPlek.transform.position;
         player.transform.rotation = spawnPlek.transform.rotation;
-        Debug.Log("Respawned at " + player.transform.position + " health : " + currentHealth);
+        //Debug.Log("Respawned at " + player.transform.position + " health : " + currentHealth);
 
         CC.enabled = true;
         currentHealth = 100;
         healthBar.SetSlider(currentHealth);
         deaths++;
-        Debug.Log("Death(s):" + deaths);
+        //Debug.Log("Death(s):" + deaths);
         //JumpscareUI.SetActive(false);
 
     }

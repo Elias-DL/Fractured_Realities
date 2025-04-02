@@ -285,11 +285,16 @@ MonoBehaviour:
   playerCamera: {fileID: 224913757155190688}
   walkSpeed: 50
   runSpeed: 100
-  jumpPower: 25
+  jumpPower: 20
   gravity: 20
+  cursorLock: 1
   lookSpeed: 2
   lookXLimit: 45
+  Inventory: {fileID: 0}
+  IngameMenuUI: {fileID: 0}
+  GuessingGame: {fileID: 0}
   canMove: 1
+  guessingGameCanvas: {fileID: 0}
   characterController: {fileID: 5914548194925849910}
 --- !u!65 &5257121674274216570
 BoxCollider:
@@ -362,6 +367,10 @@ MonoBehaviour:
   gezien: 0
   naamGezien: 
   cam: {fileID: 224913757155190688}
+  txtTips: {fileID: 0}
+  layerMaskEnemies:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!23 &9094800375650939692
 MeshRenderer:
   m_ObjectHideFlags: 0

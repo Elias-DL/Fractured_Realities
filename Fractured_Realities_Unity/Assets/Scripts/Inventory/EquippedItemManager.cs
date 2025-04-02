@@ -3,8 +3,10 @@ using UnityEngine;
 public class EquippedItemManager : MonoBehaviour
 {
     public static EquippedItemManager Instance { get; private set; }
+    private Item equippedItem;
+    private GameObject equippedItemInstance; // Store the actual GameObject
 
-    public string EquippedItemName { get; private set; }
+    public string EquippedItemName => equippedItem != null ? equippedItem.itemName : "";
 
     private void Awake()
     {
@@ -13,21 +15,29 @@ public class EquippedItemManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
         Instance = this;
-        if (EquippedItemName != null)
-        {
-            DontDestroyOnLoad(gameObject); // Keep this object persistent across scenes
-        }
+        DontDestroyOnLoad(gameObject);
     }
 
-    public void SetEquippedItem(string itemName)
+    public void SetEquippedItem(Item item, GameObject instance)
     {
-        EquippedItemName = itemName;
+        equippedItem = item;
+        equippedItemInstance = instance; // Store the actual instantiated object
+    }
+
+    public Item GetEquippedItem()
+    {
+        return equippedItem;
+    }
+
+    public GameObject GetEquippedItemInstance()
+    {
+        return equippedItemInstance; // Return the instantiated GameObject
     }
 
     public void ClearEquippedItem()
     {
-        EquippedItemName = null;
+        equippedItem = null;
+        equippedItemInstance = null;
     }
 }

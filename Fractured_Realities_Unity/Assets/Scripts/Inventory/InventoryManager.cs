@@ -40,7 +40,7 @@ public class InventoryManager : MonoBehaviour
 
         currentScene = SceneManager.GetActiveScene();
         currentSceneName = currentScene.name;
-        Debug.Log("start inventorymanager " + currentSceneName);
+        //Debug.Log("start inventorymanager " + currentSceneName);
         
         HideInventory = GameObject.FindWithTag("HideInventory");
         ShowInventory = GameObject.FindWithTag("ShowInventory");
@@ -120,7 +120,7 @@ public class InventoryManager : MonoBehaviour
 
     public void ListItems()
     {
-        Debug.Log("ListItems called");
+       // Debug.Log("ListItems called");
 
         // Clear out any existing inventory items in the UI
         foreach (Transform item in ItemContent)

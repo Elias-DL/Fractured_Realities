@@ -1,5 +1,5 @@
+using Unity.VisualScripting;
 using UnityEngine;
-
 
 public class InventoryItemController : MonoBehaviour
 {
@@ -8,9 +8,6 @@ public class InventoryItemController : MonoBehaviour
     public Transform player;
     private GameObject equippedItem;
 
-
-
-    // Static reference to the currently equipped item's name
     public static string EquippedItemName { get; private set; }
 
     private void Start()
@@ -18,84 +15,71 @@ public class InventoryItemController : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-
-
     public void OnItemClicked()
     {
         EquipItem();
         InventoryManager.Instance.Remove(item); // Remove from inventory (but no world drop)
     }
 
-    // Equip the item in front of the player
     public void EquipItem()
     {
         if (item != null && item.prefab != null)
         {
-            if (equippedItem != null)
+            // Retrieve and destroy the previously equipped item
+            GameObject previousEquippedItemObject = EquippedItemManager.Instance.GetEquippedItemInstance();
+            if (previousEquippedItemObject != null)
             {
-                Destroy(equippedItem);
+                Item previousEquippedItem = EquippedItemManager.Instance.GetEquippedItem();
+                if (previousEquippedItem != null)
+                {
+                    InventoryManager.Instance.Add(previousEquippedItem); // Return old item to inventory
+                }
+                Destroy(previousEquippedItemObject); // Destroy the actual instance in the scene
+                EquippedItemManager.Instance.ClearEquippedItem();
             }
 
+            // Determine the equip position and rotation
+            Vector3 equipPoint = GameObject.FindGameObjectWithTag("EquipPosition").transform.position;
+            Quaternion rotation = Quaternion.Euler(0, 0, 90);
 
+            // Instantiate the new equipped item
+            GameObject newEquippedItemObject = Instantiate(item.prefab, equipPoint, rotation);
+            newEquippedItemObject.transform.parent = player;
 
-            Vector3 Equippoint = GameObject.FindGameObjectWithTag("EquipPosition").transform.position;
-            Quaternion Rotation = Quaternion.Euler(0, 0, 90);
-            Debug.Log("item op pos : " + Equippoint + " en rotatie " + Rotation);
-
-            equippedItem = Instantiate(item.prefab, Equippoint, Rotation);
-            equippedItem.transform.parent = player;
-            item.itemName = item.name;
-
-            Debug.Log(item.name);   
-
-
-            // niet de beste manier maar kijk het werkt(voor nu), gwn elke keer kijken welke het is aangezien veel items anders moeten gepositioneerd worden, makkelijker dan prefab want rotatation moet in code gedefinieerd worden anders is het item verkeerd gedraaid
+            // Adjust rotation based on specific item names
             if (item.name == "Flashlight")
-            {
-                Rotation = Quaternion.Euler(0, 90, 90);
-
-            }
+                rotation = Quaternion.Euler(0, 90, 90);
             else if (item.name.Contains("Candle") || item.name == "Zombie" || item.name == "Bookhead" || item.name == "Anklegrabber")
-            {
-                Rotation = Quaternion.Euler(0, 0, 0);
-
-
-            }
-
+                rotation = Quaternion.Euler(0, 0, 0);
             else if (item.name == "FinalKey")
-            {
-                Rotation = Quaternion.Euler(270, -90, -90);
-
-            }
-
+                rotation = Quaternion.Euler(270, -90, -90);
             else if (item.name == "Camera")
-            {
-                Rotation = Quaternion.Euler(-180, 0, 0);
-            }
+                rotation = Quaternion.Euler(-180, 0, 0);
 
+            newEquippedItemObject.transform.localRotation = rotation;
 
-            else
-            {
-                Rotation = Quaternion.Euler(0, 0, 90);
-            }
-
-
-            equippedItem.transform.localRotation = Rotation; // Resets local rotation
-
-            Rigidbody rb = equippedItem.GetComponent<Rigidbody>();
+            // Ensure the Rigidbody is kinematic
+            Rigidbody rb = newEquippedItemObject.GetComponent<Rigidbody>();
             if (rb != null)
             {
                 rb.isKinematic = true;
             }
 
-            EquippedItemManager.Instance.SetEquippedItem(item.itemName); // Notify the manager
+            // Store the new equipped item in EquippedItemManager
+            EquippedItemManager.Instance.SetEquippedItem(item, newEquippedItemObject);
+            EquippedItemName = item.itemName;
         }
         else
         {
-            Debug.LogWarning("Item or prefab is missing for this item!");
-            EquippedItemManager.Instance.ClearEquippedItem(); // Clear if nothing is equipped
+            Debug.LogWarning("Item or prefab is missing!");
+            EquippedItemManager.Instance.ClearEquippedItem();
+            EquippedItemName = "";
         }
     }
+
+
+
+
 
 
     // Adds an item to this controller, ensuring the correct prefab is linked
@@ -108,7 +92,7 @@ public class InventoryItemController : MonoBehaviour
         if (item != null && item.prefab != null)
         {
             itemPrefab = item.prefab; // Assign the correct prefab
-            Debug.Log("add");
+            //Debug.Log("add");
         }
         else
         {
@@ -156,6 +140,6 @@ public class InventoryItemController : MonoBehaviour
         }
     }
 
-    
+
 
 }
