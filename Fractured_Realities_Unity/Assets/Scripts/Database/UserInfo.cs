@@ -8,6 +8,7 @@ public class UserInfo : MonoBehaviour
     public TMPro.TextMeshProUGUI Username;
     public TMPro.TextMeshProUGUI Deaths;
     public TMPro.TextMeshProUGUI Time;
+    public TMPro.TextMeshProUGUI Date;
     // Start is called before the first frame update
     void Start()
     {

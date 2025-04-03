@@ -8,8 +8,8 @@ using UnityEngine.SceneManagement;
 public class DBConnection : MonoBehaviour
 {
     // URL of the PHP script
-    private string phpUrlSturen = "http://localhost/School/Project/UnityDBScripts/Pages/SendData.php";
-    private string phpUrlHalen = "http://localhost/School/Project/UnityDBScripts/Pages/GetData.php";
+    private string phpUrlSturen = "http://localhost/Fractured_Realities_DB/UnityDBScripts/Pages/SendData.php";
+    private string phpUrlHalen = "http://localhost/Fractured_Realities_DB/UnityDBScripts/Pages/GetData.php";
     public GameObject UserInformationContent;
     public GameObject UserInfoPrefab;
 
@@ -62,7 +62,7 @@ public class DBConnection : MonoBehaviour
             PlayerPrefs.Save();
             username = usernameInput.text;
             SceneManager.LoadScene("Main Menu");
-            Debug.Log(username);
+            //Debug.Log(username);
 
         }
     }
@@ -127,13 +127,14 @@ public class DBConnection : MonoBehaviour
                         if (users[i] != "")
                         {
                             string[] userinfo = users[i].Split(",");    
-                            Debug.Log("Username : " + userinfo[0] + " Deaths : " + userinfo[1] + " Time : " + userinfo[2]);
+                            Debug.Log("Username : " + userinfo[0] + " Deaths : " + userinfo[1] + " Time : " + userinfo[2] + " Date " + userinfo[3]);
 
                             GameObject gameobj = (GameObject)Instantiate(UserInfoPrefab);
                             gameobj.transform.SetParent(UserInformationContent.transform);
                             gameobj.GetComponent<UserInfo>().Username.text = userinfo[0];
                             gameobj.GetComponent<UserInfo>().Deaths.text = userinfo[1];
                             gameobj.GetComponent<UserInfo>().Time.text = userinfo[2];
+                            gameobj.GetComponent<UserInfo>().Date.text = userinfo[3];
 
 
                         }

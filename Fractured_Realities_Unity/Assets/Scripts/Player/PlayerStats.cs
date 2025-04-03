@@ -81,7 +81,7 @@ public class PlayerStats : MonoBehaviour
         healthBar.SetSlider(currentHealth);
         deaths++;
         //Debug.Log("Death(s):" + deaths);
-        //JumpscareUI.SetActive(false);
+        JumpscareUI.SetActive(false);
 
     }
 

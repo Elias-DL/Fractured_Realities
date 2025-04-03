@@ -42,5 +42,8 @@ public class FlashlightToggle : MonoBehaviour
             }
 
         }
+
+
+        //Debug.Log(EquippedItemManager.Instance.EquippedItemName);
     }
 }

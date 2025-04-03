@@ -25,22 +25,27 @@ public class Picture : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F) && Player.GetComponent<PlayerMovement>().naamGezien == "AnkleGrabber")
         {
             Managers.GetComponent<InventoryManager>().Items.Add(pictureAnklegrabber);
-            Debug.Log("anklegrabber stalked");
+            //Debug.Log("anklegrabber stalked");
             InventoryManager.Instance.ListItems();// update de ui direct 
+            Player.GetComponent<PlayerMovement>().naamGezien = null;
         }
 
         else if (Input.GetKeyDown(KeyCode.F) && Player.GetComponent<PlayerMovement>().naamGezien == "Bookhead")
         {
             Managers.GetComponent<InventoryManager>().Items.Add(pictureZombieWithBlood);
-            Debug.Log("bookhead stalked");
+            //Debug.Log("bookhead stalked");
             InventoryManager.Instance.ListItems();
+            Player.GetComponent<PlayerMovement>().naamGezien = null;
+
         }
 
         else if (Input.GetKeyDown(KeyCode.F) && Player.GetComponent<PlayerMovement>().naamGezien == "Zombie")
         {
             Managers.GetComponent<InventoryManager>().Items.Add(pictureMutated);
-            Debug.Log("zombie stalked");
+            //Debug.Log("zombie stalked");
             InventoryManager.Instance.ListItems();
+            Player.GetComponent<PlayerMovement>().naamGezien = null;
+
         }
     }
 }

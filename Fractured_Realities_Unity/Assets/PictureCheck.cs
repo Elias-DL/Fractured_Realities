@@ -21,7 +21,11 @@ public class PictureCheck : MonoBehaviour
 
         if (imgAnkle.activeSelf == true && imgBookHead.activeSelf == true && imgZombie.activeSelf == true)
         {
-            Key.SetActive(true);
+            if (Key != null)
+            {
+                Key.SetActive(true);
+
+            }
         }
     }
 }

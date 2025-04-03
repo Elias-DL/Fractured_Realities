@@ -104,6 +104,12 @@ public class EnemyAnkleGrabber : MonoBehaviour
             }
         }
 
+        else if (coolDown && action != "Attack") 
+        {
+            RoamAround();
+            action = "Roam";
+        }
+
 
 
 
@@ -148,7 +154,7 @@ public class EnemyAnkleGrabber : MonoBehaviour
 
             StartCoroutine(Scared());
 
-                Debug.Log("aaaaaaaaa");
+           //Debug.Log("scared");
            
                 
 
@@ -181,7 +187,7 @@ public class EnemyAnkleGrabber : MonoBehaviour
         {
             StartCoroutine(Scared());
 
-            Debug.Log("scaaaaaaaaaaared");
+            //Debug.Log("Scared");
 
         }
 
@@ -239,7 +245,7 @@ public class EnemyAnkleGrabber : MonoBehaviour
     {
         coolDown = true;
         RoamAround();
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(5f);
 
         coolDown = false;
     }

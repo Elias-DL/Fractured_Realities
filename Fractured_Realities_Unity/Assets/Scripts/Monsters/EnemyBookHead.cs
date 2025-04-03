@@ -49,10 +49,10 @@ public class EnemyBookHead : MonoBehaviour
         SoundEffects();
         action = null;
 
-        if (src == null /* || JumpscareUI == null*/)
+        if (src == null  || JumpscareUI == null)
         {
             src = GetComponent<AudioSource>();
-            //JumpscareUI = GameObject.FindWithTag("JumpscareUI");
+           JumpscareUI = GameObject.FindWithTag("JumpscareUI");
 
         }
         animator.SetBool("Roam", true);
@@ -68,7 +68,7 @@ public class EnemyBookHead : MonoBehaviour
         {
             StartCoroutine(Scared());
 
-            Debug.Log("aaaaaaaaa");
+            Debug.Log("Scared");
         }
         else
         {
@@ -207,8 +207,11 @@ public class EnemyBookHead : MonoBehaviour
         if (action == "Attack") //als na de animatie speler nog in de buurt is en de action dus nog steeds attack is wel damage doen.
         {
             Managers.GetComponent<PlayerStats>().TakeDamage(damage);
+
             isDamaging = false;
-            //JumpscareUI.SetActive(true);
+            JumpscareUI = GetComponent<PlayerStats>().JumpscareUI;
+
+            JumpscareUI.SetActive(true);
 
         }
         else

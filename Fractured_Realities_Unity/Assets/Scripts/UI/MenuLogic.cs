@@ -85,8 +85,8 @@ public class MenuLogic : MonoBehaviour
         healthUI.SetActive(true);
         toggleInventory.SetActive(true);
         hideInventory.SetActive(true);
-        //JumpscareUI.SetActive(true);
-
+        JumpscareUI.SetActive(true);
+        JumpscareUI.SetActive(false);
     }
 
     public void loadMenu()

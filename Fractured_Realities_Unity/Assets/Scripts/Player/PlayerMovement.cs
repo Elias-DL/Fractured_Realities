@@ -81,21 +81,21 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (EquippedItemManager.Instance.EquippedItemName == "Flashlight")
         {
-            txtTips.text = "Press F to turn on/off flashlight \n Press R to unequip";
+            txtTips.text = "Press F to turn on/off flashlight \nPress R to unequip";
 
         }
         else if (EquippedItemManager.Instance.EquippedItemName.Contains("Key"))
         {
-            txtTips.text = "Find the right door to unlock it \n Press R to unequip";
+            txtTips.text = "Find the right door to unlock it \nPress R to unequip";
         }
         else if (EquippedItemManager.Instance.EquippedItemName == "Camera")
         {
-            txtTips.text = "Press F when nearby a monster to take a picture \n Press R to unequip";
+            txtTips.text = "Press F when nearby a monster to take a picture \nPress R to unequip";
         }
 
         else if (EquippedItemManager.Instance.EquippedItemName == "Candle")
         {
-            txtTips.text = "Use the light to find the hidden key \n Press R to unequip";
+            txtTips.text = "Use the light to find the hidden key \nPress R to unequip";
         }
 
         else if (EquippedItemManager.Instance.EquippedItemName == "USB") // check usb naam
