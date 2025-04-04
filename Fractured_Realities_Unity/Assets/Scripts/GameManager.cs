@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     }
 
     private void Update()
-    {
+    {   //check of alle paitnings zijn opgehangen
         if (imgBoat.activeSelf == true && imgWoman.activeSelf == true && imgEarth.activeSelf == true && imgLandscape == true && imgWolf.activeSelf == true && imgBridge.activeSelf == true)
         {
 
@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
   
 
     private void ShowKey()
-    {
+    {//if alle paintings -> KEY visible
         Debug.Log("All paintings are placed!");
         Key6.SetActive(true); // Activate the door (or replace with an animation)
     }
