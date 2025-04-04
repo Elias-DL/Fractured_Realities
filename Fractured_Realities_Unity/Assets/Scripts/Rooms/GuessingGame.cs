@@ -31,11 +31,11 @@ public class GuessingGame : MonoBehaviour
         {
             if (playerGuess < objRandomNr)
             {
-                feedbackText.text = "Too LOW LOSER! Try again.";
+                feedbackText.text = "Too LOW! Try again.";
             }
             else if (playerGuess > objRandomNr)
             {
-                feedbackText.text = "Too HIGH LOSER! Try again.";
+                feedbackText.text = "Too HIGH! Try again.";
             }
             else
             {
