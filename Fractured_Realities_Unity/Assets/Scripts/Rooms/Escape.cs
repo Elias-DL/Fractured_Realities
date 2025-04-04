@@ -26,7 +26,7 @@ public class escape : MonoBehaviour
 
         if (equippedItem == neccescaryKey)
         {
-            Managers.GetComponent<PlayerStats>().Escape();
+            Managers.GetComponent<PlayerStats>().Escape(); // als de laatste key gevonden is is het spel gedaan
 
         }
 

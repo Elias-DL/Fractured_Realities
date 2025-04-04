@@ -65,10 +65,8 @@ public class InventoryManager : MonoBehaviour
 
             
         }
-
-
-        //old Input system
-        if (Input.GetKeyDown(KeyCode.E))  /// fornite : caps lock, Minecraf : E,  warzone : caps lock belangerijke keuze!!!!!!!!!!!!!
+        // OUd input systeem (beide kunnen tegelijk gebruikt worden)
+        if (Input.GetKeyDown(KeyCode.E))  // De key button om het aan of uitzetten van de inventory te controleren
         {
             ToggleInventory();
 
@@ -78,7 +76,7 @@ public class InventoryManager : MonoBehaviour
     public void ToggleInventory()
     {
 
-        // Toggle  inventorys visibility
+       
         bool isActive = Inventory.activeSelf;
         Inventory.SetActive(!isActive);
 
@@ -88,7 +86,7 @@ public class InventoryManager : MonoBehaviour
             ListItems();
         }
 
-        // toggle invenotory visibility check
+        // toggle inventory visibility check
         if (isActive) 
         {
            
@@ -111,10 +109,10 @@ public class InventoryManager : MonoBehaviour
 
     public void Remove(Item item)
     {
-        // Remove the item from the inventory list
+        // Verwijder het item van de inventory
         Items.Remove(item);
 
-        // Optionally refresh the inventory UI (if you want immediate feedback)
+        //  refresh inventory UI
         ListItems();
     }
 
@@ -122,41 +120,40 @@ public class InventoryManager : MonoBehaviour
     {
        // Debug.Log("ListItems called");
 
-        // Clear out any existing inventory items in the UI
+        // Inventoy UI resetten
         foreach (Transform item in ItemContent)
         {
             Destroy(item.gameObject);
         }
 
-        // Clear the InventoryItems array before setting new ones
+        // De array leegmaken voor dat deze opnieuw wordt gebruikt.
         InventoryItems = new InventoryItemController[Items.Count];
 
-        // Instantiate new inventory items
         for (int i = 0; i < Items.Count; i++)
         {
             GameObject obj = Instantiate(InventoryItem, ItemContent);
-            obj.SetActive(true); // Ensure the item is visible
+            obj.SetActive(true); 
 
-            // Find the UI components inside the instantiated prefab
+            // Het icon en de naam van het item vinden zodat deze later kunnen worden ingesteld
             var itemName = obj.transform.Find("ItemName").GetComponent<TMPro.TextMeshProUGUI>();
             var itemIcon = obj.transform.Find("ItemIcon").GetComponent<UnityEngine.UI.Image>();
 
-            // Set the UI text and icon for the item
+            // Instellen van naam en icon
             itemName.text = Items[i].itemName;
             itemIcon.sprite = Items[i].icon;
 
             obj.name = itemName.text;
 
-            // Assign the item to the InventoryItemController component
+            // Het item toevoegen aan de inventorycontroller
             InventoryItemController controller = obj.GetComponent<InventoryItemController>();
 
-            // Ensure the correct item and prefab are assigned
+            // De corrosponderende items toevoegen aan de controller
             controller.AddItem(Items[i]);
 
-            // Assign to the InventoryItems array
+            // De controller toevoegen op de juiste plek in de array
             InventoryItems[i] = controller;
 
-            // Add the click event to equip the item
+            // Een event koppelen aan het item zodat je er op kan klikken om deze te equippen.
             obj.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(controller.OnItemClicked);
         }
     }
@@ -165,7 +162,6 @@ public class InventoryManager : MonoBehaviour
 
     public void SetInventoryItems()
     {
-        
 
         for (int i = 0; i < Items.Count; i++)
         {

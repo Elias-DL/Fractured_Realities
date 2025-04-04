@@ -10,7 +10,7 @@ public class EnemyBookHead : MonoBehaviour
     public float detectionRadius;
     public float roamRange;
     public float stopChaseDistance;
-    // private SkinnedMeshRenderer ZichtbaarMesh;
+    // private SkinnedMeshRenderer ZichtbaarMesh; Uitbreiding om het monster deels onzichtbaar te maken
     private NavMeshAgent navAgent;
     private Animator animator;
     private Vector3 startPOS;
@@ -19,15 +19,14 @@ public class EnemyBookHead : MonoBehaviour
     public float damage;
     public GameObject Player;
     public GameObject Managers;
-    private float attackDuration = 2f; // chech animatie
+    private float attackDuration = 2f; // chechk animatie
     public AudioSource src;
     public AudioClip sfxRoam;
     public AudioClip sfxChase;
     public AudioClip sfxAttack;
     public bool enemyGezien;
     private string previousAction = "";
-
-    //public GameObject JumpscareUI;
+    //public GameObject JumpscareUI; // Jumpscare uitbreiding
     public void Awake()
     {
 
@@ -64,8 +63,8 @@ public class EnemyBookHead : MonoBehaviour
 
         float distanceToPlayer = Vector3.Distance(transform.position, playerTrans.position);
         //Debug.Log("Distance to player: " + distanceToPlayer + " detectionradius : " + detectionRadius);
-        Debug.Log(Player.GetComponent<PlayerMovement>().naamGezien);
-        if (Managers.GetComponent<PlayerStats>().Respawning == true)
+        //Debug.Log(Player.GetComponent<PlayerMovement>().naamGezien);
+        if (Managers.GetComponent<PlayerStats>().Respawning == true)  // Als de speler respawned kan deze niet aangevallen of gevolgd worden 
         {
             RoamAround();
             action = "Roam";
@@ -105,7 +104,7 @@ public class EnemyBookHead : MonoBehaviour
     {
         // ZichtbaarMesh.enabled = false;
         animator.SetBool("Roam", true);
-        // Check if the agent is already moving to a destination, if not, pick a random spot to roam to
+        // Als het monster nog nergens naar toe gaat kiest deze automatisch een nieuwe locatie
         if (!navAgent.pathPending && navAgent.remainingDistance <= navAgent.stoppingDistance)
         {
             // Generate a random point within the roaming range
@@ -134,7 +133,7 @@ public class EnemyBookHead : MonoBehaviour
         action = "Attack";
 
 
-        // Make the zombie face the player
+        // monster draaien in de richting van de speler
         Vector3 directionToPlayer = (playerTrans.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(directionToPlayer.x, 0, directionToPlayer.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
@@ -159,7 +158,7 @@ public class EnemyBookHead : MonoBehaviour
         //Debug.Log(distanceToPlayer + " , " + attackRange);
 
         if (distanceToPlayer <= attackRange + 2 && Player.GetComponent<PlayerMovement>().naamGezien == "Bookhead") // +2 voor veiligheid, anders vaak in de buurt van bv 30 (attack range) maar niet helemaal voor wtv reden
-        {
+        { // Het monster valt enkel aan als je in de buurt bent EN er naar kijkt
             Debug.Log("attack");
             AttackPlayer();
 
@@ -188,7 +187,7 @@ public class EnemyBookHead : MonoBehaviour
 
         yield return new WaitForSeconds(attackDuration); // damaga na animatie zodat je tijd hebt om weg te lopen
         if (action == "Attack" && Player.GetComponent<PlayerMovement>().naamGezien == "Bookhead") //als na de animatie speler nog in de buurt is en de action dus nog steeds attack is wel damage doen.
-        {
+        {// Het monster valt enkel aan als je in de buurt bent EN er naar kijkt
             //JumpscareUI.SetActive(true);
 
             Managers.GetComponent<PlayerStats>().TakeDamage(damage);

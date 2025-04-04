@@ -6,31 +6,31 @@ using UnityEngine.SceneManagement;
 
 public class HiddenKey : MonoBehaviour
 {
-    public GameObject Player;
-    public GameObject GlowKey;
-    public GameObject MainCamera;
-    public MeshRenderer GlowKleur;
+    public GameObject player;
+    public GameObject glowKey;
+    public GameObject mainCamera;
+    public MeshRenderer glowKleur;
     void Start()
     {
-        Player = GameObject.FindWithTag("Player");
-        GlowKey = GameObject.FindWithTag("GlowKey");
+        player = GameObject.FindWithTag("Player");
+        glowKey = GameObject.FindWithTag("GlowKey");
 
         Scene currentScene = SceneManager.GetActiveScene();
 
         if (currentScene.name == "Room1")
         {
-            GlowKleur = GlowKey.GetComponent<MeshRenderer>();
+            glowKleur = glowKey.GetComponent<MeshRenderer>();
         }
     }
 
     void Update()
     {
         Scene currentScene = SceneManager.GetActiveScene();
-        GlowKey = GameObject.FindWithTag("GlowKey");
+        glowKey = GameObject.FindWithTag("GlowKey");
 
         if (currentScene.name == "Room1")
         {
-            MainCamera = GameObject.FindWithTag("MainCamera");
+            mainCamera = GameObject.FindWithTag("MainCamera");
             string equippedItem = EquippedItemManager.Instance.EquippedItemName;
             int cameraLayer = LayerMask.NameToLayer("Camera");
             int defaultLayer = LayerMask.NameToLayer("Default");
@@ -38,27 +38,24 @@ public class HiddenKey : MonoBehaviour
 
             if (equippedItem == "Candle")
             {
-                GlowKleur.enabled = true;
-
-
-                // Change layer to "Camera"
+                glowKleur.enabled = true;
 
 
                 if (cameraLayer != -1)
                 {
-                    MainCamera.layer = cameraLayer;
-                    Debug.Log("GlowKey layer changed to 'Camera'");
+                    mainCamera.layer = cameraLayer; // Het blauwe effect wordt enkel op een ander layer getoond van de camera, hierdoor moet je deze eerst switchen
+                    Debug.Log("GlowKey layer ->  'Camera'");
                 }
                 else
                 {
-                    Debug.LogError("Layer 'Camera' does not exist. Please create it in Unity Layer settings.");
+                    Debug.LogError("Layer 'Camera' bestaat niet");
                 }
             }
             else
             {
-                GlowKleur.enabled = false;
-                //Debug.Log("Pak de kaars oppp");
-                MainCamera.layer = defaultLayer;
+                glowKleur.enabled = false;
+                //Debug.Log("Pak de kaars op");
+                mainCamera.layer = defaultLayer;
 
             }
 

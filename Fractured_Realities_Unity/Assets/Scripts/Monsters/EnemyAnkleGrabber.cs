@@ -8,7 +8,6 @@ using UnityEngine.AI;
 public class EnemyAnkleGrabber : MonoBehaviour
 {
 
-    //public Zone currentZone = Zone.None;  
     public Transform playerTrans;
     public float attackRange;
     public float detectionRadius;
@@ -22,7 +21,7 @@ public class EnemyAnkleGrabber : MonoBehaviour
     public float damage;
     public GameObject Player;
     public GameObject Managers;
-    private float attackDuration = 2f; // chech animatie
+    private float attackDuration = 2f; // check animatie
     public AudioSource src;
     public AudioClip sfxChase;
     public AudioClip sfxRoam;
@@ -72,7 +71,7 @@ public class EnemyAnkleGrabber : MonoBehaviour
 
         if (coolDown == false)
         {
-            if (Managers.GetComponent<PlayerStats>().Respawning == true)
+            if (Managers.GetComponent<PlayerStats>().Respawning == true)// Als de speler respawned kan deze niet aangevallen of gevolgd worden 
             {
                 RoamAround();
                 action = "Roam";
@@ -123,10 +122,10 @@ public class EnemyAnkleGrabber : MonoBehaviour
     {
 
         animator.SetBool("Roam", true);
-        // Check if the agent is already moving to a destination, if not, pick a random spot to roam to
+        // Als het monster nog nergens naar toe gaat kiest deze automatisch een nieuwe locatie
         if (!navAgent.pathPending && navAgent.remainingDistance <= navAgent.stoppingDistance)
         {
-            // Generate a random point within the roaming range
+            // Een rand
             Vector3 randomDirection = Random.insideUnitSphere * roamRange;
             randomDirection += transform.position;
 
@@ -152,7 +151,7 @@ public class EnemyAnkleGrabber : MonoBehaviour
         action = "Attack";
 
         if (Player.GetComponentInChildren<FlashlightToggle>() != null && Player.GetComponentInChildren<FlashlightToggle>().isOn == true)
-        {
+        { // Het monster gaat weg als je een flashlight hebt en deze staat aan
 
 
             StartCoroutine(Scared());
@@ -163,7 +162,7 @@ public class EnemyAnkleGrabber : MonoBehaviour
 
         }
 
-        // Make the zombie face the player
+        // monster draaien in de richting van de speler
         Vector3 directionToPlayer = (playerTrans.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(directionToPlayer.x, 0, directionToPlayer.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);

@@ -26,7 +26,7 @@ public class FPSController : MonoBehaviour
 
     public GameObject guessingGameCanvas;
     public CharacterController characterController;
-    Animator animator; // Reference to Animator
+    Animator animator;
 
     void Start()
     {
@@ -37,10 +37,10 @@ public class FPSController : MonoBehaviour
 
     void Update()
     {
-
+        // controle of de cursor vrij is of in het midden blijft
         if (Inventory.activeSelf == true || IngameMenuUI.activeSelf == true || GuessingGame.activeSelf == true || SceneManager.GetActiveScene().name == "Scoreboard")
         {
-            cursorLock = false;
+            cursorLock = false; // cursor is vrij
         }
 
         else
@@ -50,14 +50,14 @@ public class FPSController : MonoBehaviour
 
         if (cursorLock == true)
         {
-            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.lockState = CursorLockMode.Locked; // cursor in het midden
             Cursor.visible = true;
 
             #region Handles Movment
             Vector3 forward = transform.TransformDirection(Vector3.forward);
             Vector3 right = transform.TransformDirection(Vector3.right);
 
-            // Press Left Shift to run
+            // shift om te sprinten
             bool isRunning = Input.GetKey(KeyCode.LeftShift);
             float curSpeedX = canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Vertical") : 0;
             float curSpeedY = canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Horizontal") : 0;
@@ -65,9 +65,8 @@ public class FPSController : MonoBehaviour
             moveDirection = (forward * curSpeedX) + (right * curSpeedY);
 
             // Update Animator parameter "Move"
-            float moveMagnitude = new Vector2(curSpeedX, curSpeedY).magnitude; // Calculate combined movement speed
-                                                                               // animator.SetFloat("Move", moveMagnitude); // Update Move parameter
-                                                                               //Debug.Log(moveMagnitude);
+            float moveMagnitude = new Vector2(curSpeedX, curSpeedY).magnitude;
+                                                                               
             #endregion
 
             #region Handles Jumping
@@ -110,14 +109,13 @@ public class FPSController : MonoBehaviour
             Vector3 forward = transform.TransformDirection(Vector3.forward);
             Vector3 right = transform.TransformDirection(Vector3.right);
 
-            // Press Left Shift to run
+            
             bool isRunning = Input.GetKey(KeyCode.LeftShift);
             float curSpeedX = canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Vertical") : 0;
             float curSpeedY = canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Horizontal") : 0;
             float movementDirectionY = moveDirection.y;
             moveDirection = (forward * curSpeedX) + (right * curSpeedY);
 
-            // Update Animator parameter "Move"
             float moveMagnitude = new Vector2(curSpeedX, curSpeedY).magnitude; 
             #endregion
 
@@ -141,13 +139,7 @@ public class FPSController : MonoBehaviour
             #region Handles Rotation
             characterController.Move(moveDirection * Time.deltaTime);
 
-            //if (canMove)
-            //{
-            //    rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
-            //    rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
-            //    playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
-            //    transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
-            //}
+           
 
             #endregion
         }

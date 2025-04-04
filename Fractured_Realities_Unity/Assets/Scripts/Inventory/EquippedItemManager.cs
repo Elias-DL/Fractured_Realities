@@ -4,7 +4,7 @@ public class EquippedItemManager : MonoBehaviour
 {
     public static EquippedItemManager Instance { get; private set; }
     private Item equippedItem;
-    private GameObject equippedItemInstance; // Store the actual GameObject
+    private GameObject equippedItemInstance; // Gameobject van het item
 
     public string EquippedItemName => equippedItem != null ? equippedItem.itemName : "";
 
@@ -30,7 +30,7 @@ public class EquippedItemManager : MonoBehaviour
     public void SetEquippedItem(Item item, GameObject instance)
     {
         equippedItem = item;
-        equippedItemInstance = instance; // Store the actual instantiated object
+        equippedItemInstance = instance;
     }
 
     public Item GetEquippedItem()
@@ -40,7 +40,7 @@ public class EquippedItemManager : MonoBehaviour
 
     public GameObject GetEquippedItemInstance()
     {
-        return equippedItemInstance; // Return the instantiated GameObject
+        return equippedItemInstance; 
     }
 
     public void ClearEquippedItem()

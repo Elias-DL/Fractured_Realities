@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 public class EnemyMutated : MonoBehaviour
 {
-    //public Zone currentZone = Zone.None;  
     public Transform playerTrans;
     public float attackRange;
     public float detectionRadius;
@@ -63,7 +62,7 @@ public class EnemyMutated : MonoBehaviour
         float distanceToPlayer = Vector3.Distance(transform.position, playerTrans.position);
         //Debug.Log("Distance to player: " + distanceToPlayer + " detectionradius : " + detectionRadius);
 
-        if (Managers.GetComponent<PlayerStats>().Respawning == true)
+        if (Managers.GetComponent<PlayerStats>().Respawning == true) // Als de speler respawned kan deze niet aangevallen of gevolgd worden 
         {
             RoamAround();
             action = "Roam";
@@ -96,7 +95,7 @@ public class EnemyMutated : MonoBehaviour
     {
 
         animator.SetBool("Roam", true);
-        // Check if the agent is already moving to a destination, if not, pick a random spot to roam to
+        // Als het monster nog nergens naar toe gaat kiest deze automatisch een nieuwe locatie
         if (!navAgent.pathPending && navAgent.remainingDistance <= navAgent.stoppingDistance)
         {
             // Generate a random point within the roaming range
@@ -125,7 +124,7 @@ public class EnemyMutated : MonoBehaviour
         action = "Attack";
 
 
-        // Make the zombie face the player
+        // monster draaien in de richting van de speler
         Vector3 directionToPlayer = (playerTrans.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(directionToPlayer.x, 0, directionToPlayer.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);

@@ -13,7 +13,7 @@ public class USBCHECK : MonoBehaviour
     {
 
         canvas = GameObject.FindWithTag("Canvas");
-        //check wat vast
+        //checken wat speler vast heeft
         string equippedItem = EquippedItemManager.Instance.EquippedItemName;
         guessingGameCanvas = canvas.GetComponent<MenuLogic>().guessingGameUI;
         //Debug.Log(EquippedItemManager.Instance.EquippedItemName);

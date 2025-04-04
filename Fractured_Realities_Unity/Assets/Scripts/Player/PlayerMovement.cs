@@ -77,9 +77,10 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void Update()
+    void Update() // hints op basis van welk item je vast hebt
     {
-        if (EquippedItemManager.Instance.EquippedItemName == null)
+        Debug.Log(EquippedItemManager.Instance.EquippedItemName);
+        if (EquippedItemManager.Instance.EquippedItemName == "" || EquippedItemManager.Instance.EquippedItemName == null)
         {
 
             txtTips.text = "";
@@ -103,7 +104,7 @@ public class PlayerMovement : MonoBehaviour
             txtTips.text = "Use the light to find the hidden key \nPress R to unequip";
         }
 
-        else if (EquippedItemManager.Instance.EquippedItemName == "USB") // check usb naam
+        else if (EquippedItemManager.Instance.EquippedItemName == "USB") 
         {
             txtTips.text = "";
         }
@@ -128,11 +129,11 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("RightWalk", false);
         animator.SetBool("LeftWalk", false);
 
-        if (Input.GetKey("w"))
+        if (Input.GetKey("w")) // bewegingen worden door FPS controller script uitgevoerd, dit voor de integratie met een first person view
         {
             //rb.AddForce(transform.forward * forwardForce * Time.deltaTime);
             animator.SetBool("WalkForward", true);
-            action = "Walk";
+            action = "Walk"; // de juiste animatie telkens laten afspelen
         }
 
         if (Input.GetKey("s"))
@@ -175,7 +176,7 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    public void SoundEffects()
+    public void SoundEffects() // Het juiste geluid afspelen
     {
         if (action == "Walk" && !src.isPlaying)
         {

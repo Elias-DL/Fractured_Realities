@@ -20,7 +20,7 @@ public class MenuLogic : MonoBehaviour
     public GameObject TipsUI;
     public GameObject guessingGameUI;
     // Start is called before the first frame update
-    void Start()
+    void Start() // via inspector is makkelijker en betrouwbaarder -> minder snel fouten
     {
         //player = GameObject.FindGameObjectWithTag("Player");
         //inventoryUI = GameObject.FindGameObjectWithTag("Player");
@@ -41,7 +41,7 @@ public class MenuLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))  /// fornite : caps lock, Minecraf : E,  warzone : caps lock belangerijke keuze!!!!!!!!!!!!!
+        if (Input.GetKeyDown(KeyCode.Escape))  // Een "menu" opent wanneer je op escape drukt zodat je het spel kan afsluiten
         {
 
 
@@ -75,7 +75,6 @@ public class MenuLogic : MonoBehaviour
         DontDestroyOnLoad(managers);
         DontDestroyOnLoad(canvas);
         DontDestroyOnLoad(player);
-        // DontDestroyOnLoad(Inventory);
         TipsUI.SetActive(true);
         player.SetActive(true);
         managers.SetActive(true);
@@ -94,7 +93,7 @@ public class MenuLogic : MonoBehaviour
         SceneManager.LoadScene("Main Menu");
     }
 
-    public void QuitGame()
+    public void QuitGame() // Het spel volledig afsluiten
     {
         Application.Quit();
     }

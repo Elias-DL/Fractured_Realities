@@ -18,10 +18,10 @@ public class PlayerStats : MonoBehaviour
     public float time;
     public bool escaped = false;
     public bool Respawning = true;
-    //public GameObject JumpscareUI;
+    //public GameObject JumpscareUI; // Uitbreiding
     public GameObject Canvas;
     public GameObject DiedUI;
-    private void Start() // of awake? idk voor nu voor in game time te zetten in DB
+    private void Start() 
     {
         //Debug.Log("start");
         currentHealth = maxHealth;
@@ -50,7 +50,7 @@ public class PlayerStats : MonoBehaviour
         }
 
     }
-    public void TakeDamage(float damage)
+    public void TakeDamage(float damage) // Als een enemy damage doet wordt dit het health niveau aangepast
     {
         //Debug.Log(transform.position + " health : " + currentHealth);
 
@@ -60,12 +60,12 @@ public class PlayerStats : MonoBehaviour
         if (currentHealth <= 0)
         {
             Respawn(StartSpawn);
-            //Debug.Log("DEAD LOL LLLLLLLLLLLLLLL");
+            //Debug.Log("DEAD");
         }
     }
 
 
-    public void Respawn(GameObject spawnPlek) // character controller spreekt teleportere tegen (effe uitzetten)
+    public void Respawn(GameObject spawnPlek) // character controller spreekt teleportere tegen (even uitzetten)
     {
         if (SceneManager.GetActiveScene().name == "Map")
         {
@@ -118,7 +118,7 @@ public class PlayerStats : MonoBehaviour
         escaped = true;
         Destroy(player);
         Destroy(Canvas);
-        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.lockState = CursorLockMode.Confined; // cursor vrij laten voor interactie met scorebord mogelijk te maken
         SceneManager.LoadScene("Scoreboard");
         Destroy(player);
     }
@@ -126,7 +126,7 @@ public class PlayerStats : MonoBehaviour
     IEnumerator Died()
     {
 
-        DiedUI.SetActive(true);
+        DiedUI.SetActive(true); // laten weten aan de speler dat je bent doodgegaan, aangezien de teleportatie een beetje abrupt gebeurt
         
         yield return new WaitForSeconds(2f);
         Debug.Log("dead");

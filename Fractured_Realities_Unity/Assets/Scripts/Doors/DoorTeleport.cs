@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.InputSystem; // For the new Unity Input System
+using UnityEngine.InputSystem; // Library voor het nieuwe 
 
 public class DoorInteraction : MonoBehaviour
 {
@@ -43,20 +43,16 @@ public class DoorInteraction : MonoBehaviour
         player.SetActive(true);
         managers.SetActive(true);
         canvas.SetActive(true);
-        //showInventory.SetActive(true);
         inventoryUI.SetActive(true);
-        //healthUI.SetActive(true);
         toggleInventory.SetActive(true);
 
-        //menuUI.SetActive(false);
-        //hideInventory.SetActive(false);
+        
     }
 
     public void OnMouseDown()
     {
 
         SoundEffects();
-        //Check if the left mouse button was clicked
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
             string equippedItem = EquippedItemManager.Instance.EquippedItemName;
@@ -98,14 +94,7 @@ public class DoorInteraction : MonoBehaviour
         src.Play();
 
 
-        //if (src != null) NIET NODIG DENK Ik
-        //{
-        //    if (string.IsNullOrEmpty(action) || (action != "Walk" && src.isPlaying))
-        //    {
-        //        src.Stop(); // Stop the sound instantly when no action is detected
-        //    }
-
-        //}
+      
 
 
     }

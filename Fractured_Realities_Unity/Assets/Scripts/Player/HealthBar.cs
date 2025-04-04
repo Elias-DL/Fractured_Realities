@@ -8,12 +8,12 @@ public class HealthBar : MonoBehaviour
     public Slider healthSlider;
 
 
-    public void SetSlider(float value)
+    public void SetSlider(float value) 
     {
         healthSlider.value = value;
     }
 
-    public void SetSliderMax(float value)
+    public void SetSliderMax(float value) // het maximum aantal health dat je kan hebben instellen met parameter
     {
         healthSlider.maxValue = value;
         SetSlider(value);

@@ -27,7 +27,7 @@ public class GuessingGame : MonoBehaviour
     public void CheckGuess()
     {
         int playerGuess;
-        if (int.TryParse(guessInput.text, out playerGuess))
+        if (int.TryParse(guessInput.text, out playerGuess)) // controlleeer de invoer van de speler en geef commentaar
         {
             if (playerGuess < objRandomNr)
             {
@@ -40,7 +40,7 @@ public class GuessingGame : MonoBehaviour
             else
             {
                 feedbackText.text = "Correct! You guessed it!";
-                sleutel.GetComponent<MeshRenderer>().enabled = true;
+                sleutel.GetComponent<MeshRenderer>().enabled = true; // als de gok juist is wordt de sleutel zichtbaar
                 guessingGameCanvas.SetActive(false);
 
             }

@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class DBConnection : MonoBehaviour
 {
-    // URL of the PHP script
+    // globaal de php scripts declareren
     private string phpUrlSturen = "http://localhost/Fractured_Realities_DB/UnityDBScripts/Pages/SendData.php";
     private string phpUrlHalen = "http://localhost/Fractured_Realities_DB/UnityDBScripts/Pages/GetData.php";
     public GameObject UserInformationContent;
@@ -22,7 +22,7 @@ public class DBConnection : MonoBehaviour
     {
         Managers = GameObject.FindWithTag("Managers");
 
-        if (PlayerPrefs.HasKey("Username"))
+        if (PlayerPrefs.HasKey("Username")) // de username blijft binnen de variabelen zodat deze wordt onthouden bij het verzenden van de data
         {
             username = PlayerPrefs.GetString("Username");
             Debug.Log("Loaded Username: " + username);
@@ -46,7 +46,7 @@ public class DBConnection : MonoBehaviour
     }
     private IEnumerator GetUploadData()
     {
-        yield return StartCoroutine(GatherData()); // Wacht tot GatherData klaar is
+        yield return StartCoroutine(GatherData()); // Wacht tot GatherData klaar is zodat de gegevens van het huidige spel ook worden getoond op het scorebord
         yield return StartCoroutine(DataHalenCoroutine()); // Wacht tot DataHalen klaar is
     }
     public void Username()
@@ -75,18 +75,16 @@ public class DBConnection : MonoBehaviour
         form.AddField("deaths", deaths);
         Debug.Log("Sending POST data: Username = " + username+ " Time = " + time + ", Deaths = " + deaths);
 
-        // Send a GET request to the PHP script
+        // Get request naar het php script
         UnityWebRequest www = UnityWebRequest.Post(phpUrlSturen, form);
         yield return www.SendWebRequest();
 
         if (www.result == UnityWebRequest.Result.ConnectionError || www.result == UnityWebRequest.Result.ProtocolError)
         {
-            // Log error if the connection fails
             Debug.LogError("Error: " + www.error);
         }
         else
         {
-            // Log the PHP response (like "Connected successfully" or any message from PHP)
             Debug.Log("Response: " + www.downloadHandler.text);
             Debug.Log("VERBIDNING GESLAAGD");
         }
@@ -102,7 +100,6 @@ public class DBConnection : MonoBehaviour
 
         using (UnityWebRequest webRequest = UnityWebRequest.Get(uri))
         {
-            // Request and wait for the desired page.
             yield return webRequest.SendWebRequest();
 
             string[] pages = uri.Split('/');
@@ -118,7 +115,7 @@ public class DBConnection : MonoBehaviour
                     Debug.LogError(pages[page] + ": HTTP Error: " + webRequest.error);
                     break;
                 case UnityWebRequest.Result.Success:
-                    //Debug.Log(pages[page] + ":\nReceived: " + webRequest.downloadHandler.text);
+                    
                     string rawResponse = webRequest.downloadHandler.text;
                     string[] users = rawResponse.Split('*');
                     for(int i = 0; i < users.Length; i++)
@@ -126,7 +123,7 @@ public class DBConnection : MonoBehaviour
                         //Debug.Log("current data " + users[i]);
                         if (users[i] != "")
                         {
-                            string[] userinfo = users[i].Split(",");    
+                            string[] userinfo = users[i].Split(",");    // De gegevens worden apart gesplists door een komma en erna in unity getoond.
                             Debug.Log("Username : " + userinfo[0] + " Deaths : " + userinfo[1] + " Time : " + userinfo[2] + " Date " + userinfo[3]);
 
                             GameObject gameobj = (GameObject)Instantiate(UserInfoPrefab);

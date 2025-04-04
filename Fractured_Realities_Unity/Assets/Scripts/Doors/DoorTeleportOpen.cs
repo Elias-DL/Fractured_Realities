@@ -21,8 +21,7 @@ public class DoorTeleport : MonoBehaviour
         GameObject canvas = GameObject.FindGameObjectWithTag("Canvas");
         GameObject menuUI = GameObject.FindGameObjectWithTag("MenuUI");
         GameObject healthUI = GameObject.FindGameObjectWithTag("HealthUI");
-        //GameObject hideInventory = GameObject.FindGameObjectWithTag("HideInventory");
-        //GameObject showInventory = GameObject.FindGameObjectWithTag("ShowInventory");
+        
         GameObject toggleInventory = GameObject.FindGameObjectWithTag("ToggleInventory");
 
 
@@ -35,14 +34,11 @@ public class DoorTeleport : MonoBehaviour
         player.SetActive(true);
         managers.SetActive(true);
         canvas.SetActive(true);
-        //showInventory.SetActive(true);
+        
         inventoryUI.SetActive(true);
         toggleInventory.SetActive(true);
 
-        // geeft error voor wtv reden
-        //menuUI.SetActive(false);
-        //hideInventory.SetActive(false);
-        //healthUI.SetActive(true);
+       
 
     }
 

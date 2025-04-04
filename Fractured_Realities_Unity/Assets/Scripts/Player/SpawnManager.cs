@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 public class SpawnManager : MonoBehaviour
 {
     public static string spawnPointName; // Naam van het teleportatiedoel
-    int teller = 0;// soms fout dat else toch wordt opgeroepen, mogelijke opl
 
 
     Scene currentScene;
@@ -52,7 +51,7 @@ public class SpawnManager : MonoBehaviour
                 {
                     GameObject player = GameObject.FindWithTag("Player");
 
-                    CharacterController CC = player.GetComponent<CharacterController>();
+                    CharacterController CC = player.GetComponent<CharacterController>(); // CC uitzetten voor een vlotte teleportatie
                     CC.enabled = false;
                     // Zoek de speler en verplaats deze naar het teleportatiedoel
                     player.transform.position = startspawn.transform.position;

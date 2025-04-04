@@ -1,8 +1,8 @@
 using PlayerControlsScript;
 using UnityEngine;
-using UnityEngine.InputSystem; // Required for the new Input System
+using UnityEngine.InputSystem; 
 
-public class PlayerInputController : MonoBehaviour
+public class PlayerInputController : MonoBehaviour // Script voor het gebruiken van het nieuwe input systeem
 {
     private PlayerControls controls;
 
