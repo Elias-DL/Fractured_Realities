@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class escape : MonoBehaviour
 {
     public GameObject Managers;
+    [SerializeField] private string neccescaryKey;
 
     // Start is called before the first frame update
     void Start()
@@ -21,8 +22,13 @@ public class escape : MonoBehaviour
 
     private void OnMouseDown()
     {
-       
+        string equippedItem = EquippedItemManager.Instance.EquippedItemName;
+
+        if (equippedItem == neccescaryKey)
+        {
             Managers.GetComponent<PlayerStats>().Escape();
+
+        }
 
         
     }

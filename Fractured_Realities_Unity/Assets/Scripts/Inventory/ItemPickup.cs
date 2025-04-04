@@ -20,6 +20,7 @@ public class ItemPickup : MonoBehaviour
 
     private void Update()
     {
+        //Debug.Log(Item.name);
         if (Input.GetKeyDown(KeyCode.R) && EquippedItemManager.Instance.EquippedItemName == Item.name)
         {
             unequip();

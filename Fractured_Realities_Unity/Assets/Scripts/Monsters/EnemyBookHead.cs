@@ -10,6 +10,7 @@ public class EnemyBookHead : MonoBehaviour
     public float detectionRadius;
     public float roamRange;
     public float stopChaseDistance;
+    // private SkinnedMeshRenderer ZichtbaarMesh;
     private NavMeshAgent navAgent;
     private Animator animator;
     private Vector3 startPOS;
@@ -18,14 +19,15 @@ public class EnemyBookHead : MonoBehaviour
     public float damage;
     public GameObject Player;
     public GameObject Managers;
-    private float attackDuration = 0.1f; // chech animatie
-    AudioSource audioSrc;
+    private float attackDuration = 2f; // chech animatie
     public AudioSource src;
-    public AudioClip sfx1;
-
-    public bool coolDown = false;
+    public AudioClip sfxRoam;
+    public AudioClip sfxChase;
+    public AudioClip sfxAttack;
     public bool enemyGezien;
-    public GameObject JumpscareUI;
+    private string previousAction = "";
+
+    //public GameObject JumpscareUI;
     public void Awake()
     {
 
@@ -37,10 +39,12 @@ public class EnemyBookHead : MonoBehaviour
 
     public void Start()
     {
+        //ZichtbaarMesh = GetComponentInChildren<SkinnedMeshRenderer>();
         navAgent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         startPOS = transform.position;
-        audioSrc = GetComponent<AudioSource>();
+        src = GetComponent<AudioSource>();
+
     }
 
     private void Update()
@@ -49,10 +53,9 @@ public class EnemyBookHead : MonoBehaviour
         SoundEffects();
         action = null;
 
-        if (src == null  || JumpscareUI == null)
+        if (src == null)
         {
             src = GetComponent<AudioSource>();
-           JumpscareUI = GameObject.FindWithTag("JumpscareUI");
 
         }
         animator.SetBool("Roam", true);
@@ -61,67 +64,46 @@ public class EnemyBookHead : MonoBehaviour
 
         float distanceToPlayer = Vector3.Distance(transform.position, playerTrans.position);
         //Debug.Log("Distance to player: " + distanceToPlayer + " detectionradius : " + detectionRadius);
-
-        
-
-         if (Player.GetComponent<PlayerMovement>().naamGezien == "BookHeadMonster")
+        Debug.Log(Player.GetComponent<PlayerMovement>().naamGezien);
+        if (Managers.GetComponent<PlayerStats>().Respawning == true)
         {
-            StartCoroutine(Scared());
+            RoamAround();
+            action = "Roam";
+        }
+        
+        else if (distanceToPlayer <= detectionRadius && action != "Attack" && Player.GetComponent<PlayerMovement>().naamGezien == "Bookhead")
+        {
+            ChasePlayer();
 
-            Debug.Log("Scared");
+
+        }
+        else if (action != "Attack")
+        {
+            action = "Roam";
+
+            RoamAround();
         }
         else
         {
-            if (coolDown == false)
-            {
-                if (Managers.GetComponent<PlayerStats>().Respawning == true)
-                {
-                    RoamAround();
-                    action = "Roam";
-
-                }
-
-                else if (distanceToPlayer <= detectionRadius && action != "Attack")
-                {
-                   
-                        ChasePlayer();
 
 
-                }
-                else if (action != "Attack")
-                {
-                    action = "Roam";
 
-                    RoamAround();
-                }
-                else
-                {
-                    
+            AttackPlayer();
+            action = "Attack";
 
-                   
-                        AttackPlayer();
-                    action = "Attack";
-
-                }
-            }
         }
 
 
 
 
+
+
     }
 
-    IEnumerator Scared()
-    {
-        coolDown = true;
-        RoamAround();
-        yield return new WaitForSeconds(10f);
 
-        coolDown = false;
-    }
     private void RoamAround()
     {
-
+        // ZichtbaarMesh.enabled = false;
         animator.SetBool("Roam", true);
         // Check if the agent is already moving to a destination, if not, pick a random spot to roam to
         if (!navAgent.pathPending && navAgent.remainingDistance <= navAgent.stoppingDistance)
@@ -171,13 +153,14 @@ public class EnemyBookHead : MonoBehaviour
     {
         navAgent.isStopped = false;
 
+        //ZichtbaarMesh.enabled = true;
 
         float distanceToPlayer = Vector3.Distance(transform.position, playerTrans.position);
         //Debug.Log(distanceToPlayer + " , " + attackRange);
 
-        if (distanceToPlayer <= attackRange + 2) // +2 voor veiligheid, anders vaak in de buurt van bv 30 (attack range) maar niet helemaal voor wtv reden
+        if (distanceToPlayer <= attackRange + 2 && Player.GetComponent<PlayerMovement>().naamGezien == "Bookhead") // +2 voor veiligheid, anders vaak in de buurt van bv 30 (attack range) maar niet helemaal voor wtv reden
         {
-
+            Debug.Log("attack");
             AttackPlayer();
 
         }
@@ -201,17 +184,17 @@ public class EnemyBookHead : MonoBehaviour
 
     {
         isDamaging = true;
-        Debug.Log("DAMAGE");
+        //Debug.Log("DAMAGE");
 
         yield return new WaitForSeconds(attackDuration); // damaga na animatie zodat je tijd hebt om weg te lopen
-        if (action == "Attack") //als na de animatie speler nog in de buurt is en de action dus nog steeds attack is wel damage doen.
+        if (action == "Attack" && Player.GetComponent<PlayerMovement>().naamGezien == "Bookhead") //als na de animatie speler nog in de buurt is en de action dus nog steeds attack is wel damage doen.
         {
+            //JumpscareUI.SetActive(true);
+
             Managers.GetComponent<PlayerStats>().TakeDamage(damage);
 
             isDamaging = false;
-            JumpscareUI = GetComponent<PlayerStats>().JumpscareUI;
 
-            JumpscareUI.SetActive(true);
 
         }
         else
@@ -225,19 +208,37 @@ public class EnemyBookHead : MonoBehaviour
 
     }
 
-   
+
     public void SoundEffects()
     {
-
-        if (action == "roam" && !src.isPlaying)
+        if (action != previousAction)
+        {
+            src.Stop();
+        }
+        //Debug.Log("geluiden");
+        if ((action == "Roam" && !src.isPlaying))
         {
 
-            src.clip = sfx1;
+            src.clip = sfxRoam;
             src.volume = 1f;
             src.Play();
         }
 
-      
+        else if (action == "Attack" && !src.isPlaying)
+        {
+            src.clip = sfxAttack;
+            src.volume = 1f;
+            src.Play();
+        }
+
+        else if (action == "Chase" && !src.isPlaying)
+        {
+            src.clip = sfxChase;
+            src.volume = 1f;
+            src.Play();
+        }
+
+        previousAction = action;
 
     }
 }

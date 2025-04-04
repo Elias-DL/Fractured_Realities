@@ -24,9 +24,12 @@ public class EnemyAnkleGrabber : MonoBehaviour
     public GameObject Managers;
     private float attackDuration = 2f; // chech animatie
     public AudioSource src;
-    public AudioClip sfx1;
-    public AudioClip sfxBiteAttack;
+    public AudioClip sfxChase;
+    public AudioClip sfxRoam;
+    public AudioClip sfxAttack;
     private float distanceToPlayer;
+    private string previousAction = "";
+
 
     public bool coolDown = false;
     public void Awake()
@@ -253,23 +256,34 @@ public class EnemyAnkleGrabber : MonoBehaviour
 
     public void SoundEffects()
     {
+        if (action != previousAction)
+        {
+            src.Stop();
+        }
         //Debug.Log("geluiden");
         if ((action == "Roam" && !src.isPlaying))
         {
 
-            src.clip = sfx1;
+            src.clip = sfxRoam;
             src.volume = 1f;
             src.Play();
         }
 
         else if (action == "Attack" && !src.isPlaying)
         {
-            src.clip = sfxBiteAttack;
+            src.clip = sfxAttack;
             src.volume = 1f;
             src.Play();
         }
 
+        else if (action == "Chase" && !src.isPlaying)
+        {
+            src.clip = sfxChase;
+            src.volume = 1f;
+            src.Play();
+        }
 
+        previousAction = action;
 
     }
 }

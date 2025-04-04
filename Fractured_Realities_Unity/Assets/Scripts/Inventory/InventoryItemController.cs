@@ -49,7 +49,7 @@ public class InventoryItemController : MonoBehaviour
             // Adjust rotation based on specific item names
             if (item.name == "Flashlight")
                 rotation = Quaternion.Euler(0, 90, 90);
-            else if (item.name.Contains("Candle") || item.name == "Zombie" || item.name == "Bookhead" || item.name == "Anklegrabber")
+            else if (item.name.Contains("Candle") || item.name == "Zombie" || item.name == "Bookhead" || item.name == "Anklegrabber" || item.name.Contains("Painting"))
                 rotation = Quaternion.Euler(0, 0, 0);
             else if (item.name == "FinalKey")
                 rotation = Quaternion.Euler(270, -90, -90);

@@ -6,31 +6,39 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    public PaintingCube[] paintings; // Assign all PaintingCubes in Inspector
-    public GameObject door; // Assign the door GameObject
-
+    public GameObject Key;
+    public GameObject imgBoat;
+    public GameObject imgWoman;
+    public GameObject imgEarth;
+    public GameObject imgLandscape;
+    public GameObject imgWolf;
+    public GameObject imgBridge;
+    public GameObject Key6;
     private void Awake()
     {
         Instance = this;
     }
 
-    public void CheckPaintings()
+    private void Update()
     {
-        foreach (PaintingCube painting in paintings)
+        if (imgBoat.activeSelf == true && imgWoman.activeSelf == true && imgEarth.activeSelf == true && imgLandscape == true && imgWolf.activeSelf == true && imgBridge.activeSelf == true)
         {
-            if (!painting.gameObject.activeSelf || !painting.gameObject.GetComponent<PaintingCube>().enabled)
+
+            if (Key != null)
             {
-                Debug.Log("Not all paintings are placed yet.");
-                return; // Exit if any painting is missing
+                ShowKey();
+                Debug.Log("key");
             }
+            
         }
-
-        OpenDoor(); // If all paintings are placed, open the door
     }
+    
+       
+  
 
-    private void OpenDoor()
+    private void ShowKey()
     {
-        Debug.Log("All paintings are placed! Opening the door...");
-        door.SetActive(true); // Activate the door (or replace with an animation)
+        Debug.Log("All paintings are placed!");
+        Key6.SetActive(true); // Activate the door (or replace with an animation)
     }
 }

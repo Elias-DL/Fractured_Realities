@@ -518,6 +518,9 @@ MonoBehaviour:
   deaths: 0
   time: 0
   escaped: 0
+  Respawning: 1
+  Canvas: {fileID: 0}
+  DiedUI: {fileID: 0}
 --- !u!114 &404172518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1299,7 +1302,10 @@ MonoBehaviour:
   Player: {fileID: 0}
   Managers: {fileID: 0}
   src: {fileID: 0}
-  sfx1: {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
+  sfxRoam: {fileID: 0}
+  sfxChase: {fileID: 0}
+  sfxAttack: {fileID: 0}
+  enemyGezien: 0
 --- !u!82 &852600263
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3125,6 +3131,10 @@ MonoBehaviour:
   toggleInventory: {fileID: 0}
   hideInventory: {fileID: 914497696}
   showInventory: {fileID: 1168856882}
+  LoadingScreen: {fileID: 0}
+  JumpscareUI: {fileID: 0}
+  TipsUI: {fileID: 0}
+  guessingGameUI: {fileID: 0}
 --- !u!1 &1660976978
 GameObject:
   m_ObjectHideFlags: 0
@@ -3246,7 +3256,9 @@ MonoBehaviour:
   Player: {fileID: 0}
   Managers: {fileID: 0}
   src: {fileID: 0}
-  sfx1: {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
+  sfxRoam: {fileID: 0}
+  sfxChase: {fileID: 0}
+  sfxAttack: {fileID: 0}
 --- !u!82 &1717668486
 AudioSource:
   m_ObjectHideFlags: 0

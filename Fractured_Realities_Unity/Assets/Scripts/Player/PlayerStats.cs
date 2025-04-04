@@ -18,15 +18,19 @@ public class PlayerStats : MonoBehaviour
     public float time;
     public bool escaped = false;
     public bool Respawning = true;
-    public GameObject JumpscareUI;
+    //public GameObject JumpscareUI;
     public GameObject Canvas;
+    public GameObject DiedUI;
     private void Start() // of awake? idk voor nu voor in game time te zetten in DB
     {
         //Debug.Log("start");
         currentHealth = maxHealth;
-
+        if (DiedUI == null)
+        {
+            Debug.LogWarning("DiedUI is NOT assigned!");
+        }
         healthBar.SetSliderMax(maxHealth);
-        JumpscareUI = GameObject.FindWithTag("JumpscareUI");
+        //JumpscareUI = GameObject.FindWithTag("JumpscareUI");
         Canvas = GameObject.FindWithTag("Canvas");
     }
 
@@ -66,22 +70,44 @@ public class PlayerStats : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "Map")
         {
             Respawning = true;
-            
+
+            CharacterController CC = player.GetComponent<CharacterController>();
+            CC.enabled = false;
+
+
+            player.transform.position = spawnPlek.transform.position;
+            player.transform.rotation = spawnPlek.transform.rotation;
+            //Debug.Log("Respawned at " + player.transform.position + " health : " + currentHealth);
+
+            CC.enabled = true;
+            currentHealth = 100;
+            healthBar.SetSlider(currentHealth);
+            deaths++;
+            //Debug.Log("Death(s):" + deaths);
+            //JumpscareUI.SetActive(false);
+            StartCoroutine(Died()); // nadat de speler en camera zijn gereset
+
         }
-        CharacterController CC = player.GetComponent<CharacterController>();
-        CC.enabled = false;
+
+        else
+        {
+            CharacterController CC = player.GetComponent<CharacterController>();
+            CC.enabled = false;
 
 
-        player.transform.position = spawnPlek.transform.position;
-        player.transform.rotation = spawnPlek.transform.rotation;
-        //Debug.Log("Respawned at " + player.transform.position + " health : " + currentHealth);
+            player.transform.position = spawnPlek.transform.position;
+            player.transform.rotation = spawnPlek.transform.rotation;
+            //Debug.Log("Respawned at " + player.transform.position + " health : " + currentHealth);
 
-        CC.enabled = true;
-        currentHealth = 100;
-        healthBar.SetSlider(currentHealth);
-        deaths++;
-        //Debug.Log("Death(s):" + deaths);
-        JumpscareUI.SetActive(false);
+            CC.enabled = true;
+            currentHealth = 100;
+            healthBar.SetSlider(currentHealth);
+            deaths++;
+            //Debug.Log("Death(s):" + deaths);
+            //JumpscareUI.SetActive(false);
+            DiedUI.SetActive(false);
+
+        }
 
     }
 
@@ -94,6 +120,20 @@ public class PlayerStats : MonoBehaviour
         Destroy(Canvas);
         Cursor.lockState = CursorLockMode.Confined;
         SceneManager.LoadScene("Scoreboard");
+        Destroy(player);
     }
-    
+
+    IEnumerator Died()
+    {
+
+        DiedUI.SetActive(true);
+        
+        yield return new WaitForSeconds(2f);
+        Debug.Log("dead");
+
+        DiedUI.SetActive(false);
+
+
+    }
+
 }

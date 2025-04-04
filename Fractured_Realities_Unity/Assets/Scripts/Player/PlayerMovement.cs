@@ -11,14 +11,18 @@ public class PlayerMovement : MonoBehaviour
     //declaratie
     public Rigidbody rb;
     public AudioSource src;
-    public AudioClip sfx1;
+    public AudioClip sfxWalk;
+    public AudioClip sfxRun;
+
+    public AudioClip sfxJump;
+
     public float forwardForce = 500, sideForce = 30, sprintForce = 1000, jump = 1000;
     public CharacterController characterController;
     Animator animator; // Reference to Animator
     public bool gezien;
     public string naamGezien;
     Ray ray;
-    float sphereRadius = 2.0f; // Same radius as SphereCast
+    float sphereRadius = 1.0f; // Same radius as SphereCast
     float rayDistance = 100f;   // Max distance for the SphereCast
     RaycastHit rayHit;
     public Camera cam;
@@ -29,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-       
+
         characterController = GetComponent<CharacterController>();
         animator = GetComponentInChildren<Animator>(); // Get the Animator from the child object
     }
@@ -40,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
         if (Physics.SphereCast(ray, sphereRadius, out RaycastHit rayHit, rayDistance, layerMaskEnemies))
         {
             naamGezien = rayHit.transform.name;
-            if (naamGezien == "Anklegrabber" || naamGezien == "ZombieWithBlood" || naamGezien == "Mutated")
+            if (naamGezien == "AnkleGrabber" || naamGezien == "Bookhead" || naamGezien == "Zombie")
             {
                 Debug.Log(rayHit.transform.name);
                 gezien = true;
@@ -49,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             gezien = false;
+            naamGezien = null;
         }
 
         yield return new WaitForSeconds(10f);
@@ -103,7 +108,6 @@ public class PlayerMovement : MonoBehaviour
             txtTips.text = "";
         }
 
-        SoundEffects();
         action = null;
 
         if (src == null)
@@ -166,13 +170,31 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("Jump", true);
             action = "Jump";
         }
+
+        SoundEffects();
+
     }
 
     public void SoundEffects()
     {
         if (action == "Walk" && !src.isPlaying)
         {
-            src.clip = sfx1;
+            src.clip = sfxWalk;
+            src.volume = 0.1f;
+            src.Play();
+
+        }
+
+        else if (action == "Walk & Run" && !src.isPlaying)
+        {
+            src.clip = sfxRun;
+            src.volume = 0.1f;
+            src.Play();
+        }
+
+        else if (action == "Jump" && !src.isPlaying)
+        {
+            src.clip = sfxJump;
             src.volume = 0.1f;
             src.Play();
         }

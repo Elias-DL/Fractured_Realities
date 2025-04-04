@@ -14,8 +14,6 @@ GameObject:
   - component: {fileID: -5983652846248494458}
   - component: {fileID: -1374545319848443203}
   - component: {fileID: 2664526124816707249}
-  - component: {fileID: 6134339566723964809}
-  - component: {fileID: 621243958562491307}
   - component: {fileID: 7038617489095080919}
   m_Layer: 0
   m_Name: Flashlight 1
@@ -97,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: ef401caa30762e64eb4a1ad1c4a4bae9, type: 2}
-  itemPrefab: {fileID: 1147965471979518}
+  itemPrefab: {fileID: 0}
   player: {fileID: 0}
 --- !u!114 &-1374545319848443203
 MonoBehaviour:
@@ -134,34 +132,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.04458029, y: 0.2333746, z: 0.04996374}
   m_Center: {x: -0.002441901, y: 0.10330868, z: 0.0006739244}
---- !u!114 &6134339566723964809
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1147965471979518}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e79a0a16a1165164ab3610a37956812f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  screenPos: {x: 0, y: 0, z: 0}
-  worldPos: {x: 0, y: 0, z: 0}
---- !u!114 &621243958562491307
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1147965471979518}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e79a0a16a1165164ab3610a37956812f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  screenPos: {x: 0, y: 0, z: 0}
-  worldPos: {x: 0, y: 0, z: 0}
 --- !u!54 &7038617489095080919
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -329,8 +299,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 50
-  m_Range: 49.61843
+  m_Intensity: 2.81
+  m_Range: 189.4
   m_SpotAngle: 22.493929
   m_InnerSpotAngle: 3
   m_CookieSize: 10

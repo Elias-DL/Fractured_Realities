@@ -20,9 +20,12 @@ public class EnemyMutated : MonoBehaviour
     public GameObject Player;
     public GameObject Managers;
     private float attackDuration = 0.30f; // chech animatie
-    AudioSource audioSrc;
     public AudioSource src;
-    public AudioClip sfx1;
+    public AudioClip sfxRoam;
+    public AudioClip sfxChase;
+    public AudioClip sfxAttack;
+    private string previousAction = "";
+
     public void Awake()
     {
 
@@ -38,14 +41,15 @@ public class EnemyMutated : MonoBehaviour
         navAgent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         startPOS = transform.position;
-        audioSrc = GetComponent<AudioSource>();
+        src = GetComponent<AudioSource>();
+
     }
 
     private void Update()
     {
         //Debug.Log(action);
         SoundEffects();
-        action = null;
+        action = null;  
 
         if (src == null)
         {
@@ -193,14 +197,34 @@ public class EnemyMutated : MonoBehaviour
 
     public void SoundEffects()
     {
-
-        if (action == "roam" && !src.isPlaying)
+        if (action != previousAction)
+        {
+            src.Stop();
+        }
+        //Debug.Log("geluiden");
+        if ((action == "Roam" && !src.isPlaying))
         {
 
-            src.clip = sfx1;
+            src.clip = sfxRoam;
             src.volume = 1f;
             src.Play();
         }
+
+        else if (action == "Attack" && !src.isPlaying)
+        {
+            src.clip = sfxAttack;
+            src.volume = 1f;
+            src.Play();
+        }
+
+        else if (action == "Chase" && !src.isPlaying)
+        {
+            src.clip = sfxChase;
+            src.volume = 1f;
+            src.Play();
+        }
+
+        previousAction = action;
 
     }
 }

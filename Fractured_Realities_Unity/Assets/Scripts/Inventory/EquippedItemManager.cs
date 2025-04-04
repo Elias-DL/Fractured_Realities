@@ -8,6 +8,14 @@ public class EquippedItemManager : MonoBehaviour
 
     public string EquippedItemName => equippedItem != null ? equippedItem.itemName : "";
 
+    private void Update()
+    {
+        if (equippedItem != null)
+        {
+            Debug.Log(equippedItem.name);
+
+        }
+    }
     private void Awake()
     {
         if (Instance != null && Instance != this)
