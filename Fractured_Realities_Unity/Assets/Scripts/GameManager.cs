@@ -1,50 +1,36 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance; // Singleton zodat andere scripts hier toegang toe hebben
-    [SerializeField] private GameObject door; // De deur die geactiveerd moet worden
-    [SerializeField] private GameObject key;
-    private PaintingCube[] allCubes; // Alle kubussen in de scene
+    public static GameManager Instance;
+
+    public PaintingCube[] paintings; // Assign all PaintingCubes in Inspector
+    public GameObject door; // Assign the door GameObject
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        Instance = this;
     }
 
-    private void Start()
+    public void CheckPaintings()
     {
-        allCubes = FindObjectsOfType<PaintingCube>(); // Zoek alle kubussen in de scène
-    }
-
-    public void CheckAllPaintings()
-    {
-        foreach (PaintingCube cube in allCubes)
+        foreach (PaintingCube painting in paintings)
         {
-            if (!cube.IsCorrect()) // Als er ook maar één kubus fout is, doe niks
+            if (!painting.gameObject.activeSelf || !painting.gameObject.GetComponent<PaintingCube>().enabled)
             {
-                return;
+                Debug.Log("Not all paintings are placed yet.");
+                return; // Exit if any painting is missing
             }
         }
 
-        Debug.Log("All paintings are correct! Opening door...");
-        ActivateDoor();
+        OpenDoor(); // If all paintings are placed, open the door
     }
 
-    private void ActivateDoor()
+    private void OpenDoor()
     {
-        if (door != null)
-        {
-            door.SetActive(true); // Zet de deur actief (of speel een animatie, etc.)
-            key.SetActive(true);
-
-        }
+        Debug.Log("All paintings are placed! Opening the door...");
+        door.SetActive(true); // Activate the door (or replace with an animation)
     }
 }
